@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "slick-carousel/slick/slick.css";
+
 import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import AuthProvider from "@/Utils/AuthProvider/AuthProvider";
@@ -20,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ar" dir="rtl">
       <body className={inter.className}>
         <AuthProvider>
           <Navbar />

@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,400;1,200;1,400&family=Titillium+Web:ital,wght@0,200;0,400;1,200;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -9,3 +11,4 @@
       @apply px-[16px] sm:px-[32px] md:px-[64px]  xl:px-[140px] 
     }
   }
+

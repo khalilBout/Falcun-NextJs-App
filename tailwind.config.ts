@@ -24,12 +24,15 @@ module.exports = {
         xl: "1280px",
       },
       fontFamily: {
+        TitleFont: ["Cairo", "sans-serif"],
         bodyFont: ["Jost", "sans-serif"],
+        bodyFont: ["Markazi Text", "sans-serif"],
       },
       colors: {
-        primeColor: "#262626",
+        primeColor: "#193A81",
+        scendColor: "#53B2EF",
         lightText: "#6D6D6D",
-        actionColor: "#D9ECF2",
+        thirdColor: "#F8CB5C",
       },
       boxShadow: {
         testShadow: "0px 0px 54px -13px rgba(0,0,0,0.7)",
