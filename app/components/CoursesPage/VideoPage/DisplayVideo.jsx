@@ -70,7 +70,7 @@ const DisplayVideo = ({ allVideos }) => {
     applyFilters();
   }, [selectClass, selectLevel, selectSeason]);
 
-  // console.log(" video filter:", videoFilter);
+  console.log(" video filter:", videoFilter);
 
   return (
     <div>
