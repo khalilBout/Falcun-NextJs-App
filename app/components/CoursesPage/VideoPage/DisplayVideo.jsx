@@ -7,7 +7,7 @@ import EmptyView from "@/app/components/CoursesPage/EmptyView";
 const DisplayVideo = ({ allVideos }) => {
   const [videoFilter, setVideoFilter] = useState(allVideos);
   var dataDisplay = allVideos;
-
+console.log('fakey')
   const dataSeason = [
     {
       id: 1,
