@@ -15,7 +15,7 @@ const pageVideo = async ({ searchParams }) => {
   const levels = searchParams?.level || "all";
 
   const { allVideos, count } = await getVideo(page, levels);
-  console.log("allVideos:", allVideos);
+  // console.log("allVideos:", allVideos);
   return (
     // <p>product..</p>
     <div className="w-full font-bodyFont">

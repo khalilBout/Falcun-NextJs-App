@@ -7,6 +7,7 @@ import { useSession } from "next-auth/react";
 import { IoPersonAdd } from "react-icons/io5";
 import { TbLogout2 } from "react-icons/tb";
 import { RiShoppingBag3Fill } from "react-icons/ri";
+import { FcManager } from "react-icons/fc";
 
 const Icons = () => {
   const session = useSession();
@@ -31,34 +32,58 @@ const Icons = () => {
       )}
 
       {session && session.status === "authenticated" && (
-        <>
-          <div className="flex justify-start items-center ">
-            {session.data.user.role === "admin" ? (
+        <ul className="flex justify-center items-center gap-4">
+          {session.data.user.role === "admin" ? (
+            <li>
               <Link
                 href="/dashboard"
-                className="py-1 px-2 rounded-full bg-slate-300 hover:bg-slate-600 cursor-pointer"
+                className=" hidden mdl:block py-1 px-2 rounded-full bg-slate-100 font-TitleFont text-primeColor text-xl font-bold hover:bg-slate-300 cursor-pointer"
               >
                 لوحة التحكم
               </Link>
-            ) : (
               <Link
-                href="/profile"
-                className="py-1 px-2 rounded-full bg-slate-300 hover:bg-slate-600 cursor-pointer"
+                href="/dashboard"
+                className="block mdl:hidden cursor-pointer"
               >
-                Profile
+                <FcManager className="text-thirdColor" size={24} />
               </Link>
-            )}
-          </div>
+            </li>
+          ) : (
+            <>
+              <li>
+                <button className=" flex justify-center items-center cursor-pointer">
+                  <RiShoppingBag3Fill className="text-thirdColor" size={24} />
+                </button>
+              </li>
+            </>
+          )}
 
-          <Link
-            href="/api/auth/signout?callbackUrl=/"
-            className="py-1 px-2 rounded-full bg-slate-300 hover:bg-slate-600 cursor-pointer"
-          >
-            <span>تسجيل الخروج</span>
-            <TbLogout2 />
-          </Link>
-        </>
+          <li>
+            <Link
+              href="/api/auth/signout?callbackUrl=/"
+              className="py-1 px-2 rounded-full bg-slate-300 hover:bg-slate-600 cursor-pointer"
+            >
+              <TbLogout2 className="text-thirdColor" size={24} />
+            </Link>
+          </li>
+        </ul>
       )}
+
+      {/* {session &&
+        session.status === "authenticated" &&
+        session.data.user.role ===
+          "admin"(
+            <ul className="flex justify-center items-center gap-4">
+              <li>
+                <Link
+                  href="/api/auth/signout?callbackUrl=/"
+                  className="py-1 px-2 rounded-full bg-slate-300 hover:bg-slate-600 cursor-pointer"
+                >
+                  <FcManager className="" size={26} />
+                </Link>
+              </li>
+            </ul>
+          )} */}
     </>
   );
 };

@@ -30,3 +30,17 @@ export const getVideo = async (page, levels) => {
     // throw new Error("Failed to fetch products!");
   }
 };
+
+export const getVideoById = async (id) => {
+  try {
+    const res = await fetch(`${process.env.GLOBAL_URL}/api/video/${id}`, {
+      method: "GET",
+      cache: "no-store",
+    });
+
+    const data = await res.json();
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};

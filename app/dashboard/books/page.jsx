@@ -15,7 +15,7 @@ const pageBook = async ({ searchParams }) => {
   const levels = searchParams?.level || "all";
 
   const { allBooks, count } = await getBooks(page, levels);
-  console.log("allBooks:", allBooks);
+  // console.log("allBooks:", allBooks);
   return (
     // <p>product..</p>
     <div className="w-full font-bodyFont">
