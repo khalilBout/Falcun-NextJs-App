@@ -8,6 +8,7 @@ import AuthProvider from "@/Utils/AuthProvider/AuthProvider";
 import Navbar from "@/app/components/Navbar/Navbar";
 import Footer from "@/app/components/Footer/Footer";
 import { Toaster } from "react-hot-toast";
+import ReduxProv from "@/app/components/ReduxProv";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,10 +26,12 @@ export default function RootLayout({
     <html lang="ar" dir="rtl">
       <body className={inter.className}>
         <AuthProvider>
-          <Navbar />
-          {children}
-          <Toaster position="bottom-right" />
-          <Footer />
+          <ReduxProv>
+            <Navbar />
+            {children}
+            <Toaster position="bottom-right" />
+            <Footer />
+          </ReduxProv>
         </AuthProvider>
       </body>
     </html>

@@ -2,7 +2,7 @@ import React from "react";
 import DisplayVideo from "@/app/components/CoursesPage/VideoPage/DisplayVideo";
 
 const page = async () => {
-  const res = await fetch("http://localhost:3000/api/admin/video", {
+  const res = await fetch(`${process.env.GLOBAL_URL}/api/admin/video`, {
     method: "GET",
   });
   const allVideos = await res.json();

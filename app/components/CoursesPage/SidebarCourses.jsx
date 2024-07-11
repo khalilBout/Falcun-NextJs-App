@@ -29,7 +29,7 @@ const SidebarCourses = () => {
           <Link
             href={cty.url}
             key={ind}
-            className="mx-1 text-[12px] sml:text-[15px] mdl:text-[18px] font-TitleFont font-medium text-black bg-slate-300 border-1 border-black/70 rounded-full px-4 py-1 hover:bg-black hover:text-white"
+            className="mx-1 text-center text-[12px] sml:text-[15px] mdl:text-[18px] font-TitleFont font-medium text-black bg-slate-300 border-1 border-black/70 rounded-full px-4 py-1 hover:bg-black hover:text-white"
             //   onClick={() => addCategory(cty.name)}
           >
             {cty.name}

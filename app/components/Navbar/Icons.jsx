@@ -6,8 +6,9 @@ import { useSession } from "next-auth/react";
 
 import { IoPersonAdd } from "react-icons/io5";
 import { TbLogout2 } from "react-icons/tb";
-import { RiShoppingBag3Fill } from "react-icons/ri";
+// import { RiShoppingBag3Fill } from "react-icons/ri";
 import { FcManager } from "react-icons/fc";
+import CartBooksShop from "@/app/components/Navbar/CartBooksShop";
 
 const Icons = () => {
   const session = useSession();
@@ -24,9 +25,7 @@ const Icons = () => {
           </li>
 
           <li>
-            <button className=" flex justify-center items-center cursor-pointer">
-              <RiShoppingBag3Fill className="text-thirdColor" size={24} />
-            </button>
+            <CartBooksShop />
           </li>
         </ul>
       )}
@@ -51,9 +50,7 @@ const Icons = () => {
           ) : (
             <>
               <li>
-                <button className=" flex justify-center items-center cursor-pointer">
-                  <RiShoppingBag3Fill className="text-thirdColor" size={24} />
-                </button>
+                <CartBooksShop />
               </li>
             </>
           )}

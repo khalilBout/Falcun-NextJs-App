@@ -1,11 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
-import { useSession } from "next-auth/react";
 
 const Links = ({ dataLink }) => {
-  const session = useSession();
-  console.log("session", session);
   return (
     <motion.div
       initial={{ y: "-600px", opacity: 0 }}
@@ -23,19 +20,6 @@ const Links = ({ dataLink }) => {
             </Link>
           </li>
         ))}
-
-        {session.status === "unauthenticated" &&
-          session.data.user.role ===
-            "admin"(
-              <li key="admin">
-                <Link
-                  className="text-primeColor font-TitleFont font-bold mdl:text-[20px] xl:text-[24px] "
-                  href="/dashboard"
-                >
-                  لوحة التحكم
-                </Link>
-              </li>
-            )}
       </ul>
     </motion.div>
   );

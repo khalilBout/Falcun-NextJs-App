@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import VideoCard from "@/app/components/CoursesPage/VideoCard";
+import BookCard from "@/app/components/CoursesPage/BookPage/BookCard";
 import EmptyView from "@/app/components/CoursesPage/EmptyView";
 
-const DisplayVideo = ({ allVideos }) => {
-  const [videoFilter, setVideoFilter] = useState(allVideos);
-  var dataDisplay = allVideos;
+const DisplayBooks = ({ allBooks }) => {
+  const [booksFilter, setBooksFilter] = useState(allBooks);
+  var dataDisplay = allBooks;
 
   const dataSeason = [
     {
@@ -62,14 +62,12 @@ const DisplayVideo = ({ allVideos }) => {
       dataDisplay = dataDisplay.filter((item) => item.TheClass === selectClass);
     }
 
-    setVideoFilter(dataDisplay);
+    setBooksFilter(dataDisplay);
   };
 
   useEffect(() => {
     applyFilters();
   }, [selectClass, selectLevel, selectSeason]);
-
-  console.log(" video filter:", videoFilter);
 
   return (
     <div>
@@ -124,8 +122,8 @@ const DisplayVideo = ({ allVideos }) => {
 
       {/* display data  */}
       <div className="w-full flex justify-around items-start flex-wrap ">
-        {videoFilter?.length > 0 ? (
-          videoFilter?.map((item, ind) => <VideoCard key={ind} item={item} />)
+        {booksFilter?.length > 0 ? (
+          booksFilter?.map((item, ind) => <BookCard key={ind} item={item} />)
         ) : (
           <EmptyView />
         )}
@@ -134,4 +132,4 @@ const DisplayVideo = ({ allVideos }) => {
   );
 };
 
-export default DisplayVideo;
+export default DisplayBooks;

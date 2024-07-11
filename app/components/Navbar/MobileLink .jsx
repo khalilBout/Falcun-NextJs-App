@@ -84,7 +84,7 @@ const MobileLink = ({ dataLink }) => {
             variants={listVariants}
             initial="closed"
             animate="opened"
-            className=" absolute top-0 left-0 w-[85vw] h-screen bg-black/70 text-white flex flex-col items-center justify-center gap-8 text-4xl"
+            className=" absolute top-0 left-0 w-[85vw] z-100 h-screen bg-black/70 text-white flex flex-col items-center justify-center gap-8 text-4xl"
           >
             {dataLink?.map((link) => (
               <motion.div
@@ -95,7 +95,7 @@ const MobileLink = ({ dataLink }) => {
                   // backgroundColor: "#FEC3A6",
                   backgroundColor: "#85B8EE",
                 }}
-                className="cursor-pointer font-TitleFont py-2 px-8 rounded-full text-[24px]"
+                className="z-50 cursor-pointer font-TitleFont py-2 px-8 rounded-full text-[24px]"
                 key={link.name}
                 onClick={() => setOpen((prev) => !prev)}
               >

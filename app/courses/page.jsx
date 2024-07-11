@@ -14,7 +14,7 @@ export default function Courses() {
       <div className="py-8 w-full h-full flex justify-center items-center flex-wrap  gap-8 ">
         <div className="w-[300px] h-[200px] relative">
           <Link
-            href="/courses/video"
+            href="/courses/videos"
             className="w-[300px] h-[200px] flex justify-center items-center font-TitleFont text-2xl font-semibold bg-blue-200/20 rounded-lg"
           >
             الفيديوهات التعليمية

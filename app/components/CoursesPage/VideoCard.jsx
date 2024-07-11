@@ -41,20 +41,6 @@ const VideoCard = ({ item }) => {
             {item.TheClass}
           </h2>
         </div>
-        {/* icon  */}
-        {/* <div className=" absolute top-0 right-4 flex justify-center items-center gap-2">
-          <div className="flex justify-center items-center gap-1">
-            <p className="text-[12px]">12</p>
-
-            <FcLike size={14} />
-          </div>
-
-          <div className="flex justify-center items-center gap-1">
-            <p className="text-[12px]">02</p>
-
-            <FaComment size={12} />
-          </div>
-        </div> */}
       </Link>
     </div>
   );

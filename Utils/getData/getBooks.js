@@ -30,3 +30,19 @@ export const getBooks = async (page, levels) => {
     // throw new Error("Failed to fetch products!");
   }
 };
+
+export const getBookById = async (id) => {
+  console.log("start...");
+  try {
+    const res = await fetch(`${process.env.GLOBAL_URL}/api/books/${id}`, {
+      method: "GET",
+      cache: "no-store",
+    });
+
+    const data = await res.json();
+    console.log("data book:", data);
+    return data;
+  } catch (e) {
+    console.log(e);
+  }
+};
