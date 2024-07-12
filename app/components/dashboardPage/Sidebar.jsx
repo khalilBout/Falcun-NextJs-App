@@ -68,7 +68,7 @@ const Sidebar = () => {
             <Link
               // href="/profile/order"
               href="/dashboard/books"
-              className=" font-TitleFont font-bold text-[16px] block px-4 py-2  text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
+              className="text-center font-TitleFont font-bold text-[16px] block px-4 py-2  text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
             >
               المذكرات المدرسية
             </Link>
@@ -77,7 +77,7 @@ const Sidebar = () => {
             <Link
               // href="/profile/order"
               href="/dashboard/"
-              className=" font-TitleFont font-bold text-[17px] block px-4 py-2  text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
+              className="text-center font-TitleFont font-bold text-[17px] block px-4 py-2  text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
             >
               السلاسل التعليمية
             </Link>
@@ -87,10 +87,10 @@ const Sidebar = () => {
         <div className="w-full flex justify-center ">
           <button
             // href='/profile'
-            className="mt-0 md:mt-6 px-2 py-1 text-red-800 hover:bg-red-100 hover:text-white-500 rounded-md cursor-pointer"
+            className="my-4 px-2  py-1 text-red-800 hover:bg-red-100 hover:text-white-500 rounded-md cursor-pointer"
             onClick={logoutHandler}
           >
-            Logout
+            تسجيل  الخروج 
           </button>
         </div>
       </div>

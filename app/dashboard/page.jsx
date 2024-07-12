@@ -6,9 +6,10 @@ import Link from "next/link";
 const page = () => {
   return (
     <>
-      <div className="w-full mdl:w-3/4  min-h-screen transition-all main">
-        {/* top section */}
-        <div className="p-6"></div>
+      <div className=" h-[40vh] flex justify-center items-center ">
+        <h1 className="font-TitleFont text-3xl  text-center text-black bg-slate-300 rounded-md px-16 py-8">
+          مرحبا بك في لوحة التحكم الخاصة بمنصة برافو
+        </h1>
       </div>
     </>
   );

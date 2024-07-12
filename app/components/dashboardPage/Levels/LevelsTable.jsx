@@ -1,7 +1,5 @@
 import React from "react";
-// import BtnDelete from "@/utils/action/BtnDelete";
-import Link from "next/link";
-import { BiEdit } from "react-icons/bi";
+import DeleteLev from "@/app/components/dashboardPage/Levels/DeleteLev";
 
 const levelsTable = ({ allLevels }) => {
   console.log("data level new:", allLevels);
@@ -14,15 +12,15 @@ const levelsTable = ({ allLevels }) => {
       >
         <thead>
           <tr>
-            <th className="text-[12px] uppercase tracking-wide font-medium text-gray-400 py-2 px-4 bg-gray-50 text-left">
+            <th className="text-[15px] font-medium text-gray-400 py-2 px-4 bg-gray-50 text-center">
               المستوى
             </th>
 
-            <th className="text-[12px] uppercase tracking-wide font-medium text-gray-400 py-2 px-4 bg-gray-50 text-left rounded-tr-md rounded-br-md">
+            <th className="text-[15px] font-medium text-gray-400 py-2 px-4 bg-gray-50 center ">
               الأقسام
             </th>
 
-            <th className="text-[12px] uppercase tracking-wide font-medium text-gray-400 py-2 px-4 bg-gray-50 text-left rounded-tr-md rounded-br-md">
+            <th className="text-[15px] font-medium text-gray-400 py-2 px-4 bg-gray-50 text-center">
               التعديل
             </th>
           </tr>
@@ -51,7 +49,7 @@ function Tr({ item }) {
           </span>
         </td>
         {/* description of description video  */}
-        <td className="py-2 px-4 border-b border-b-gray-50">
+        <td className="py-2 px-4 border-b border-b-gray-50 ">
           <span className=" flex gap-2 text-[16px] font-medium text-gray-800">
             {listClass?.map((elm, ind) => (
               <p
@@ -66,17 +64,8 @@ function Tr({ item }) {
 
         {/* Actions  */}
 
-        <td className="py-2 px-4 border-b border-b-gray-50">
-          <span className="flex gap-1">
-            <Link
-              href={`/dashboard/products/updateProduct/${_id}`}
-              className="cursor-pointer"
-            >
-              <BiEdit size={20} color={"rgb(34,197,94)"}></BiEdit>
-            </Link>
-            {/* <BtnDelete url={`/admin/productAdmin/${_id}`} /> */}
-            <p>delete</p>
-          </span>
+        <td className="py-3 px-4 border-b border-b-gray-50 flex justify-center">
+          <DeleteLev id={_id} />
         </td>
       </tr>
     </>

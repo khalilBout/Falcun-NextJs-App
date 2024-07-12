@@ -62,7 +62,6 @@ export const getBookById = async (id) => {
     });
 
     const data = await res.json();
-    console.log("data book:", data);
     return data;
   } catch (e) {
     console.log(e);

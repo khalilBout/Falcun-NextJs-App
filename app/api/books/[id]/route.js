@@ -13,3 +13,17 @@ export async function GET(request, { params }) {
     return new NextResponse(`Database Error => ${error}`, { status: 500 });
   }
 }
+
+export const DELETE = async (request, { params }) => {
+  // امساك رقم تعريف المدونة
+  const { id } = params;
+
+  try {
+    await connectDB();
+    await Book.findByIdAndDelete(id);
+
+    return new NextResponse("Book Deleted", { status: 200 });
+  } catch (err) {
+    return new NextResponse("Database Error", { status: 500 });
+  }
+};

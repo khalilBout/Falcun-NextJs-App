@@ -3,13 +3,12 @@ import { getVideo } from "@/Utils/getData/getVideo";
 import TableAllVideo from "@/app/components/dashboardPage/TableAllVideo";
 import SelectLevel from "@/app/components/dashboardPage/SelectLevel";
 import SelectSeason from "@/app/components/dashboardPage/SelectSeason";
-// import CategorySelect from "@/app/components/dashboard/productPage/CategorySelect";
-// import SearchComponent from "@/app/components/navbar/SearchInput";
 import Pagination from "@/app/components//dashboardPage/Pagination";
 
 // images
 import empty from "@/public/image/empty.png";
 import Image from "next/image";
+import EmptyView from "@/app/components/CoursesPage/EmptyView";
 
 const pageVideo = async ({ searchParams }) => {
   //   const search = searchParams?.search || "";
@@ -53,7 +52,8 @@ const pageVideo = async ({ searchParams }) => {
           ) : (
             <>
               <div className="w-full flex justify-center items-center">
-                <Image width={320} height={180} src={empty} alt="No Video" />
+                {/* <Image width={320} height={180} src={empty} alt="No Video" /> */}
+                <EmptyView />
               </div>
             </>
           )}

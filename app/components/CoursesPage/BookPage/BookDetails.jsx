@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { addToBasket } from "@/redux/CartSlice";
 import toast from "react-hot-toast";
+import Link from "next/link";
+import { BsWhatsapp } from "react-icons/bs";
 
 const BookDetails = ({ book }) => {
   const cart = useSelector((state) => state.Cart.cartBooks);
@@ -89,6 +91,32 @@ const BookDetails = ({ book }) => {
           >
             أضف إلى السلة{" "}
           </button>
+        </div>
+        <div className="bg-green-100 mt-3 p-3 rounded-lg ">
+          <p className=" text-center font-TitleFont text-[15px] mdl:text-[17px] ">
+            {" "}
+            عزيزي الطالب يمكنك طلب المذكرة مباشرة من هنا ، كما نعلمك أن هذه
+            المذكرات متوفر لدى مجموعة من المكتبات يمكنك الإطلاع عليها من خلال
+            الزر ادناه ، أو الإتصال بنا مباشرة على الواتساب{" "}
+          </p>
+          <div className="flex justify-end items-center gap-4 font-TitleFont text-[18px] font-semibold mt-2">
+            <Link
+              href="/contact"
+              className="font-bold px-4 py-2 bg-blue-300 rounded-lg cursor-pointer text-[16px] "
+            >
+              المكتبات
+            </Link>
+            <Link
+              href="https://wa.me/96550133774"
+              className=" bg-blue-300-20  cursor-pointer text-[15px] font-semibold bg-green-300 hover:bg-green-500 duration-200 p-2 rounded-full"
+            >
+              {/* <span>whatsapp</span> */}
+              <BsWhatsapp
+                size={24}
+                className="text-black cursor-pointer rounded-full "
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

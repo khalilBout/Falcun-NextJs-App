@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import Level from "./level";
 
 const VideoSchema = new mongoose.Schema({
   title: {

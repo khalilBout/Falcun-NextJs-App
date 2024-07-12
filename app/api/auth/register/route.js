@@ -7,14 +7,16 @@ connectDB();
 
 export const POST = async (request) => {
   // catch data from page of register
+  console.log("user start *************************************************");
+
   const { name, email, password } = await request.json();
 
   //check if user already exists
   const user = await User.findOne({ email });
 
-  if (user) {
-    return NextResponse.json({ error: "User already exists" }, { status: 400 });
-  }
+  // if (user) {
+  //   return NextResponse.json({ error: "User already exists" }, { status: 400 });
+  // }
 
   // hashed Password with leb of script (bcrypt)
   const hashedPassword = await bcrypt.hash(password, 5);
@@ -28,6 +30,7 @@ export const POST = async (request) => {
 
   // save user in data base and return response with mesg of success or catch error
   try {
+    console.log("user:", newUser);
     await newUser.save();
     return new NextResponse("User has been created", {
       status: 201,

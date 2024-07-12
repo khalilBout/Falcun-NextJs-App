@@ -4,6 +4,7 @@ import Link from "next/link";
 // import { BiEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import Image from "next/image";
+import DeleteBook from "@/app/components/dashboardPage/DeleteBook";
 
 // import ProcessOrder from "@/utils/action/ProcessOrder";
 const TableAllBooks = ({ data }) => {
@@ -78,7 +79,7 @@ function Tr({ item }) {
         {/* season of book  */}
         <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
           <span className="text-[16px] font-medium text-gray-800">
-            {season}
+            {season === "season-1" ? "الفصل 1" : "الفصل 2"}
           </span>
         </td>
         {/* levels of Video  */}
@@ -102,19 +103,7 @@ function Tr({ item }) {
         {/* Actions  */}
 
         <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
-          <span className="flex gap-1">
-            {/* <Link
-              href={`/dashboard/products/updateProduct/${_id}`}
-              className="cursor-pointer"
-            >
-              <BiEdit size={20} color={"rgb(34,197,94)"}></BiEdit>
-            </Link> */}
-            {/* <BtnDelete url={`/admin/productAdmin/${_id}`} /> */}
-
-            <Link href={`/dashboard/book/${_id}`} className="cursor-pointer">
-              <MdDelete size={20} color={"rgb(34,197,94)"}></MdDelete>
-            </Link>
-          </span>
+          <DeleteBook id={_id} />
         </td>
       </tr>
     </>

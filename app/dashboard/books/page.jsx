@@ -3,12 +3,8 @@ import { getBooks } from "@/Utils/getData/getBooks";
 import TableAllBooks from "@/app/components/dashboardPage/TableAllBooks";
 import SelectLevel from "@/app/components/dashboardPage/SelectLevel";
 import SelectSeason from "@/app/components/dashboardPage/SelectSeason";
-// import SearchComponent from "@/app/components/navbar/SearchInput";
 import Pagination from "@/app/components/dashboardPage/Pagination";
-
-// images
-import empty from "@/public/image/empty.png";
-import Image from "next/image";
+import EmptyView from "@/app/components/CoursesPage/EmptyView";
 
 const pageBook = async ({ searchParams }) => {
   //   const search = searchParams?.search || "";
@@ -47,7 +43,7 @@ const pageBook = async ({ searchParams }) => {
           ) : (
             <>
               <div className="w-full flex justify-center items-center">
-                <Image width={320} height={180} src={empty} alt="No Video" />
+                <EmptyView />
               </div>
             </>
           )}

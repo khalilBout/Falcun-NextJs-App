@@ -25,14 +25,14 @@ const DisplayBooks = ({ allBooks }) => {
   // fetching data
   useEffect(() => {
     const fetchLevels = async () => {
-      const res = await fetch("/api/admin/levels", {
+      const res = await fetch("/api/levels", {
         method: "GET",
       });
-      const data = await res.json();
-      setLevelList(data);
+      if (res.status === 200) {
+        const data = await res.json();
+        setLevelList(data);
+      }
     };
-
-    // fetchVideo();
     fetchLevels();
   }, []);
 

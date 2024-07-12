@@ -28,14 +28,14 @@ const Pagination = ({ count }) => {
       <div className="flex items-center gap-2 mx-2">
         <button
           className={`${
-            hasNext
+            hasPrev
               ? "border-[1px] border-gray-300 text-[#737373]"
               : "bg-primeColor text-white"
-          } w-8 h-8 text-lg flex items-center justify-center cursor-pointer`}
-          disabled={!hasPrev}
-          onClick={() => handleChangePage("prev")}
+          } w-8 h-8 text-base flex items-center justify-center cursor-pointer`}
+          disabled={!hasNext}
+          onClick={() => handleChangePage("next")}
         >
-          <GrFormPrevious />
+          <MdOutlineNavigateNext />
         </button>
 
         <div
@@ -47,14 +47,14 @@ const Pagination = ({ count }) => {
 
         <button
           className={`${
-            hasPrev
+            hasNext
               ? "border-[1px] border-gray-300 text-[#737373]"
               : "bg-primeColor text-white"
-          } w-8 h-8 text-base flex items-center justify-center cursor-pointer`}
-          disabled={!hasNext}
-          onClick={() => handleChangePage("next")}
+          } w-8 h-8 text-lg flex items-center justify-center cursor-pointer`}
+          disabled={!hasPrev}
+          onClick={() => handleChangePage("prev")}
         >
-          <MdOutlineNavigateNext />
+          <GrFormPrevious />
         </button>
       </div>
     </>

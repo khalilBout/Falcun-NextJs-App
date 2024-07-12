@@ -86,27 +86,27 @@ const Page = () => {
                   onChange={handelTitle}
                 />
               </div>
-              <div className="flex gap-4  ">
+              <div className="flex gap-8 mx-2 ">
                 <input
-                  className=" h-[40px] border-[1px] rounded-lg focus:border-pink-200 px-3 focus:border-2 outline-none m-1"
+                  className=" h-[40px] min-w-[280px] border-[1px] rounded-lg focus:border-pink-200 px-3 focus:border-2 outline-none m-1"
                   placeholder="القسم  "
                   type="text"
                   name="theClass"
                   onChange={handelClassName}
                 />
                 <button
-                  className="mx-2 px-2 py-1 text-black bg-green-200 rounded-md w-[90px]"
+                  className="mx-2 px-2 py-1 text-black bg-green-200 rounded-md"
                   onClick={addClassToList}
                 >
                   إضافة القسم
                 </button>
               </div>
               {listClass.length > 0 && (
-                <div className=" flex gap-2">
+                <div className="flex gap-3 my-2">
                   {listClass.map((elm, ind) => (
                     <p
                       key={ind}
-                      className=" text-[14px] text-red-400 bg-slate-300 px-2 py-1 rounded-full "
+                      className=" text-[14px] text-red-400 bg-slate-300 px-3 py-1 rounded-full "
                     >
                       {elm.name}
                     </p>

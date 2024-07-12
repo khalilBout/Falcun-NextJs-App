@@ -1,12 +1,11 @@
 import { getOrder } from "@/Utils/getData/getOrder";
 import TableAllOrder from "@/app/components/dashboardPage/TableAllOrder";
-// import CategorySelect from "@/app/components/dashboard/productPage/CategorySelect";
-// import SearchComponent from "@/app/components/navbar/SearchInput";
 import Pagination from "@/app/components//dashboardPage/Pagination";
 
 // images
 import empty from "@/public/image/empty.png";
 import Image from "next/image";
+import EmptyView from "@/app/components/CoursesPage/EmptyView";
 
 const pageOrder = async ({ searchParams }) => {
   //   const search = searchParams?.search || "";
@@ -24,10 +23,6 @@ const pageOrder = async ({ searchParams }) => {
         </div>
         <div className="flex justify-between">
           <div className="w-full mx-2 flex justify-between items-center mb-4 ">
-            {/* <CategorySelect /> */}
-            {/* <div className="mr-4 grow">
-              <SearchComponent />
-            </div> */}
             <Pagination count={count} />
           </div>
         </div>
@@ -37,7 +32,7 @@ const pageOrder = async ({ searchParams }) => {
           ) : (
             <>
               <div className="w-full flex justify-center items-center">
-                <Image width={320} height={180} src={empty} alt="No Order" />
+                <EmptyView />
               </div>
             </>
           )}

@@ -17,8 +17,8 @@ const Service = () => {
         <div className="mdl:w-1/2 flex flex-col justify-center items-center ">
           <div className=" my-2 min-h-[120px] flex items-center ">
             <p className=" text-[18px] xl:text-[22px] text-center font-bodyFont font-medium text-primeColor px-2">
-              موقعنا التعليمي يقدم خدمات شاملة للمرحلة الإعدادية، تشمل فيديوهات
-              تعليمية تفاعلية تغطي جميع المواد الدراسية .
+              منصتنا تقدم خدمات شاملة للمرحلة الإعدادية، تشمل فيديوهات تعليمية
+              تفاعلية تغطي جميع المواد الدراسية .
             </p>
             <Image
               src={Service1}

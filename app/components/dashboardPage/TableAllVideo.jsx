@@ -4,8 +4,8 @@ import Link from "next/link";
 import { BiEdit } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 import Image from "next/image";
+import DeleteVideo from "@/app/components/dashboardPage/DeleteVideo";
 
-// import ProcessOrder from "@/utils/action/ProcessOrder";
 const TableAllVideo = ({ data }) => {
   return (
     <>
@@ -91,7 +91,7 @@ function Tr({ item }) {
         {/* season of description video  */}
         <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
           <span className="text-[16px] font-medium text-gray-800">
-            {season}
+            {season === "season-1" ? "الفصل 1" : "الفصل 2"}
           </span>
         </td>
         {/* levels of Video  */}
@@ -123,19 +123,7 @@ function Tr({ item }) {
         {/* Actions  */}
 
         <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
-          <span className="flex gap-1">
-            {/* <Link
-              href={`/dashboard/products/updateProduct/${_id}`}
-              className="cursor-pointer"
-            >
-              <BiEdit size={20} color={"rgb(34,197,94)"}></BiEdit>
-            </Link> */}
-            {/* <BtnDelete url={`/admin/productAdmin/${_id}`} /> */}
-
-            <Link href={`/dashboard/video/${_id}`} className="cursor-pointer">
-              <MdDelete size={20} color={"rgb(34,197,94)"}></MdDelete>
-            </Link>
-          </span>
+          <DeleteVideo id={_id} />
         </td>
       </tr>
     </>
