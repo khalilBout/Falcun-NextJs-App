@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getVideo } from "@/Utils/getData/getVideo";
 import TableAllVideo from "@/app/components/dashboardPage/TableAllVideo";
+import SelectLevel from "@/app/components/dashboardPage/SelectLevel";
+import SelectSeason from "@/app/components/dashboardPage/SelectSeason";
 // import CategorySelect from "@/app/components/dashboard/productPage/CategorySelect";
 // import SearchComponent from "@/app/components/navbar/SearchInput";
 import Pagination from "@/app/components//dashboardPage/Pagination";
@@ -13,8 +15,9 @@ const pageVideo = async ({ searchParams }) => {
   //   const search = searchParams?.search || "";
   const page = searchParams?.page || 1;
   const levels = searchParams?.level || "all";
+  const season = searchParams?.season || "all";
 
-  const { allVideos, count } = await getVideo(page, levels);
+  const { allVideos, count } = await getVideo(page, levels, season);
   // console.log("allVideos:", allVideos);
   return (
     // <p>product..</p>
@@ -27,6 +30,9 @@ const pageVideo = async ({ searchParams }) => {
         </div>
         <div className="flex justify-between">
           <div className="w-full mx-2 flex justify-between items-center mb-4 ">
+            <SelectSeason />
+            <SelectLevel />
+
             {/* <CategorySelect /> */}
             {/* <div className="mr-4 grow">
               <SearchComponent />

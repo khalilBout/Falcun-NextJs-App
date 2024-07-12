@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-const SidebarCourses = () => {
+const SidebarCourses = (params) => {
+  const path = "";
   const dataCategory = [
     {
       id: 1,
@@ -25,16 +26,19 @@ const SidebarCourses = () => {
   return (
     <div>
       <div className="w-full flex justify-center mdl:justify-around items-center gap-1 py-6 px-2 bg-emerald-100 ">
-        {dataCategory?.map((cty, ind) => (
-          <Link
-            href={cty.url}
-            key={ind}
-            className="mx-1 text-center text-[12px] sml:text-[15px] mdl:text-[18px] font-TitleFont font-medium text-black bg-slate-300 border-1 border-black/70 rounded-full px-4 py-1 hover:bg-black hover:text-white"
-            //   onClick={() => addCategory(cty.name)}
-          >
-            {cty.name}
-          </Link>
-        ))}
+        {dataCategory?.map((cty, ind) => {
+          const isActive = cty.url === path;
+
+          return (
+            <Link
+              href={cty.url}
+              key={ind}
+              className="mx-1 text-center text-[12px] sml:text-[15px] mdl:text-[18px] font-TitleFont font-medium text-black bg-slate-300 border-1 border-black/70 rounded-full px-4 py-1 hover:bg-black hover:text-white"
+            >
+              {cty.name}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

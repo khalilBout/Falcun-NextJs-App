@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { getBooks } from "@/Utils/getData/getBooks";
 import TableAllBooks from "@/app/components/dashboardPage/TableAllBooks";
-// import CategorySelect from "@/app/components/dashboard/productPage/CategorySelect";
+import SelectLevel from "@/app/components/dashboardPage/SelectLevel";
+import SelectSeason from "@/app/components/dashboardPage/SelectSeason";
 // import SearchComponent from "@/app/components/navbar/SearchInput";
-import Pagination from "@/app/components//dashboardPage/Pagination";
+import Pagination from "@/app/components/dashboardPage/Pagination";
 
 // images
 import empty from "@/public/image/empty.png";
@@ -13,8 +14,9 @@ const pageBook = async ({ searchParams }) => {
   //   const search = searchParams?.search || "";
   const page = searchParams?.page || 1;
   const levels = searchParams?.level || "all";
+  const season = searchParams?.season || "all";
 
-  const { allBooks, count } = await getBooks(page, levels);
+  const { allBooks, count } = await getBooks(page, levels, season);
   // console.log("allBooks:", allBooks);
   return (
     // <p>product..</p>
@@ -27,10 +29,8 @@ const pageBook = async ({ searchParams }) => {
         </div>
         <div className="flex justify-between">
           <div className="w-full mx-2 flex justify-between items-center mb-4 ">
-            {/* <CategorySelect /> */}
-            {/* <div className="mr-4 grow">
-              <SearchComponent />
-            </div> */}
+            <SelectSeason />
+            <SelectLevel />
             <Pagination count={count} />
             <div className="w-full flex justify-end ">
               <Link href="/dashboard/books/addBook">

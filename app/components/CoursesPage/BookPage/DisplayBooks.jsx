@@ -40,6 +40,18 @@ const DisplayBooks = ({ allBooks }) => {
   const [selectLevel, setSelectLevel] = useState("");
   const [selectClass, setSelectClass] = useState("");
 
+  const handelSeason = (e) => {
+    setSelectSeason(e.target.value);
+  };
+
+  const handelLevel = (e) => {
+    setSelectLevel(e.target.value);
+  };
+
+  const handelClass = (e) => {
+    setSelectClass(e.target.value);
+  };
+
   const LevelSelectedObject = LevelList?.find(
     (elm) => elm.title === selectLevel
   );
@@ -72,52 +84,61 @@ const DisplayBooks = ({ allBooks }) => {
   return (
     <div>
       {/* filter data  */}
-      <div>
-        <div className=" w-full flex justify-center mdl:justify-around items-center gap-1 py-4 bg-blue-50">
+      <div className="font-TitleFont flex justify-center items-center flex-wrap gap-2 mdl:gap-8 text-[12px] mdl:text-[14px] py-2 mdl:py-4 ">
+        {/* filter Season  */}
+        <select
+          className="w-[140px]  h-[40px] border-[1px] rounded-lg focus:border-green-200 px-3 focus:border-2 outline-none m-1"
+          name="Season"
+          defaultValue="all"
+          onChange={handelSeason}
+        >
+          <option key="all" value="">
+            جميع الفصول
+          </option>
           {dataSeason?.map((elm, ind) => (
-            <li key={ind}>
-              <button
-                onClick={() => setSelectSeason(elm.nameEn)}
-                // className="border-b-[1px] border-b-[#F0F0F0] pb-2 flex items-center gap-2 hover:text-primeColor hover:border-gray-400 duration-300 cursor-pointer"
-                className="mx-1 text-[12px] sml:text-[14px] mdl:text-[16px] font-TitleFont font-medium text-black bg-slate-300 border-1 border-black/70 rounded-full px-4 py-1 hover:bg-black hover:text-white"
-                scroll={false}
-              >
-                {elm.name}
-              </button>
-            </li>
+            <option key={ind} value={elm.nameEn}>
+              {elm.name}
+            </option>
           ))}
-        </div>
-        <div className=" w-full flex justify-center items-center gap-1 sml:gap-4 mdl:gap-8 py-4 ">
-          {LevelList &&
-            LevelList?.map((elm, ind) => (
-              <li key={ind}>
-                <button
-                  onClick={() => setSelectLevel(elm.title)}
-                  // className="border-b-[1px] border-b-[#F0F0F0] pb-2 flex items-center gap-2 hover:text-primeColor hover:border-gray-400 duration-300 cursor-pointer"
-                  className="mx-1 text-[12px] sml:text-[14px] mdl:text-[16px] font-TitleFont font-medium text-black bg-slate-300 border-1 border-black/70 rounded-full px-4 py-1 hover:bg-black hover:text-white"
-                  scroll={false}
-                >
-                  {elm.title}
-                </button>
-              </li>
+        </select>
+
+        {/* filter Level  */}
+        {LevelList && (
+          <select
+            className="w-[140px]  h-[40px] border-[1px] rounded-lg focus:border-green-200 px-3 focus:border-2 outline-none m-1"
+            name="level"
+            defaultValue="all"
+            onChange={handelLevel}
+          >
+            <option key="all" value="">
+              جميع الصفوف
+            </option>
+            {LevelList?.map((elm, ind) => (
+              <option key={ind} value={elm.title}>
+                {elm.title}
+              </option>
             ))}
-        </div>
-        <div className=" w-full flex justify-center items-center gap-1 sml:gap-4 mdl:gap-8 py-4 ">
-          {LevelSelectedObject &&
-            LevelSelectedObject?.listClass?.map((elm, ind) => {
-              return (
-                <li key={ind}>
-                  <button
-                    onClick={() => setSelectClass(elm.name)}
-                    className="mx-1 text-[12px] sml:text-[14px] mdl:text-[16px] font-TitleFont font-medium text-black bg-slate-300 border-1 border-black/70 rounded-full px-4 py-1 hover:bg-black hover:text-white"
-                    scroll={false}
-                  >
-                    {elm.name}
-                  </button>
-                </li>
-              );
-            })}
-        </div>
+          </select>
+        )}
+
+        {/* filter Class  */}
+        {LevelSelectedObject && (
+          <select
+            className="w-[140px]  h-[40px] border-[1px] rounded-lg focus:border-green-200 px-3 focus:border-2 outline-none m-1"
+            name="level"
+            defaultValue="all"
+            onChange={handelClass}
+          >
+            <option key="all" value="">
+              جميع الأقسام
+            </option>
+            {LevelSelectedObject?.listClass?.map((elm, ind) => (
+              <option key={ind} value={elm.name}>
+                {elm.name}
+              </option>
+            ))}
+          </select>
+        )}
       </div>
 
       {/* display data  */}

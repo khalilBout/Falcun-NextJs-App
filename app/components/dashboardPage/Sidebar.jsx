@@ -25,7 +25,7 @@ const Sidebar = () => {
         </div>
 
         <ul className="grow py-2 sidebar font-bodyFont flex md:flex-col items-center justify-around ">
-        <li>
+          <li>
             <Link
               href="/dashboard/levels"
               className=" font-TitleFont font-bold text-[15px] block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
@@ -40,7 +40,7 @@ const Sidebar = () => {
               href="/dashboard/library"
               className=" font-TitleFont font-bold text-[15px] block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
             >
-               المكتبات
+              المكتبات
               {/* <span className="text-red-300">({cart.length})</span> */}
             </Link>
           </li>
@@ -49,11 +49,10 @@ const Sidebar = () => {
               href="/dashboard/order"
               className=" font-TitleFont font-bold text-[15px] block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
             >
-              طلبات المذكرات 
+              طلبات المذكرات
               {/* <span className="text-red-300">({cart.length})</span> */}
             </Link>
           </li>
-
 
           <li>
             <Link
@@ -83,8 +82,6 @@ const Sidebar = () => {
               السلاسل التعليمية
             </Link>
           </li>
-
-
         </ul>
         <hr border />
         <div className="w-full flex justify-center ">

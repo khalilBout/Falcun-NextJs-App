@@ -9,6 +9,7 @@ import { TbLogout2 } from "react-icons/tb";
 // import { RiShoppingBag3Fill } from "react-icons/ri";
 import { FcManager } from "react-icons/fc";
 import CartBooksShop from "@/app/components/Navbar/CartBooksShop";
+import { signOut } from "next-auth/react";
 
 const Icons = () => {
   const session = useSession();
@@ -50,18 +51,18 @@ const Icons = () => {
           ) : (
             <>
               <li>
-                <CartBooksShop />
+                <CartBooksShop size={20} />
+              </li>
+              <li>
+                <FcManager size={20} />
               </li>
             </>
           )}
 
           <li>
-            <Link
-              href="/api/auth/signout?callbackUrl=/"
-              className="py-1 px-2 rounded-full bg-slate-300 hover:bg-slate-600 cursor-pointer"
-            >
+            <button className="" onClick={() => signOut()}>
               <TbLogout2 className="text-thirdColor" size={24} />
-            </Link>
+            </button>
           </li>
         </ul>
       )}
