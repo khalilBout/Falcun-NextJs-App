@@ -45,7 +45,7 @@ const Page = () => {
     // console.log("data level sendin : ", dataLevel);
     try {
       setPending(true);
-      const res = await fetch("/api/admin/levels", {
+      const res = await fetch("/api/levels", {
         method: "POST",
         body: JSON.stringify(dataLevel),
       });

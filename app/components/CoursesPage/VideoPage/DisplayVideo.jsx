@@ -42,7 +42,7 @@ const DisplayVideo = ({ allVideos }) => {
     fetchLevels();
   }, []);
 
-  const [selectSeason, setSelectSeason] = useState("season-1");
+  const [selectSeason, setSelectSeason] = useState("");
   const [selectLevel, setSelectLevel] = useState("");
   const [selectClass, setSelectClass] = useState("");
 
@@ -52,7 +52,7 @@ const DisplayVideo = ({ allVideos }) => {
 
   const applyFilters = () => {
     // Season Filter
-    if (selectSeason) {
+    if (selectSeason && selectSeason !== "") {
       dataDisplay = dataDisplay.filter((item) => item.season === selectSeason);
     }
 

@@ -36,7 +36,7 @@ const DisplayBooks = ({ allBooks }) => {
     fetchLevels();
   }, []);
 
-  const [selectSeason, setSelectSeason] = useState("season-1");
+  const [selectSeason, setSelectSeason] = useState("");
   const [selectLevel, setSelectLevel] = useState("");
   const [selectClass, setSelectClass] = useState("");
 

@@ -7,7 +7,7 @@ const SelectLevel = () => {
 
   useEffect(() => {
     const fetchLevels = async () => {
-      const res = await fetch("/api/admin/levels", {
+      const res = await fetch("/api/levels", {
         method: "GET",
       });
       const data = await res.json();

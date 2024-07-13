@@ -95,7 +95,7 @@ const Page = () => {
           </div>
           <div className=" flex justify-center items-center rounded border text-sm h-[40px] bg-blue-400 text-gray-800">
             <button className="text-[16px] w-full h-full" onClick={addBook}>
-              {pending ? "Sending..." : "إضافة الفيديو"}
+              {pending ? "Sending..." : "إضافة الكتاب"}
             </button>
           </div>
         </>
