@@ -12,7 +12,7 @@ const handler = NextAuth({
   providers: [
     CredentialsProvider({
       id: "credentials",
-      name: "Credentials",
+      name: "credentials",
       // الدالة المسؤولة عن التاكد من البايانات ثم تسجيل الدخول
       async authorize(credentials) {
         //Check if the user exists.

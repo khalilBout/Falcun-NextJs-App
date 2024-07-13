@@ -40,6 +40,7 @@ const Login = () => {
     if (email && password) {
       try {
         setLoading(true);
+
         signIn("credentials", {
           email,
           password,

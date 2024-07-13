@@ -10,6 +10,8 @@ import { TbLogout2 } from "react-icons/tb";
 import { FcManager } from "react-icons/fc";
 import CartBooksShop from "@/app/components/Navbar/CartBooksShop";
 import { signOut } from "next-auth/react";
+import Image from "next/image";
+import bookIcon from "@/public/image/bookIcon.png";
 
 const Icons = () => {
   const session = useSession();
@@ -54,7 +56,7 @@ const Icons = () => {
                 <CartBooksShop size={20} />
               </li>
               <li>
-                <FcManager size={20} />
+                <Image src={bookIcon} width={22} height={22} alt="icon" />
               </li>
             </>
           )}
