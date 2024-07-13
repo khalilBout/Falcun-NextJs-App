@@ -31,10 +31,10 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     if (!email) {
-      setErrEmail("Enter your email");
+      setErrEmail("أدخل بريدك الإلكتروني");
     }
     if (!password) {
-      setErrPassword("Create a password");
+      setErrPassword("أدخل كلمة المرور");
     }
     // ============== Getting the value ==============
     if (email && password) {
@@ -54,17 +54,17 @@ const Login = () => {
     }
   };
   return (
-    <div className="w-[450px] h-[580px]">
+    <div className="w-[450px] h-[580px] font-TitleFont font-medium">
       <form className="w-full h-full flex items-center justify-center">
         <div className="px-6 py-4 w-full h-[90%] flex flex-col justify-center">
           <h1 className="font-titleFont underline underline-offset-4 decoration-[1px] font-semibold text-3xl mdl:text-4xl mb-4">
-            Sign in
+            تسجيل الدخول
           </h1>
           <div className="flex flex-col gap-3">
             {/* Email */}
             <div className="flex flex-col gap-.5">
               <p className="font-titleFont text-base font-semibold text-gray-600">
-                Email
+                البريد الإلكتروني{" "}
               </p>
               <input
                 onChange={handleEmail}
@@ -84,7 +84,7 @@ const Login = () => {
             {/* Password */}
             <div className="flex flex-col gap-.5">
               <p className="font-titleFont text-base font-semibold text-gray-600">
-                Password
+                كلمة المرور
               </p>
               <input
                 onChange={handlePassword}
@@ -105,7 +105,7 @@ const Login = () => {
               onClick={handleLogin}
               className="bg-primeColor hover:bg-black text-gray-200 hover:text-white cursor-pointer w-full text-base font-medium h-10 rounded-md  duration-300"
             >
-              Sign In
+              تسجيل الدخول
             </button>
             {errorMsg && (
               <p className="text-sm text-red-500 font-titleFont font-semibold px-4">
@@ -114,12 +114,12 @@ const Login = () => {
               </p>
             )}
             <p className="text-sm text-center font-titleFont font-medium">
-              Don't have an Account !{" "}
-              <Link href="/register">
+              ليس لديك حساب !{" "}
+              {/* <Link href="/register">
                 <span className="hover:text-blue-600 duration-300">
-                  Register
+                  إنشاء حساب
                 </span>
-              </Link>
+              </Link> */}
             </p>
             <button
               className="bg-green-200 text-gray-500  px-4 py-2 text-xl hover:bg-green-400 cursor-pointer"
@@ -132,7 +132,7 @@ const Login = () => {
                 });
               }}
             >
-              Login with Google
+              سجل دخولك عن طريق GOOGLE
             </button>
           </div>
         </div>

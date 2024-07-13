@@ -3,54 +3,80 @@ import connectDB from "@/Utils/connectDB";
 
 export const getVideo = async (page, levels, season) => {
   const ITEM_PER_PAGE = 12;
-  // const regex = new RegExp(search, "i");
+
   try {
-    connectDB();
-    if (season === "all" || season === "") {
-      if (levels === "all") {
-        const count = await Video.find().count();
-        const allVideos = await Video.find()
-          .limit(ITEM_PER_PAGE)
-          .skip(ITEM_PER_PAGE * (page - 1));
-        return { count, allVideos };
-      } else {
-        const count = await Video.find({
-          "levelsInf.levelTitle": levels,
-        }).count();
-        const allVideos = await Video.find({
-          // levels: levels,
-          "levelsInf.levelTitle": levels,
-        })
-          .limit(ITEM_PER_PAGE)
-          .skip(ITEM_PER_PAGE * (page - 1));
-        return { count, allVideos };
-      }
-    } else {
-      if (levels === "all") {
-        const count = await Video.find({ season: season }).count();
-        const allVideos = await Video.find({ season: season })
-          .limit(ITEM_PER_PAGE)
-          .skip(ITEM_PER_PAGE * (page - 1));
-        return { count, allVideos };
-      } else {
-        const count = await Video.find({
-          season: season,
-          "levelsInf.levelTitle": levels,
-        }).count();
-        const allVideos = await Video.find({
-          // levels: levels,
-          season: season,
-          "levelsInf.levelTitle": levels,
-        })
-          .limit(ITEM_PER_PAGE)
-          .skip(ITEM_PER_PAGE * (page - 1));
-        return { count, allVideos };
-      }
+    await connectDB();
+
+    const query = {};
+    if (season !== "all" && season !== "") {
+      query.season = season;
     }
+    if (levels !== "all") {
+      query["levelsInf.levelTitle"] = levels;
+    }
+
+    const count = await Video.countDocuments(query);
+    const allVideos = await Video.find(query)
+      .limit(ITEM_PER_PAGE)
+      .skip(ITEM_PER_PAGE * (page - 1));
+
+    return { count, allVideos };
   } catch (err) {
-    console.log("err:", err);
+    console.error("Error fetching videos:", err);
+    throw new Error("Error fetching videos");
   }
 };
+
+// export const getVideo = async (page, levels, season) => {
+//   const ITEM_PER_PAGE = 12;
+//   // const regex = new RegExp(search, "i");
+//   try {
+//     connectDB();
+//     if (season === "all" || season === "") {
+//       if (levels === "all") {
+//         const count = await Video.find().count();
+//         const allVideos = await Video.find()
+//           .limit(ITEM_PER_PAGE)
+//           .skip(ITEM_PER_PAGE * (page - 1));
+//         return { count, allVideos };
+//       } else {
+//         const count = await Video.find({
+//           "levelsInf.levelTitle": levels,
+//         }).count();
+//         const allVideos = await Video.find({
+//           // levels: levels,
+//           "levelsInf.levelTitle": levels,
+//         })
+//           .limit(ITEM_PER_PAGE)
+//           .skip(ITEM_PER_PAGE * (page - 1));
+//         return { count, allVideos };
+//       }
+//     } else {
+//       if (levels === "all") {
+//         const count = await Video.find({ season: season }).count();
+//         const allVideos = await Video.find({ season: season })
+//           .limit(ITEM_PER_PAGE)
+//           .skip(ITEM_PER_PAGE * (page - 1));
+//         return { count, allVideos };
+//       } else {
+//         const count = await Video.find({
+//           season: season,
+//           "levelsInf.levelTitle": levels,
+//         }).count();
+//         const allVideos = await Video.find({
+//           // levels: levels,
+//           season: season,
+//           "levelsInf.levelTitle": levels,
+//         })
+//           .limit(ITEM_PER_PAGE)
+//           .skip(ITEM_PER_PAGE * (page - 1));
+//         return { count, allVideos };
+//       }
+//     }
+//   } catch (err) {
+//     console.log("err:", err);
+//   }
+// };
 
 export const getVideoById = async (id) => {
   try {

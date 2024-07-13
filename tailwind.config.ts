@@ -25,7 +25,6 @@ module.exports = {
       },
       fontFamily: {
         TitleFont: ["Cairo", "sans-serif"],
-        bodyFont: ["Jost", "sans-serif"],
         bodyFont: ["Markazi Text", "sans-serif"],
       },
       colors: {
