@@ -34,7 +34,7 @@ const OrderSchema = new mongoose.Schema({
         type: String,
         required: [true],
       },
-      imageUrl: {
+      bookCover: {
         type: String,
         required: [false],
       },
@@ -42,11 +42,11 @@ const OrderSchema = new mongoose.Schema({
         type: String,
         required: [false],
       },
-      TheClass: {
-        type: String,
-        required: [false],
-      },
       priceBook: {
+        type: Number,
+        required: [true],
+      },
+      Qt: {
         type: Number,
         required: [true],
       },

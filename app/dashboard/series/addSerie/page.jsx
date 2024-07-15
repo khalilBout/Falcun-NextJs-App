@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import FormAddBook from "@/Utils/Forms/FormAddBook";
+import FormAddSerie from "@/Utils/Forms/FormAddSerie";
 import UploadBookImg from "@/app/components/Upload/UploadBookImg";
 import BoxImage from "@/app/components/Upload/BoxImage";
 import { useRouter } from "next/navigation";
@@ -12,36 +12,25 @@ const Page = () => {
   const [form, setForm] = useState({
     title: "",
     description: "",
-    season: "",
     numberOfPages: 0,
     price: 0,
   });
 
-  const [levels, setLevels] = useState("");
   const [pending, setPending] = useState(false);
   const [bookCover, setBookCover] = useState("");
   const [contentBook, setContentBook] = useState([]);
-  const [levelList, setLevelList] = useState([]);
-  const levelObject = levelList?.find((elm) => elm.title === levels);
-  // const levelsInf = { levelId: levelObject._id };
-  console.log("bookCover:", bookCover);
-  console.log("contentBook:", contentBook);
-  // add product to database
-  const dataBook = {
+
+  const dataSerie = {
     ...form,
     bookCover,
     contentBook,
-    levelsInf: {
-      levelID: levelObject?._id,
-      levelTitle: levelObject?.title,
-    },
   };
-  const addBook = async () => {
+  const addSerie = async () => {
     try {
       setPending(true);
-      const res = await fetch("/api/books", {
+      const res = await fetch("/api/series", {
         method: "POST",
-        body: JSON.stringify(dataBook),
+        body: JSON.stringify(dataSerie),
       });
       if (res.status === 201) {
         setPending(false);
@@ -49,14 +38,12 @@ const Page = () => {
         setForm({
           title: "",
           description: "",
-          season: "",
           numberOfPages: 0,
           price: 0,
         });
         setBookCover("");
         setContentBook([]);
-        setLevels([]);
-        router.replace("/dashboard/books");
+        router.replace("/dashboard/series");
       }
     } catch (err) {
       console.log(err);
@@ -72,18 +59,11 @@ const Page = () => {
       ) : (
         <>
           <h1 className=" font-TitleFont my-3 text-xl md:text-3xl font-semibold text-black mb-8">
-            إضافة مذكرة مدرسية
+            إضافة سلسلة تأسيس
           </h1>
           {/* info product  */}
           <div className="">
-            <FormAddBook
-              form={form}
-              setForm={setForm}
-              levels={levels}
-              setLevels={setLevels}
-              levelList={levelList}
-              setLevelList={setLevelList}
-            />
+            <FormAddSerie form={form} setForm={setForm} />
           </div>
           <div className="flex gap-3 m-1">
             <div className="w-[140px] h-[220px] border-1 rounded-lg  flex flex-col justify-center items-center bg-green-100">
@@ -108,8 +88,8 @@ const Page = () => {
             </div>
           </div>
           <div className=" flex justify-center items-center rounded border text-sm h-[40px] bg-blue-400 text-gray-800">
-            <button className="text-[16px] w-full h-full" onClick={addBook}>
-              {pending ? "Sending..." : "إضافة الكتاب"}
+            <button className="text-[16px] w-full h-full" onClick={addSerie}>
+              {pending ? "Sending..." : "إضافة سلسلة"}
             </button>
           </div>
         </>

@@ -11,7 +11,6 @@ import Image from "next/image";
 const CartBooksShop = () => {
   const [showCard, setShowCard] = useState(false);
   const cart = useSelector((state) => state.Cart.cartBooks);
-  console.log("cart:", cart);
 
   return (
     <>

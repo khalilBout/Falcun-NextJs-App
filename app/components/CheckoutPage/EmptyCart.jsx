@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { emptyCart } from "@/public/image/empty.png";
+import emptyCart from "@/public/image/empty.png";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -15,22 +15,21 @@ const EmptyCard = () => {
     >
       <div>
         <Image
-          className="w-80 rounded-lg p-4 mx-auto"
+          width={380}
+          height={280}
+          className=" rounded-lg p-4 mx-auto"
           src={emptyCart}
-          alt="emptyCart"
+          alt=""
         />
       </div>
       <div className="max-w-[500px] p-4 py-8 bg-white flex gap-4 flex-col items-center rounded-md shadow-lg">
-        <h1 className="font-titleFont text-xl font-bold uppercase">
-          Your Cart feels lonely.
+        <h1 className="font-titleFont text-2xl font-bold uppercase">
+          السلة فارغة .
         </h1>
-        <p className="text-sm text-center px-10 -mt-2">
-          Your Shopping cart lives to serve. Give it purpose - fill it with
-          books, electronics, videos, etc. and make it happy.
-        </p>
-        <Link href="/courses/books">
+
+        <Link href="/courses">
           <button className="bg-primeColor rounded-md cursor-pointer hover:bg-black active:bg-gray-900 px-8 py-2 font-TitleFont font-semibold text-lg text-gray-200 hover:text-white duration-300">
-            إطلع على المذكرات
+            إطلع على مكذكراتنا التعليمية أو سلاسل التأسيس
           </button>
         </Link>
       </div>

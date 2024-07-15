@@ -21,7 +21,7 @@ const Navbar = () => {
     },
   ];
   return (
-    <div className="screenPadding flex h-[80px] justify-between items-center  py-4 z-50">
+    <div className="screenPadding flex h-[80px] justify-between items-center  py-4 relative z-50">
       <Logo />
       <div className=" hidden sml:block">
         <Links dataLink={dataLink} />
@@ -31,7 +31,7 @@ const Navbar = () => {
         initial={{ x: "-600px", opacity: 0 }}
         animate={{ x: "0%", opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="flex justify-center items-center gap-2"
+        className="flex justify-between items-center gap-2 min-w-[90px] "
       >
         <Icons />
         <div className="block sml:hidden">

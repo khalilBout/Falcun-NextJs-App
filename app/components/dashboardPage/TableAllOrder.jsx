@@ -1,4 +1,3 @@
-import ProcessOrder from "@/app/components/dashboardPage/ProcessOrder";
 import DeleteOrder from "@/app/components/dashboardPage/DeleteOrder";
 
 import Link from "next/link";
@@ -24,10 +23,7 @@ const TableAllOrder = ({ data }) => {
               رقم الهاتف
             </th>
             <th className="text-[14px] font-bold font-TitleFont text-gray-400 py-2 px-4 bg-gray-50 text-center rounded-tr-md rounded-br-md">
-              حالة الطلب
-            </th>
-            <th className="text-[14px] font-bold font-TitleFont text-gray-400 py-2 px-4 bg-gray-50 text-center rounded-tr-md rounded-br-md">
-              التعديل
+              مسح الطلب
             </th>
           </tr>
         </thead>
@@ -46,51 +42,48 @@ const TableAllOrder = ({ data }) => {
               </td>
               <td className="py-2 px-4 border-b border-b-gray-50">
                 {order?.orderItems?.map((TheBook, index) => {
-                  console.log("TheBook:", TheBook);
                   return (
                     <div key={index} className="flex gap-2 my-1">
                       <div className="flex gap-1 justify-between items-center">
                         <span className="text-[14px] font-medium text-gray-700 bg-red-200 rounded-md px-1 ">
                           {TheBook.titleBook}
                         </span>
-                        <span className="text-[14px] font-medium text-gray-700 bg-red-200 rounded-md px-1 ">
+                        <span className="text-[15px] font-medium text-gray-700 bg-red-200 rounded-md px-1 ">
                           {TheBook.priceBook} $
                         </span>
-                        <span className="text-[14px] font-medium text-gray-700 bg-red-200 rounded-md px-1 ">
+                        {/* <span className="text-[14px] font-medium text-gray-700 bg-red-200 rounded-md px-1 ">
                           {TheBook.season === "season-1"
                             ? "الفصل-1"
                             : "الفصل-2"}
-                        </span>
-                        <span className="text-[14px] font-medium text-gray-700 bg-red-200 rounded-md px-1 ">
-                          {TheBook.level}
-                        </span>
-                        <span className="text-[14px] font-medium text-gray-700 bg-red-200 rounded-md px-1 ">
-                          {TheBook.TheClass}
+                        </span> */}
+                        <span className="text-[15px] font-medium text-gray-700 bg-red-200 rounded-md px-1 ">
+                          الكمية: {TheBook.Qt}
                         </span>
                       </div>
                     </div>
                   );
                 })}
               </td>
+
               <td className="py-2 px-4 border-b border-b-gray-50 text-center">
-                <span className="text-[14px] font-medium text-gray-600">
-                  {order?.totolPyment}$
+                <span className="text-[16px] font-medium text-gray-700">
+                  {order?.totolPyment} دينار
                 </span>
               </td>
               <td className="py-2 px-4 border-b border-b-gray-50 text-center">
-                <span className="text-[13px] font-medium text-gray-400">
+                <span className="text-[13px] max-w-[380px] font-medium text-gray-700">
                   {order?.shippingAddress?.address}
                 </span>
               </td>
               <td className="py-2 px-4 border-b border-b-gray-50 text-center">
-                <span className="text-[13px] font-medium text-gray-400">
+                <span className="text-[15px] font-medium text-gray-700">
                   {order?.shippingAddress?.phone}
                 </span>
               </td>
-              <td className="py-2 px-4 border-b border-b-gray-50 text-center">
+              {/* <td className="py-2 px-4 border-b border-b-gray-50 text-center">
                 {order?.isProcess ? (
                   <>
-                    {/* <ProcessOrder orderID={`${order._id}`} /> */}
+                     <ProcessOrder orderID={`${order._id}`} /> 
                     <span className=" w-[80px] inline-block p-1 rounded bg-red-500/40 text-gray-600 font-medium text-[14px] leading-none ">
                       قيد الإنتظار
                     </span>
@@ -100,9 +93,9 @@ const TableAllOrder = ({ data }) => {
                     تم
                   </span>
                 )}
-              </td>
+              </td> */}
               <td className="py-2 px-4 border-b border-b-gray-50">
-                <div className="flex gap-1">
+                <div className="flex justify-center items-center">
                   {/* <ProcessOrder order={order} /> */}
                   <DeleteOrder id={order._id} />
                 </div>

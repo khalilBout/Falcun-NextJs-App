@@ -12,7 +12,8 @@ const MobileLink = ({ dataLink }) => {
     },
     opened: {
       rotate: 45,
-      backgroundColor: "rgb(255,255,255)",
+      // backgroundColor: "rgb(255,255,255)",
+      backgroundColor: "#f8cb5c",
     },
   };
   const centerVariants = {
@@ -29,7 +30,8 @@ const MobileLink = ({ dataLink }) => {
     },
     opened: {
       rotate: -45,
-      backgroundColor: "rgb(255,255,255)",
+      // backgroundColor: "rgb(255,255,255)",
+      backgroundColor: "#f8cb5c",
     },
   };
   const listVariants = {
@@ -48,18 +50,20 @@ const MobileLink = ({ dataLink }) => {
     closed: {
       x: -10,
       opacity: 0,
+      backgroundColor: "#0f1112",
     },
     opened: {
       x: 0,
       opacity: 1,
+      backgroundColor: "#0f1112",
     },
   };
   return (
-    <div className="">
+    <div className=" absolute -top-2 -left-2 z-50">
       <div className="md:hidden m-2">
         {/* MENU BUTTON */}
         <button
-          className=" w-6 h-5 flex flex-col justify-between z-50 relative"
+          className=" w-6 h-5 flex flex-col justify-between z-50 "
           onClick={() => setOpen((prev) => !prev)}
         >
           <motion.div
@@ -84,7 +88,7 @@ const MobileLink = ({ dataLink }) => {
             variants={listVariants}
             initial="closed"
             animate="opened"
-            className=" absolute top-0 left-0 w-[85vw] z-100 h-screen bg-black/70 text-white flex flex-col items-center justify-center gap-8 text-4xl"
+            className=" absolute top-8 left-0  w-[85vw] z-40 h-screen bg-black/70 text-white flex flex-col items-center justify-center gap-8 text-4xl"
           >
             {dataLink?.map((link) => (
               <motion.div

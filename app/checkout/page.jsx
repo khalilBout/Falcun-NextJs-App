@@ -27,22 +27,30 @@ const page = () => {
     setAddressClientUpdated("update");
   };
 
+  const ShippingExpenses = 80;
+
+  const totolPyment = cart.reduce(
+    (total, item) => item.priceBook * item.Qt + total,
+    ShippingExpenses
+  );
+
   const OrderData = {
     userName: session?.data?.user.name || null,
     email: session?.data?.user.email || null,
+    totolPyment: totolPyment,
     shippingAddress: {
       clientName: addressClient?.clientName,
       address: addressClient?.address,
       phone: addressClient?.phone,
     },
-    BooksOrder: cart?.map((item) => ({
+    orderItems: cart?.map((item) => ({
       bookID: item.idBook,
       titleBook: item.titleBook,
-      imageUrl: item.imageBook,
-      season: item.season,
-      TheClass: item.TheClass,
-      level: item.level,
+      bookCover: item.bookCover,
+      season: item.season || "",
+      level: item.level || "",
       priceBook: item.priceBook,
+      Qt: item.Qt,
     })),
   };
   const sendOrder = async () => {

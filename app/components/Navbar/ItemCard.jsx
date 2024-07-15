@@ -22,21 +22,20 @@ const ItemCard = ({ item }) => {
           />
         </div>
 
-        <div className="flex flex-col justify-start items-start px-2">
+        <div className="flex flex-col justify-between items-start px-2">
           {/* titel box  */}
           <h2 className="text-[16px] mdl:text-[18px] font-TitleFont font-semibold text-gray-700">
             <a>{titleBook.substring(0, 20)}</a>
           </h2>
 
           <h2 className="px-2 font-TitleFont text-[15px] font-medium">
-            <span className="">الفصل : </span>
             <span className="text-gray-800">
-              {season === "season-1" ? "الفصل الأول" : "الفصل الثاني"}
+              {season === "season-1" && "الفصل الأول"}
+              {season === "season-2" && "الفصل الثاني"}
             </span>
           </h2>
 
           <h2 className="px-2 font-TitleFont text-[15px] font-medium">
-            <span className="">المستوى : </span>
             <span className="text-gray-800">{level}</span>
           </h2>
 

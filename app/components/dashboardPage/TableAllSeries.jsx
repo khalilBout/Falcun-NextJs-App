@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import DeleteBook from "@/app/components/dashboardPage/DeleteBook";
-
-const TableAllBooks = ({ data }) => {
+import DeleteSerie from "@/app/components/dashboardPage/DeleteBook";
+import NoImg from "@/public/image/noImgeBook.png";
+const TableAllSeries = ({ data }) => {
   return (
     <>
       <table
@@ -16,14 +16,9 @@ const TableAllBooks = ({ data }) => {
               صورة الغلاف
             </th>
             <th className="text-[14px] font-TitleFont text-right font-medium text-gray-400 py-2 px-4 bg-gray-50">
-              العنوان
+              إسم السلسلة
             </th>
-            <th className="text-[14px] font-TitleFont text-right font-medium text-gray-400 py-2 px-4 bg-gray-50 rounded-tr-md rounded-br-md">
-              الفصل
-            </th>
-            <th className="text-[14px] font-TitleFont text-right font-medium text-gray-400 py-2 px-4 bg-gray-50 rounded-tr-md rounded-br-md">
-              الصف
-            </th>
+
             <th className="text-[14px] font-TitleFont text-right font-medium text-gray-400 py-2 px-4 bg-gray-50 rounded-tr-md rounded-br-md">
               عدد الصفحات
             </th>
@@ -36,19 +31,18 @@ const TableAllBooks = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data?.map((book, index) => (
-            <Tr item={book} key={index} />
+          {data?.map((serie, index) => (
+            <Tr item={serie} key={index} />
           ))}
         </tbody>
       </table>
     </>
   );
 };
-export default TableAllBooks;
+export default TableAllSeries;
 
 function Tr({ item }) {
-  const { _id, title, price, bookCover, levelsInf, numberOfPages, season } =
-    item;
+  const { _id, title, price, bookCover, numberOfPages } = item;
   return (
     <>
       <tr className="bg-red-100">
@@ -60,8 +54,8 @@ function Tr({ item }) {
               quality={100}
               objectFit="cover"
               objectPosition="center"
-              src={bookCover.url || productNoImg}
-              alt={title}
+              src={bookCover.url || NoImg}
+              alt=""
               className="rounded-full object-cover overflow-hidden bg-teal-100"
               // className="text-gray-600 text-sm font-medium hover:text-blue-500 ml-2 truncate"
             />
@@ -72,18 +66,7 @@ function Tr({ item }) {
         <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
           <span className="text-[16px] font-medium text-gray-800">{title}</span>
         </td>
-        {/* season of book  */}
-        <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
-          <span className="text-[16px] font-medium text-gray-800">
-            {season === "season-1" ? "الفصل 1" : "الفصل 2"}
-          </span>
-        </td>
-        {/* levels of Video  */}
-        <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
-          <span className="text-[14px] font-medium text-gray-700">
-            {levelsInf.levelTitle}
-          </span>
-        </td>
+
         {/* class of Video  */}
 
         <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
@@ -93,13 +76,15 @@ function Tr({ item }) {
         </td>
         {/*price of book  */}
         <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
-          <span className="text-[15px] font-medium text-gray-600">{price}</span>
+          <span className="text-[15px] font-medium text-gray-600">
+            {price} دينار
+          </span>
         </td>
 
         {/* Actions  */}
 
         <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
-          <DeleteBook id={_id} />
+          <DeleteSerie id={_id} />
         </td>
       </tr>
     </>

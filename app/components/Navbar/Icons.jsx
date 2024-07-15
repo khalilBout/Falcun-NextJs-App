@@ -68,22 +68,6 @@ const Icons = () => {
           </li>
         </ul>
       )}
-
-      {/* {session &&
-        session.status === "authenticated" &&
-        session.data.user.role ===
-          "admin"(
-            <ul className="flex justify-center items-center gap-4">
-              <li>
-                <Link
-                  href="/api/auth/signout?callbackUrl=/"
-                  className="py-1 px-2 rounded-full bg-slate-300 hover:bg-slate-600 cursor-pointer"
-                >
-                  <FcManager className="" size={26} />
-                </Link>
-              </li>
-            </ul>
-          )} */}
     </>
   );
 };

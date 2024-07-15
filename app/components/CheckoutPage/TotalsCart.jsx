@@ -6,7 +6,7 @@ const TotalsCart = () => {
 
   const priceList = cart?.map((x) => x.priceBook * x.Qt);
   const totalPrice = priceList?.reduce((a, c) => a + c, 0);
-  const shippingCharge = 0;
+  const shippingCharge = 80;
 
   return (
     <div className="max-w-7xl gap-4 flex justify-center mt-2">
@@ -20,7 +20,7 @@ const TotalsCart = () => {
             </span>
           </p>
           <p className="flex items-center justify-between border-[1px] border-gray-400 border-b-0 py-1.5 text-lg px-4 font-medium">
-            مصاريف الشحن
+            رسوم التوصيل
             <span className="font-semibold tracking-wide font-titleFont">
               {shippingCharge} دينار
             </span>
