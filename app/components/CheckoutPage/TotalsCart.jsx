@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 const TotalsCart = () => {
   const cart = useSelector((state) => state.Cart.cartBooks);
 
-  const priceList = cart?.map((x) => x.priceBook);
+  const priceList = cart?.map((x) => x.priceBook * x.Qt);
   const totalPrice = priceList?.reduce((a, c) => a + c, 0);
   const shippingCharge = 0;
 

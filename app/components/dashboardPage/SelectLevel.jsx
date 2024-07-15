@@ -39,7 +39,7 @@ const SelectLevel = () => {
       onChange={handelChange}
     >
       <option key="all" value="">
-        جميع المستويات
+        إختر الصف
       </option>
       {LevelList?.map((elm, ind) => (
         <option key={ind} value={elm.title}>

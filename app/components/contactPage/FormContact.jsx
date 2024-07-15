@@ -1,54 +1,38 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FaTelegramPlane } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
-const FormContact = ({ setDataMessage }) => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+const FormContact = () => {
+  const [success, setSuccess] = useState(false);
+  const form = useRef();
 
-  // ============= Error Msg  =================
-  const [errName, setErrName] = useState("");
-  const [errEmail, setErrEmail] = useState("");
-  const [errMessage, setErrMessage] = useState("");
-
-  const handelChangeForm = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const AddMessage = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    // checked valid data
-    if (!form.name) {
-      setErrName("أكتب إسمك");
-    }
 
-    if (!form.email) {
-      setErrEmail("أدخل بريدك الإلكتروني");
-    }
-
-    if (!form.message) {
-      setErrMessage("أكتب الرسالة");
-    }
-
-    if (form.name && form.email && form.message) {
-      setDataMessage(form);
-
-      setForm({
-        name: "",
-        email: "",
-        message: "",
-      });
-    }
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+        }
+      )
+      .then(
+        () => {
+          setSuccess(true);
+          form.current.reset();
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
   };
+
   return (
     <div className="w-full h-full flex flex-col font-TitleFont">
-      <form className=" flex items-center justify-center my-4">
+      <form ref={form} className=" flex items-center justify-center my-4">
         <div className="px-2 py-4 flex flex-col justify-start ">
           <h1 className="text-center mb-6 font-bold text-2xl mdl:text-2xl">
             يسعد فريق برافو الإطلاع على ارائكم وإقتراحاتكم
@@ -60,18 +44,11 @@ const FormContact = ({ setDataMessage }) => {
                 الإسم
               </p>
               <input
-                onChange={handelChangeForm}
-                name="name"
+                name="user_name"
                 className="placeholder:text-sm placeholder:tracking-wide px-4 text-base font-medium placeholder:font-normal rounded-md border-[1px] border-gray-400 outline-none"
                 type="text"
                 placeholder="الإسم ..."
               />
-              {errName && (
-                <p className="text-sm text-red-500 font-titleFont font-semibold px-4">
-                  <span className="font-bold italic mr-1">!</span>
-                  {errName}
-                </p>
-              )}
             </div>
 
             {/* Phone Number */}
@@ -80,18 +57,11 @@ const FormContact = ({ setDataMessage }) => {
                 البريد الإلكتروني{" "}
               </p>
               <input
-                onChange={handelChangeForm}
-                name="email"
+                name="user_email"
                 className=" placeholder:text-sm placeholder:tracking-wide px-4 text-base font-medium placeholder:font-normal rounded-md border-[1px] border-gray-400 outline-none"
                 type="text"
                 placeholder="cc@cc.com"
               />
-              {errEmail && (
-                <p className="text-sm text-red-500 font-titleFont font-semibold px-4">
-                  <span className="font-bold italic mr-1">!</span>
-                  {errEmail}
-                </p>
-              )}
             </div>
             {/* Address */}
             <div className="flex flex-col gap-.5">
@@ -101,22 +71,17 @@ const FormContact = ({ setDataMessage }) => {
               <textarea
                 rows={6}
                 onChange={handelChangeForm}
-                name="message"
+                name="user_message"
                 className=" placeholder:text-sm placeholder:tracking-wide px-4 text-base font-medium placeholder:font-normal rounded-md border-[1px] border-gray-400 outline-none"
                 type="text"
                 placeholder="ماتود إخبارنا به  .... "
               />
-              {errMessage && (
-                <p className="text-sm text-red-500 font-titleFont font-semibold px-4">
-                  <span className="font-bold italic mr-1">!</span>
-                  {errMessage}
-                </p>
-              )}
             </div>
 
             <div className="w-full flex justify-end">
               <button
-                onClick={AddMessage}
+                type="submit"
+                onSubmit={sendEmail}
                 className=" flex justify-center items-center mx-4 w-[120px] bg-emerald-300 hover:bg-emerald-500 px-3 py-1 text-gray-600 border-1 border-black font-bold rounded-full hover:text-black duration-300"
               >
                 <span className="px-2">إرسال</span>

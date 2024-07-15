@@ -23,9 +23,9 @@ const BookSchema = new mongoose.Schema({
       required: [true],
     },
   },
-  TheClass: {
-    type: String,
-    required: [true],
+  numberOfPages: {
+    type: Number,
+    required: [false],
   },
   season: {
     type: String,
@@ -34,10 +34,16 @@ const BookSchema = new mongoose.Schema({
       values: ["season-1", "season-2"],
     },
   },
-  urlBook: {
+  bookCover: {
     url: { type: String, required: [true] },
     public_id: String,
   },
+  contentBook: [
+    {
+      url: { type: String, required: [true] },
+      public_id: String,
+    },
+  ],
   createdAt: {
     type: Date,
     default: Date.now,

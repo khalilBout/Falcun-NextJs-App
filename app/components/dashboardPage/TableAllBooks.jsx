@@ -30,7 +30,7 @@ const TableAllBooks = ({ data }) => {
               الصف
             </th>
             <th className="text-[14px] font-TitleFont text-right font-medium text-gray-400 py-2 px-4 bg-gray-50 rounded-tr-md rounded-br-md">
-              القسم
+              عدد الصفحات
             </th>
             <th className="text-[14px] font-TitleFont text-right font-medium text-gray-400 py-2 px-4 bg-gray-50 rounded-tr-md rounded-br-md">
               السعر
@@ -52,7 +52,8 @@ const TableAllBooks = ({ data }) => {
 export default TableAllBooks;
 
 function Tr({ item }) {
-  const { _id, title, price, urlBook, levelsInf, TheClass, season } = item;
+  const { _id, title, price, bookCover, levelsInf, numberOfPages, season } =
+    item;
   return (
     <>
       <tr className="bg-red-100">
@@ -64,7 +65,7 @@ function Tr({ item }) {
               quality={100}
               objectFit="cover"
               objectPosition="center"
-              src={urlBook.url || productNoImg}
+              src={bookCover.url || productNoImg}
               alt={title}
               className="rounded-full object-cover overflow-hidden bg-teal-100"
               // className="text-gray-600 text-sm font-medium hover:text-blue-500 ml-2 truncate"
@@ -92,7 +93,7 @@ function Tr({ item }) {
 
         <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
           <span className="text-[14px] font-medium text-gray-700">
-            {TheClass}
+            {numberOfPages}
           </span>
         </td>
         {/*price of book  */}

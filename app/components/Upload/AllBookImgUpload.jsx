@@ -1,9 +1,9 @@
 import React from "react";
 import { CldUploadWidget } from "next-cloudinary";
 
-const UploadBookImg = ({ setBookCover }) => {
+const AllBookImgUpload = ({ setContentBook }) => {
   return (
-    <div className="w-full h-full flex justify-center items-center font-TitleFont text-xl rounded-sm">
+    <div className="w-full h-full flex justify-center items-start font-TitleFont text-xl rounded-md">
       <CldUploadWidget
         uploadPreset="BravoApp"
         onSuccess={(result, { widget }) => {
@@ -19,10 +19,10 @@ const UploadBookImg = ({ setBookCover }) => {
         {({ open }) => {
           return (
             <button
-              className=" rounded-full bg-green-300  px-2 py-1"
+              className="w-[180px] h-[40px] mt-6 px-4 py-1 rounded-full bg-green-300 "
               onClick={() => open()}
             >
-              صورالغلاف
+              رفع صورة المذكرة
             </button>
           );
         }}
@@ -31,4 +31,4 @@ const UploadBookImg = ({ setBookCover }) => {
   );
 };
 
-export default UploadBookImg;
+export default AllBookImgUpload;

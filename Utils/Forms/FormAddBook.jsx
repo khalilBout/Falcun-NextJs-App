@@ -32,7 +32,7 @@ const FormAddVideo = ({
     e.preventDefault();
     setLevels(e.target.value);
   };
-  const ListClass = levelList?.find((elm) => elm.title === levels);
+  // const ListClass = levelList?.find((elm) => elm.title === levels);
 
   const listSeason = ["season-1", "season-2"];
   return (
@@ -50,6 +50,13 @@ const FormAddVideo = ({
           placeholder="سعر  الكتاب"
           type="number"
           name="price"
+          onChange={handelChange}
+        />
+        <input
+          className=" h-[40px] border-[1px] rounded-lg focus:border-pink-200 px-3 focus:border-2 outline-none m-1"
+          placeholder="عدد صفحات الكتاب"
+          type="number"
+          name="numberOfPages"
           onChange={handelChange}
         />
         <select
@@ -86,7 +93,7 @@ const FormAddVideo = ({
           })}
         </select>
 
-        <select
+        {/* <select
           className=" h-[40px] border-[1px] rounded-lg focus:border-pink-200 px-3 focus:border-2 outline-none m-1 bg-blue-200"
           name="TheClass"
           onChange={handelChange}
@@ -100,7 +107,7 @@ const FormAddVideo = ({
               {elm.name}
             </option>
           ))}
-        </select>
+        </select> */}
       </div>
       <div className="m-2">
         <textarea

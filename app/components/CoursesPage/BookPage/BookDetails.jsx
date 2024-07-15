@@ -1,31 +1,49 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { addToBasket } from "@/redux/CartSlice";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { BsWhatsapp } from "react-icons/bs";
+import GlryBook from "@/app/components/CoursesPage/BookPage/GlryBook";
 
 const BookDetails = ({ book }) => {
   const cart = useSelector((state) => state.Cart.cartBooks);
   const dispatch = useDispatch();
+  const [Qt, setQt] = useState(1);
+  console.log("Qt:", Qt);
+
+  const decrement = () => {
+    if (Qt > 1) {
+      setQt((prev) => prev - 1);
+    }
+  };
+
+  const increment = () => {
+    setQt((prev) => prev + 1);
+  };
 
   const bookToCart = {
     idBook: book._id,
     titleBook: book.title,
     priceBook: book.price,
-    imageBook: book.urlBook.url,
+    bookCover: book.bookCover.url,
     season: book.season,
-    TheClass: book.TheClass,
     level: book.levelsInf.levelTitle,
+    Qt: Qt,
   };
 
   const handleAddToCart = () => {
     if (cart.length > 0) {
       const itemExist = cart.find((item) => item.idBook === bookToCart.idBook);
       if (itemExist) {
-        toast.error("المذكرة موجودة في السلة");
+        // setQt((prev) => prev + Qt);
+        // dispatch(addToBasket(bookToCart));
+        // toast.error("تم إضافة نسخة أخرى");
+        alert(
+          "لقد قمت بإضافة هذه المذكرة ، إن كنت ترغب في نسخ أكثر يمكن زيادة الكمية عند تأكيد الشراء"
+        );
       } else {
         dispatch(addToBasket(bookToCart));
         toast.success("تمت إضافة الكتاب بنجاح ");
@@ -40,58 +58,83 @@ const BookDetails = ({ book }) => {
   return (
     <div className="p-2 mdl:p-4 w-full flex flex-col mdl:flex-row gap-4 justify-around mdl:item-center ">
       {/* video Player  */}
-      <div className="w-full m-2 mdl:w-1/2 h-auto -z-10">
-        <div className="w-full max-w-[400px] flex justify-center items-center">
-          <Image width={330} height={600} src={book.urlBook.url} />
-        </div>
-      </div>
+      <GlryBook book={book} />
 
-      {/* video Info   */}
-      <div className="flex flex-col items-start w-full m-2 mdl:w-1/2 mdl:px-4 ">
+      {/* book Info   */}
+      <div className="flex flex-col items-start w-full mdl:w-1/2 mdl:px-4 ">
         {/* text info  */}
-        <div className=" text-[16px] mdl:text-[18px]">
-          <h2 className="py-2 font-TitleFont ">
+        <div className=" text-[18px] mdl:text-[20px] font-bold">
+          {/* <h2 className="py-2 font-TitleFont ">
             <span className="text-gray-700">عنوان المذكرة : </span>
             <span className="text-gray-900">{book.title}</span>
-          </h2>
+          </h2> */}
 
+          <h2 className="py-1 font-TitleFont ">
+            <span className="text-gray-700">الصف : </span>
+            <span className="text-gray-900 px-2">
+              {book.levelsInf.levelTitle}
+            </span>
+          </h2>
           {/* <div className="flex justify-around items-center "> */}
-          <h2 className="py-1 font-TitleFont text-gray-700">
-            <span className="">الفصل : </span>
-            {book.season === "season-1" ? (
-              <span>الفصل الأول</span>
-            ) : (
-              <span>الفصل الثاني</span>
-            )}
-          </h2>
           <h2 className="py-1 font-TitleFont ">
-            <span className="text-gray-700">المستوى : </span>
-            <span className="text-gray-900">{book.levelsInf.levelTitle}</span>
+            <span className="text-gray-700">الفصل الدراسي : </span>
+            <span className="text-gray-900">
+              {book.season === "season-1" ? "الفصل الأول" : " الفصل الثاني"}
+            </span>
           </h2>
 
           <h2 className="py-1 font-TitleFont ">
-            <span className="text-gray-700">القسم : </span>
-            <span className="text-gray-900">{book.TheClass}</span>
+            <span className="text-gray-700">عدد الصفحات : </span>
+            <span className="text-gray-900">{book.numberOfPages} صفحة </span>
           </h2>
-
-          <div className="py-1 font-TitleFont ">
-            <h2 className="text-gray-700">وصف المذكرة : </h2>
-            <h2 className="px-4 text-gray-900">{book.description}</h2>
-          </div>
-          <h2 className="py-2 font-TitleFont ">
-            <span className="text-gray-700">سعر المذكرة : </span>
+          <h2 className="py-1 font-TitleFont ">
+            <span className="text-gray-700">السعر : </span>
             <span className="text-red-900">{book.price} دينار</span>
           </h2>
+          {/* <div className="py-1 font-TitleFont ">
+             <h2 className="text-gray-700">وصف المذكرة : </h2> 
+            <h2 className="px-4 text-gray-900">{book.description}</h2>
+          </div> */}
         </div>
         {/*Add cart shopping  */}
-        <div className="mt-4 float-left flex justify-center items-center py-2 w-[220px] h-[45px] bg-blue-300 rounded-md font-TitleFont font-bold">
+        <div className="mt-4 w-full flex justify-between items-center h-[45px]">
           <button
             onClick={handleAddToCart}
-            className="w-full h-full cursor-pointer text-center text-[18px] text-red-600"
+            className="h-full px-4 text-center bg-blue-300 rounded-md font-TitleFont font-bold cursor-pointer text-[18px] text-red-600"
           >
             أضف إلى السلة{" "}
           </button>
+          <div className="w-[140px] h-full  flex items-center gap-1 ">
+            <button
+              type="button"
+              className="w-[45px] bg-slate-100 h-full text-[18px]  border-black flex justify-center items-center"
+              onClick={() => decrement()}
+            >
+              -
+            </button>
+
+            <input
+              type="number"
+              id="Quantity"
+              value={Qt}
+              className="h-full w-[45px] font-bold text-center "
+            />
+
+            <button
+              type="button"
+              className=" w-[45px] bg-slate-100 h-full flex justify-center items-center border-black"
+              onClick={
+                () => increment()
+                // dispatch(
+                //   increaseCount({  IdBook })
+                // )
+              }
+            >
+              +
+            </button>
+          </div>
         </div>
+
         <div className="bg-green-100 mt-3 p-3 rounded-lg ">
           <p className=" text-center font-TitleFont text-[15px] mdl:text-[17px] ">
             {" "}

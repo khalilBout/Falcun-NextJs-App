@@ -31,12 +31,12 @@ const TableAllVideo = ({ data }) => {
             <th className="text-[14px] font-TitleFont text-right font-medium text-gray-400 py-2 px-4 bg-gray-50 rounded-tr-md rounded-br-md">
               القسم
             </th>
-            <th className="text-[14px] font-TitleFont text-right font-medium text-gray-400 py-2 px-4 bg-gray-50 rounded-tr-md rounded-br-md">
+            {/* <th className="text-[14px] font-TitleFont text-right font-medium text-gray-400 py-2 px-4 bg-gray-50 rounded-tr-md rounded-br-md">
               الإعجاب
-            </th>
-            <th className="text-[14px] font-TitleFont text-right font-medium text-gray-400 py-2 px-4 bg-gray-50 rounded-tr-md rounded-br-md">
+            </th> */}
+            {/* <th className="text-[14px] font-TitleFont text-right font-medium text-gray-400 py-2 px-4 bg-gray-50 rounded-tr-md rounded-br-md">
               التعليقات
-            </th>
+            </th> */}
             <th className="text-[14px] font-TitleFont text-right font-medium text-gray-400 py-2 px-4 bg-gray-50 rounded-tr-md rounded-br-md">
               حدف
             </th>
@@ -108,17 +108,17 @@ function Tr({ item }) {
           </span>
         </td>
         {/*likes of Video  */}
-        <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
+        {/* <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
           <span className="text-[15px] font-medium text-gray-600">
             {like.length}
           </span>
-        </td>
+        </td> */}
         {/*list Comment of Video  */}
-        <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
+        {/* <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">
           <span className="text-[15px] font-medium text-gray-600">
             {listComment.length}
           </span>
-        </td>
+        </td> */}
 
         {/* Actions  */}
 

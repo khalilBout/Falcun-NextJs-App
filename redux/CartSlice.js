@@ -31,10 +31,34 @@ export const CartSlice = createSlice({
     resetBasket: (state) => {
       state.cartBooks = [];
     },
+    increaseCount: (state, action) => {
+      state.cartBooks = state.cartBooks.map((item) => {
+        if (item.idBook === action.payload.idBook) {
+          item.Qt++;
+        }
+        return item;
+      });
+    },
+    decreaseCount: (state, action) => {
+      state.cartBooks = state.cartBooks.map((item) => {
+        if (item.idBook === action.payload.idBook) {
+          if (item.Qt > 1) {
+            item.Qt--;
+          }
+        }
+        return item;
+      });
+    },
   },
 });
 // Action creators are generated for each case reducer function
-export const { addToBasket, removeItem, resetBasket, setOpenCart } =
-  CartSlice.actions;
+export const {
+  addToBasket,
+  removeItem,
+  resetBasket,
+  setOpenCart,
+  decreaseCount,
+  increaseCount,
+} = CartSlice.actions;
 
 export default CartSlice.reducer;

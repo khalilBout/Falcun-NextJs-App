@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import FormAddBook from "@/Utils/Forms/FormAddBook";
 import UploadBookImg from "@/app/components/Upload/UploadBookImg";
+import BoxImage from "@/app/components/Upload/BoxImage";
 import { useRouter } from "next/navigation";
 import Loading from "@/app/components/Loading/Loading";
 // import toast from "react-hot-toast";
@@ -12,31 +13,33 @@ const Page = () => {
     title: "",
     description: "",
     season: "",
-    TheClass: "",
+    numberOfPages: 0,
     price: 0,
   });
 
   const [levels, setLevels] = useState("");
   const [pending, setPending] = useState(false);
-  const [urlBook, setUrlBook] = useState("");
+  const [bookCover, setBookCover] = useState("");
+  const [contentBook, setContentBook] = useState([]);
   const [levelList, setLevelList] = useState([]);
   const levelObject = levelList?.find((elm) => elm.title === levels);
   // const levelsInf = { levelId: levelObject._id };
-
+  console.log("bookCover:", bookCover);
+  console.log("contentBook:", contentBook);
   // add product to database
   const dataBook = {
     ...form,
-    urlBook,
+    bookCover,
+    contentBook,
     levelsInf: {
       levelID: levelObject?._id,
       levelTitle: levelObject?.title,
     },
   };
   const addBook = async () => {
-    console.log("data video:", dataBook);
     try {
       setPending(true);
-      const res = await fetch("/api/admin/book", {
+      const res = await fetch("/api/books", {
         method: "POST",
         body: JSON.stringify(dataBook),
       });
@@ -47,11 +50,12 @@ const Page = () => {
           title: "",
           description: "",
           season: "",
-          TheClass: "",
+          numberOfPages: 0,
           price: 0,
         });
-        setUrlBook("");
-        setLevels();
+        setBookCover("");
+        setContentBook([]);
+        setLevels([]);
         router.replace("/dashboard/books");
       }
     } catch (err) {
@@ -81,17 +85,27 @@ const Page = () => {
               setLevelList={setLevelList}
             />
           </div>
-          <div className="m-4 p-2 border-1 rounded-lg h-[120px] flex flex-col justify-center items-center gap-4 bg-green-100">
-            {urlBook === "" ? (
-              <UploadBookImg setUrlBook={setUrlBook} />
-            ) : (
-              <div className="w-[180px] h-[220px] flex justify-center items-center">
-                <h1 className="font-TitleFont text-xl font-medium text-red-700">
-                  {" "}
-                  تم رفع الصورة بنجاح{" "}
-                </h1>
-              </div>
-            )}
+          <div className="flex gap-3 m-1">
+            <div className="w-[140px] h-[220px] border-1 rounded-lg  flex flex-col justify-center items-center bg-green-100">
+              {bookCover === "" ? (
+                <UploadBookImg setBookCover={setBookCover} />
+              ) : (
+                <div className="w-[140px] h-[220px]flex justify-center items-center">
+                  <img
+                    src={bookCover.url}
+                    alt={bookCover.url}
+                    className="rounded-lg w-[140px] h-[220px] object-fill "
+                  />
+                </div>
+              )}
+            </div>
+
+            <div className="w-[140px] h-[220px] bg-blue-100 rounded-md">
+              <BoxImage
+                contentBook={contentBook}
+                setContentBook={setContentBook}
+              />
+            </div>
           </div>
           <div className=" flex justify-center items-center rounded border text-sm h-[40px] bg-blue-400 text-gray-800">
             <button className="text-[16px] w-full h-full" onClick={addBook}>

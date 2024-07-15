@@ -51,8 +51,8 @@ const Page = () => {
         });
         setUrlVideo("");
         setLevels();
-        router.refresh();
         router.replace("/dashboard/video");
+        router.refresh();
       }
     } catch (err) {
       console.log(err);

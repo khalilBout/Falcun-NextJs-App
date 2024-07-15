@@ -41,7 +41,7 @@ const SelectSeason = () => {
       onChange={handelChange}
     >
       <option key="all" value="">
-        جميع الفصول
+        إختر الفصل{" "}
       </option>
       {dataSeason?.map((elm, ind) => (
         <option key={ind} value={elm.nameEn}>
