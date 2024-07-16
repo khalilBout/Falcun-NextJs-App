@@ -126,28 +126,28 @@ const SliderHome = () => {
     <div className=" overflow-x-hidden">
       <Slider {...settings}>
         {dataHeroSection.map((item, ind) => (
-          <Link key={ind} href={item.url} className="relative ">
-            <div className="w-full ">
+          <Link key={ind} href={item.url} className="relative min-h-[420px] ">
+            <div className="w-full h-full min-h-[420px] ">
               <Image
                 src={item.img}
                 alt="bannerImgTwo"
-                width="fill"
-                height="auto"
+                fill
                 quality={100}
+                className="object-cover object-center "
                 // sizes="max-width: 480px"
                 // fill={true}
               />
             </div>
             <div
-              className="max-w-[420px] mdl:max-w-[480px] xl:max-w-[620px] absolute z-10
-              top-14 sml:top-28 mdl:top-40 xl:top-52 
+              className=" max-w-[400px] mdl:max-w-[480px] xl:max-w-[620px] absolute z-10
+           bottom-16 xl:top-52 
              right-6 sml:right-10 mdl:right-20 xl:right-28
              "
             >
-              <h2 className="text-center sml:text-right font-TitleFont text-[16px] sml:text-[22px] mdl:text-[28px] xl:text-[36px] font-bold">
+              <h2 className="text-lime-500 text-right font-TitleFont text-[20px] sml:text-[22px] mdl:text-[28px] xl:text-[36px] font-bold">
                 {item.title}
               </h2>
-              <p className="sml:pr-4 text-center sml:text-right text-[14px] sml:text-[18px] mdl:text-[22px] xl:text-[28px] font-bodyFont font-medium">
+              <p className=" text-lime-300 sml:pr-4  text-right text-[18px] sml:text-[18px] mdl:text-[22px] xl:text-[28px] font-bodyFont font-medium">
                 {item.desc}
               </p>
             </div>

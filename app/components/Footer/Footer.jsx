@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import logo from "@/public/image/logo/IMG-20240630-WA0000.jpg";
+import logo from "@/public/image/logo/logo1.png";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa6";
@@ -14,11 +14,11 @@ const Footer = () => {
     <div className="screenPadding">
       <div className="md:flex">
         {/* logo section  */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 flex flex-col items-start justify-center gap-2">
           {/* <Logo /> */}
           <Image
-            width={90}
-            // height="auto"
+            width={160}
+            height="auto"
             className="max-h-[100px] "
             src={logo}
             alt="Bravo Logo"
@@ -33,12 +33,12 @@ const Footer = () => {
         {/* info section  */}
         <div className="w-full md:w-1/2 p-2 mdl:p-4">
           <h2 className="text-[20px] mdl:text-[26px] font-TitleFont font-bold pt-2 text-slate-800">
-            معلومات الإتصال
+            معلومات الاتصال
           </h2>
           <div className="p-2 ">
             <div className="flex items-start gap-2">
               <h3 className="font-TitleFont font-semibold text-[18px] mdl:text-[20px] text-slate-600">
-                رقم الهاتف:{" "}
+                رقم الهاتف (01)
               </h3>
               <h3 className=" font-TitleFont text-[18px] mdl:text-[22px] text-slate-900 font-bold">
                 0096550133774
@@ -46,7 +46,7 @@ const Footer = () => {
             </div>
             <div className="flex items-start gap-2">
               <h3 className="font-TitleFont font-semibold text-[18px] mdl:text-[20px] text-slate-600">
-                الثاني:{" "}
+                رقم الهاتف (02)
               </h3>
               <h3 className=" font-TitleFont text-[18px] mdl:text-[22px] text-slate-900 font-bold">
                 0096550653733
@@ -54,11 +54,11 @@ const Footer = () => {
             </div>
 
             <div className="flex items-start gap-2">
-              <h3 className="font-TitleFont font-semibold text-[18px] mdl:text-[20px] text-slate-600">
-                الإيمايل:{" "}
+              <h3 className="font-TitleFont font-semibold text-[16px] mdl:text-[20px] text-slate-600">
+                البريد الإلكتروني
               </h3>
-              <h3 className=" font-TitleFont text-[16px] text-slate-900 font-bold">
-                bravo.kuwiat@gmail.com
+              <h3 className=" font-TitleFont text-[17px] text-slate-900 font-bold">
+                bravo.kuwait@gmail.com
               </h3>
             </div>
           </div>

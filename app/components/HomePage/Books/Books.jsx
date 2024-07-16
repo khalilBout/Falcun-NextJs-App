@@ -10,7 +10,7 @@ import Image from "next/image";
 const Books = () => {
   return (
     <section className="screenPadding my-8 overflow-x-hidden">
-      <h1 className="my-8 px-8 text-primeColor font-TitleFont text-4xl sml:text-2xl mdl:text-4xl xl:text-7xl font-bold  text-center">
+      <h1 className="my-4 px-8 text-primeColor font-TitleFont text-4xl sml:text-2xl mdl:text-4xl xl:text-7xl font-bold  text-center">
         من كتبنا ...؟
       </h1>
 
