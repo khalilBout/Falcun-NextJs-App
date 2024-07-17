@@ -9,7 +9,7 @@ import ServiceSmall from "@/public/image/service/ServiceSmall.png";
 import Image from "next/image";
 const Service = () => {
   return (
-    <section className="screenPadding py-8 bg-slate-300 overflow-x-hidden">
+    <section className="screenPadding py-8 bg-indigo-200 overflow-x-hidden">
       <h1 className="my-8 px-8 text-primeColor font-TitleFont text-4xl sml:text-2xl mdl:text-4xl xl:text-7xl font-bold  text-center">
         خدماتنا{" "}
       </h1>
@@ -18,7 +18,7 @@ const Service = () => {
         <div className="mdl:w-1/2 flex flex-col justify-center items-center ">
           <div className=" my-2 min-h-[120px] flex items-center ">
             <p className=" text-[18px] xl:text-[22px] text-center font-bodyFont font-medium text-primeColor px-2">
-              منصتنا تقدم خدمات شاملة للمرحلة الإعدادية، تشمل فيديوهات تعليمية
+              موقعنا يقدم خدمات شاملة للمرحلة الإبتدائية ، تشمل فيديوهات تعليمية
               تفاعلية تغطي جميع المواد الدراسية .
             </p>
             <Image
@@ -37,9 +37,9 @@ const Service = () => {
               className="mdl:w-[300px]"
             />
             <p className=" text-[18px] xl:text-[22px] text-center font-bodyFont font-medium text-primeColor px-2">
-              نساعد الطلاب على الفهم العميق للمفاهيم بطريقة ممتعة ، الإضافة إلى
-              ذلك، نوفر مذكرات مدرسية متكاملة ومنظمة تساهم في تحسين الأداء
-              الأكاديمي.
+              نساعد الطلاب على الفهم العميق للمفاهيم بطريقة ممتعة ، إضافة إلى
+              ذلك نوفر مذكرات مدرسية متكاملة ومنظمة تساهم في تحسين الأداء
+              التعليمي.
             </p>
           </div>
 
@@ -47,7 +47,7 @@ const Service = () => {
             <p className=" text-[18px] xl:text-[22px] text-center font-bodyFont font-medium text-primeColor px-2">
               كما نقدم سلاسل تعليمية مترابطة ومتكاملة، مصممة لتأسيس مفاهيم قوية
               وتنمية مهارات الطلاب بشكل متدرج وفعّال، مما يعزز من تجربة التعلم
-              ويحقق أفضل النتائج الأكاديمية.
+              ويحقق أفضل النتائج التعليمية.
             </p>
             <Image
               src={Service3}

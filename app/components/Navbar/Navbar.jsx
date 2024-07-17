@@ -17,7 +17,7 @@ const Navbar = () => {
     },
     {
       url: "/contact",
-      name: "إتصل بنا ",
+      name: "اتصل بنا ",
     },
   ];
   return (

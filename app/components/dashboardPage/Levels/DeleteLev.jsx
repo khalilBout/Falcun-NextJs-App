@@ -10,7 +10,7 @@ const DeleteLev = ({ id }) => {
     const confirmed = confirm("هل تريد مسح المستوى ؟");
 
     if (confirmed) {
-      const res = await fetch(`/api/admin/levels/${id}`, {
+      const res = await fetch(`/api/levels/${id}`, {
         method: "DELETE",
       });
       if (res.status === 200) {

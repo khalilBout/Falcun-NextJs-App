@@ -17,11 +17,30 @@ const VideoDetails = ({ video }) => {
       {/* video Player  */}
       <div className="w-full m-2 mdl:w-1/2 h-auto -z-10">
         <div className="w-full max-w-[400px] flex justify-center items-center">
-          <CldVideoPlayer
+          {/* <CldVideoPlayer
             width="330"
             height="600"
             src={video.urlVideo.public_id}
-          />
+          /> */}
+
+          {video?.urlVideo ? (
+            <CldVideoPlayer
+              width="330"
+              height="600"
+              src={video?.urlVideo?.public_id}
+            />
+          ) : (
+            <iframe
+              width="330"
+              height="600"
+              src={video.urlYoutube}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          )}
         </div>
       </div>
 
@@ -30,35 +49,41 @@ const VideoDetails = ({ video }) => {
         {/* text info  */}
         <div className=" text-[16px] mdl:text-[18px]">
           <h2 className="py-2 font-TitleFont ">
-            <span className="text-gray-700">عنوان الدرس : </span>
             <span className="text-gray-900">{video.title}</span>
           </h2>
           {/* <div className="flex justify-around items-center "> */}
-          <h2 className="py-1 font-TitleFont text-gray-700">
-            <span className="">الفصل : </span>
-            {video.season === "season-1" ? (
-              <span>الفصل الأول</span>
-            ) : (
-              <span>الفصل الثاني</span>
-            )}
-          </h2>
-          <h2 className="py-1 font-TitleFont ">
-            <span className="text-gray-700">المستوى : </span>
-            <span className="text-gray-900">{video.levelsInf.levelTitle}</span>
-          </h2>
+          {video.season && (
+            <h2 className="py-1 font-TitleFont text-gray-700">
+              {video.season === "season-1" ? (
+                <span>الفصل الأول</span>
+              ) : (
+                <span>الفصل الثاني</span>
+              )}
+            </h2>
+          )}
+          {video.levelsInf && (
+            <h2 className="py-1 font-TitleFont ">
+              <span className="text-gray-900">
+                {video.levelsInf.levelTitle}
+              </span>
+            </h2>
+          )}
 
-          <h2 className="py-1 font-TitleFont ">
-            <span className="text-gray-700">القسم : </span>
-            <span className="text-gray-900">{video.TheClass}</span>
-          </h2>
+          {video.TheClass && (
+            <h2 className="py-1 font-TitleFont ">
+              <span className="text-gray-900">{video.TheClass}</span>
+            </h2>
+          )}
 
-          <div className="py-1 font-TitleFont ">
-            <h2 className="text-gray-700">وصف الدرس : </h2>
-            <h2 className="px-4 text-gray-900">{video.description}</h2>
-          </div>
+          {video.description && (
+            <div className="py-1 font-TitleFont ">
+              <h2 className="text-gray-700">وصف الدرس : </h2>
+              <h2 className="px-4 text-gray-900">{video.description}</h2>
+            </div>
+          )}
         </div>
         {/* Like And Comment  */}
-        <div className="py-2">
+        {/* <div className="py-2">
           <div className=" flex justify-between items-center">
             <h1 className="text-[18px] font-TitleFont text-gray-900 font-bold">
               أضف تعليق
@@ -77,7 +102,7 @@ const VideoDetails = ({ video }) => {
               </div>
             </div>
           </div>
-          {/* text of Comment  */}
+          
           <div>
             {video.listComment > 0 &&
               video.listComment?.map((elm, ind) => (
@@ -107,7 +132,7 @@ const VideoDetails = ({ video }) => {
               )}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

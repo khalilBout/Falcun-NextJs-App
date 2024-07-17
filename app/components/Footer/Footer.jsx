@@ -24,10 +24,10 @@ const Footer = () => {
             alt="Bravo Logo"
           />
           <p className="text-[16px] mdl:text-[18px] font-bodyFont font-semibold text-center px-2 mdl:px-4 text-slate-700">
-            نسعى في منصة برافو لجعل التعلم رحلة ممتعة ومثمرة، حيث يتم تنظيم
-            المحتوى بشكل متدرج يعزز الفهم ويساعد الأطفال على تحقيق أفضل النتائج
-            الأكاديمية. نهدف إلى دعم الأطفال في كل خطوة من خطواتهم التعليمية، مع
-            تقديم موارد تعليمية تلبي احتياجاتهم وتثير شغفهم للتعلم.
+            بكل تفان نعمل على أن يكون "برافو" أكثر من مجرد كتاب ، بل شريكا داعما
+            في رحلة كل طفل نحو التفوق والإبداع. نهدف إلى دعم الأطفال في كل خطوة
+            من خطواتهم التعليمية، مع تقديم موارد تعليمية تلبي احتياجاتهم وتثير
+            شغفهم للتعلم.
           </p>
         </div>
         {/* info section  */}
@@ -41,7 +41,7 @@ const Footer = () => {
                 رقم الهاتف (01)
               </h3>
               <h3 className=" font-TitleFont text-[18px] mdl:text-[22px] text-slate-900 font-bold">
-                0096550133774
+                50133774
               </h3>
             </div>
             <div className="flex items-start gap-2">
@@ -49,7 +49,7 @@ const Footer = () => {
                 رقم الهاتف (02)
               </h3>
               <h3 className=" font-TitleFont text-[18px] mdl:text-[22px] text-slate-900 font-bold">
-                0096550653733
+                50653733
               </h3>
             </div>
 

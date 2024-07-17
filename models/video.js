@@ -22,7 +22,7 @@ const VideoSchema = new mongoose.Schema({
   },
   TheClass: {
     type: String,
-    required: [true],
+    required: [false],
   },
   season: {
     type: String,
@@ -32,17 +32,18 @@ const VideoSchema = new mongoose.Schema({
     },
   },
   urlVideo: {
-    url: { type: String, required: [true] },
+    url: { type: String, required: [false] },
     public_id: String,
     thumbnail: String,
     // required: [true],
   },
+  urlYoutube: { type: String, required: [false] },
   like: [
     {
       userID: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
-        // required: [true],
+        required: [false],
       },
     },
   ],

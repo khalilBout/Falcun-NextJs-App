@@ -3,14 +3,18 @@ import { CldVideoPlayer } from "next-cloudinary";
 import "next-cloudinary/dist/cld-video-player.css";
 
 const page = () => {
-  const urlVideo = {
-    url: "https://res.cloudinary.com/dppqikbzu/video/upload/v1720262465/testV_drxa4b.mp4",
-    public_id: "testV_drxa4b",
-  };
+  const urlVideo = [
+    {
+      url: "https://www.youtube.com/embed/jVdictMFM-s?si=Vi7yUMRIIgmrnb0x",
+    },
+    {
+      url: "https://www.youtube.com/embed/MC6D4vylKTc?si=5Hc3hUfb6NUua6FK",
+    },
+  ];
   return (
-    <div className=" flex flex-col justify-center items-center">
+    <div className="h-[50vh]">
       <h1>Test Page</h1>
-      <div className="w-[280px] h-[530px] bg-slate-400">
+      {/* <div className="w-[280px] h-[530px] bg-slate-400">
         <CldVideoPlayer
           className="mx-auto"
           width="360"
@@ -25,6 +29,28 @@ const page = () => {
             );
           }}
         />
+      </div> */}
+      <div className="flex justify-center items-center flex-wrap gap-4 h-full w-full bg-lime-200">
+        {urlVideo.map((elm, ind) => (
+          <div key={ind}>
+            <iframe
+              width="560"
+              height="315"
+              src={elm.url}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+
+            <h3>عنوات الفيديو</h3>
+            <p>
+              وصف الفيديو وصف الفيديو وصف الفيديو وصف الفيديو وصف الفيديو وصف
+              الفيديو{" "}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );

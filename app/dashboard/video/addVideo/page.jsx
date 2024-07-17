@@ -13,6 +13,7 @@ const Page = () => {
     description: "",
     season: "",
     TheClass: "",
+    urlYoutube: "",
   });
 
   const [levels, setLevels] = useState("");
@@ -93,6 +94,7 @@ const Page = () => {
               </div>
             )}
           </div>
+
           <div className=" flex justify-center items-center rounded border text-sm h-[40px] bg-blue-400 text-gray-800">
             <button className="text-[16px] w-full h-full" onClick={addVideo}>
               {pending ? "Sending..." : "إضافة الفيديو"}

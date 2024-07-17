@@ -17,9 +17,6 @@ const TableAllVideo = ({ data }) => {
         <thead>
           <tr>
             <th className="text-[14px] font-TitleFont text-right  font-medium text-gray-400 py-2 px-4 bg-gray-50 ">
-              الصورة
-            </th>
-            <th className="text-[14px] font-TitleFont text-right  font-medium text-gray-400 py-2 px-4 bg-gray-50 ">
               العنوان
             </th>
             <th className="text-[14px] font-TitleFont text-right font-medium text-gray-400 py-2 px-4 bg-gray-50">
@@ -69,7 +66,7 @@ function Tr({ item }) {
     <>
       <tr className="bg-blue-100">
         {/* Image  */}
-        <td className="py-2 px-4 border-b border-b-gray-50 ">
+        {/* <td className="py-2 px-4 border-b border-b-gray-50 ">
           <div className="relative h-[60px] w-[60px]">
             <Image
               fill
@@ -82,7 +79,7 @@ function Tr({ item }) {
               // className="text-gray-600 text-sm font-medium hover:text-blue-500 ml-2 truncate"
             />
           </div>
-        </td>
+        </td> */}
 
         {/* name of video  */}
         <td className="text-[13px] font-TitleFont font-medium text-right py-2 px-4 border-b border-b-gray-50">

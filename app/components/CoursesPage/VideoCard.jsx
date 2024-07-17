@@ -8,11 +8,24 @@ const VideoCard = ({ item }) => {
   return (
     <div className="m-1 w-[220px] bg-slate-100 rounded-xl p-2 ">
       <div className=" w-[215] h-[350px] bg-slate-900 rounded-xl">
-        <CldVideoPlayer
-          width="220"
-          height="380"
-          src={item.urlVideo.public_id}
-        />
+        {item?.urlVideo ? (
+          <CldVideoPlayer
+            width="220"
+            height="380"
+            src={item.urlVideo?.public_id}
+          />
+        ) : (
+          <iframe
+            width="215"
+            height="350px"
+            src={item.urlYoutube}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        )}
       </div>
 
       <Link
@@ -25,21 +38,27 @@ const VideoCard = ({ item }) => {
             {item.title}
           </h2>
           <div className="flex justify-around items-center ">
-            <div className=" text-[15px] font-TitleFont text-gray-700">
-              {item.season === "season-1" ? (
-                <h1>الفصل الأول</h1>
-              ) : (
-                <h1>الفصل الثاني</h1>
-              )}
-            </div>
-            <h2 className="px-4 text-[14px]  font-TitleFont text-gray-700">
-              {item.levelsInf.levelTitle}
-            </h2>
+            {item.season && (
+              <div className=" text-[15px] font-TitleFont text-gray-700">
+                {item.season === "season-1" ? (
+                  <h1>الفصل الأول</h1>
+                ) : (
+                  <h1>الفصل الثاني</h1>
+                )}
+              </div>
+            )}
+            {item.levelsInf && (
+              <h2 className="px-4 text-[14px]  font-TitleFont text-gray-700">
+                {item.levelsInf.levelTitle}
+              </h2>
+            )}
           </div>
 
-          <h2 className=" px-4 [14px] font-TitleFont text-blue-900">
-            {item.TheClass}
-          </h2>
+          {item.TheClass && (
+            <h2 className=" px-4 [14px] font-TitleFont text-blue-900">
+              {item.TheClass}
+            </h2>
+          )}
         </div>
       </Link>
     </div>

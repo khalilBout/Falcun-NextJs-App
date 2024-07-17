@@ -52,7 +52,7 @@ const FormAddVideo = ({
           required
         >
           <option value="" className="text-gray-100 h-[40px]">
-            الفصل
+            إختر الفصل
           </option>
           {listSeason?.map((elm) => (
             <option key={elm} value={elm}>
@@ -68,7 +68,7 @@ const FormAddVideo = ({
           required
         >
           <option value="" className="text-gray-100 h-[40px]">
-            المستوى
+            إختر الصف
           </option>
           {levelList?.map((lev, ind) => {
             return (
@@ -86,7 +86,7 @@ const FormAddVideo = ({
           required
         >
           <option value="" className="text-gray-100 h-[40px]">
-            القسم
+            إختر القسم{" "}
           </option>
           {ListClass?.listClass?.map((elm, ind) => (
             <option key={ind} value={elm.name}>
@@ -102,6 +102,13 @@ const FormAddVideo = ({
           placeholder="وصف الفيديو"
           type="text"
           name="description"
+          onChange={handelChange}
+        />
+        <input
+          className="px-4 w-full h-[40px] border-[1px] rounded-lg focus:border-pink-200  focus:border-2 outline-none m-1"
+          placeholder="رابط الفيديو على اليوتيوب"
+          type="text"
+          name="urlYoutube"
           onChange={handelChange}
         />
       </div>
