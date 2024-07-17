@@ -21,7 +21,7 @@ const Navbar = () => {
     },
   ];
   return (
-    <div className="screenPadding flex h-[80px] justify-between items-center  py-4 relative z-50">
+    <div className="screenPadding flex h-[80px] justify-between items-center py-2 relative z-50">
       <Logo />
       <div className=" hidden sml:block">
         <Links dataLink={dataLink} />

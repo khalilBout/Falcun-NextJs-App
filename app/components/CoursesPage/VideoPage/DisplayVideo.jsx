@@ -99,7 +99,7 @@ const DisplayVideo = ({ allVideos }) => {
           onChange={handleSeason}
         >
           <option key="all" value="">
-            جميع الفصول
+            إختر الفصل
           </option>
           {dataSeason?.map((elm, ind) => (
             <option key={ind} value={elm.nameEn}>
@@ -117,7 +117,7 @@ const DisplayVideo = ({ allVideos }) => {
             onChange={handleLevel}
           >
             <option key="all" value="">
-              جميع الصفوف
+              إختر الصف
             </option>
             {LevelList?.map((elm, ind) => (
               <option key={ind} value={elm.title}>

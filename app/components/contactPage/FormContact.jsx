@@ -67,7 +67,7 @@ const FormContact = () => {
         className=" flex items-center justify-center my-4"
       >
         <div className="px-2 py-4 flex flex-col justify-start ">
-          <h1 className="text-center mb-6 font-bold text-2xl mdl:text-2xl">
+          <h1 className="text-center mb-6 font-bold text-xl mdl:text-2xl">
             يسعد فريق برافو الإطلاع على ارائكم وإقتراحاتكم
           </h1>
           <div className="flex flex-col gap-3">

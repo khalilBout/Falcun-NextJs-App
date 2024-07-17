@@ -33,7 +33,7 @@ export default function Courses() {
             href="/courses/books"
             className="w-[300px] h-[200px] flex justify-center items-center font-TitleFont text-2xl font-semibold bg-blue-200/20 rounded-lg"
           >
-            المذكرات التعليمية
+            المذكرات المدرسية
           </Link>
           <Image
             src={img2}
@@ -49,7 +49,7 @@ export default function Courses() {
             href="/courses/series"
             className="w-[300px] h-[200px] flex justify-center items-center font-TitleFont text-2xl font-semibold bg-blue-200/20 rounded-lg"
           >
-            السلاسل التعليمية
+            سلاسل التأسيس
           </Link>
           <Image
             src={img3}

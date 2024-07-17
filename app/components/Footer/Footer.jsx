@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import logo from "@/public/image/logo/logo1.png";
+import logo from "@/public/image/logo/logo2.png";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa6";
@@ -11,13 +11,13 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="screenPadding">
+    <div className="screenPadding bg-zinc-300">
       <div className="md:flex">
         {/* logo section  */}
-        <div className="w-full md:w-1/2 flex flex-col items-start justify-center gap-2">
+        <div className="my-2 w-full md:w-1/2 flex flex-col items-start justify-center gap-2">
           {/* <Logo /> */}
           <Image
-            width={160}
+            width={110}
             height="auto"
             className="max-h-[100px] "
             src={logo}
@@ -54,7 +54,7 @@ const Footer = () => {
             </div>
 
             <div className="flex items-start gap-2">
-              <h3 className="font-TitleFont font-semibold text-[16px] mdl:text-[20px] text-slate-600">
+              <h3 className="font-TitleFont font-semibold text-[14px] mdl:text-[20px] text-slate-600">
                 البريد الإلكتروني
               </h3>
               <h3 className=" font-TitleFont text-[17px] text-slate-900 font-bold">
@@ -67,13 +67,6 @@ const Footer = () => {
       {/* icon section  */}
       <div className="w-full flex justify-center items-center gap-4 mdl:gap-8 py-4 mdl:py-8">
         <Link
-          href="/"
-          className="w-12 h-12 rounded-full  bg-slate-300 hover:bg-slate-700 hover:text-white text-slate-900  flex justify-center items-center"
-        >
-          <FaFacebookF size={18} />
-        </Link>
-
-        <Link
           href="https://www.instagram.com/bravo_kw2023/?igsh=cXF5czNjeXZyaGZ6"
           className="w-12 h-12 rounded-full bg-slate-300 hover:bg-slate-700 hover:text-white text-slate-900 flex justify-center items-center"
         >
@@ -85,13 +78,6 @@ const Footer = () => {
           className="w-12 h-12 rounded-full bg-slate-300 hover:bg-slate-700 hover:text-white text-slate-900 flex justify-center items-center"
         >
           <FaWhatsapp size={18} />
-        </Link>
-
-        <Link
-          href="/"
-          className="w-12 h-12 rounded-full bg-slate-300 hover:bg-slate-700 hover:text-white text-slate-900 flex justify-center items-center"
-        >
-          <FaYoutube size={18} />
         </Link>
       </div>
     </div>

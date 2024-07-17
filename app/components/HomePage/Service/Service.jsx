@@ -2,6 +2,7 @@ import React from "react";
 import Service1 from "@/public/image/service/Service1.png";
 import Service2 from "@/public/image/service/Service2.png";
 import Service3 from "@/public/image/service/Service3.png";
+
 import ServiceMain from "@/public/image/service/ServiceMain.png";
 import ServiceSmall from "@/public/image/service/ServiceSmall.png";
 
