@@ -37,7 +37,11 @@ module.exports = {
         testShadow: "0px 0px 54px -13px rgba(0,0,0,0.7)",
       },
       backgroundImage: {
-        // "hero-1": "url('/images/banner/man3.png')",
+        bgBlue: "url('/bg/bgBlue.png')",
+        bgGreen: "url('/bg/bgGreen.png')",
+        bgSky: "url('/bg/bgSky.png')",
+        bgNight: "url('/bg/bgNight.png')",
+        bgLend: "url(/bg/bgLend.png')",
         // 'hero-2': "url('/img/hero-pattern.svg')",
         // 'hero-3': "url('/img/hero-pattern.svg')",
       },

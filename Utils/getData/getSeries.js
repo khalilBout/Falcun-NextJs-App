@@ -7,9 +7,11 @@ export const getSeries = async (page) => {
   try {
     await connectDB();
     const count = await Serie.find().count();
-    const allSeries = await Serie.find()
+    const allSerie = await Serie.find()
       .limit(ITEM_PER_PAGE)
       .skip(ITEM_PER_PAGE * (page - 1));
+    const allSeries = JSON.parse(JSON.stringify(allSerie));
+
     return { count, allSeries };
   } catch (err) {
     console.error("Error fetching Series:", err);

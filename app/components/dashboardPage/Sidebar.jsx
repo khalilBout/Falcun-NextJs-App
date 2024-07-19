@@ -57,7 +57,7 @@ const Sidebar = () => {
           <li>
             <Link
               href="/dashboard/video"
-              className=" font-TitleFont font-bold text-[15px] block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
+              className="text-center font-TitleFont font-bold text-[15px] block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
             >
               الفيديوهات التعليمية
               {/* <span className="text-red-300">({cart.length})</span> */}

@@ -34,7 +34,7 @@ const Icons = () => {
       )}
 
       {session && session.status === "authenticated" && (
-        <ul className="flex justify-center items-center gap-4">
+        <ul className="flex justify-center items-center gap-2">
           {session.data.user.role === "admin" ? (
             <li>
               <Link
@@ -56,7 +56,7 @@ const Icons = () => {
                 <CartBooksShop size={20} />
               </li>
               <li>
-                <Image src={bookIcon} width={22} height={22} alt="icon" />
+                <Image src={bookIcon} width={20} height={22} alt="icon" />
               </li>
             </>
           )}

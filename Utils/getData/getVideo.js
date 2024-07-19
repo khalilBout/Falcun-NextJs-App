@@ -16,10 +16,10 @@ export const getVideo = async (page, levels, season) => {
     }
 
     const count = await Video.countDocuments(query);
-    const allVideos = await Video.find(query)
+    const allVideo = await Video.find(query)
       .limit(ITEM_PER_PAGE)
       .skip(ITEM_PER_PAGE * (page - 1));
-
+    const allVideos = JSON.parse(JSON.stringify(allVideo));
     return { count, allVideos };
   } catch (err) {
     console.error("Error fetching videos:", err);

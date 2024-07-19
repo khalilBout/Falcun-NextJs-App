@@ -5,11 +5,23 @@ import Service3 from "@/public/image/service/Service3.png";
 
 import ServiceMain from "@/public/image/service/ServiceMain.png";
 import ServiceSmall from "@/public/image/service/ServiceSmall.png";
+import bookAll from "@/public/image/service/bookAll.png";
 
 import Image from "next/image";
 const Service = () => {
   return (
-    <section className="screenPadding py-8 bg-indigo-200 overflow-x-hidden">
+    <section className=" relative screenPadding py-8 bg-indigo-200 overflow-x-hidden">
+      <div className="sml:hidden absolute top-8 left-4 -z-10 max-h-[240px] w-[320px]">
+        <Image
+          src={bookAll}
+          quality={100}
+          alt="bg"
+          width={300}
+          height={240}
+          className=""
+        />
+      </div>
+
       <h1 className="my-8 px-8 text-primeColor font-TitleFont text-4xl sml:text-2xl mdl:text-4xl xl:text-7xl font-bold  text-center">
         خدماتنا{" "}
       </h1>
@@ -51,12 +63,13 @@ const Service = () => {
             </p>
             <Image
               src={Service3}
-              width={110}
+              width={90}
               quality={100}
               className="mdl:w-[300px]"
             />
           </div>
         </div>
+
         {/* image section  */}
         <div className=" relative mdl:w-1/2 flex justify-center items-center">
           <Image

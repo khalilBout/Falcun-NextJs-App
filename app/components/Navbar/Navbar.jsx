@@ -4,7 +4,9 @@ import Links from "./Links";
 import Icons from "./Icons";
 import { motion } from "framer-motion";
 import MobileLink from "./MobileLink ";
+import Image from "next/image";
 
+import text from "@/public/image/logo/text.png";
 const Navbar = () => {
   const dataLink = [
     {
@@ -25,6 +27,9 @@ const Navbar = () => {
       <Logo />
       <div className=" hidden sml:block">
         <Links dataLink={dataLink} />
+      </div>
+      <div className=" block sml:hidden max-w-[300px] py-2">
+        <Image src={text} alt="" width={280} height="auto" />
       </div>
 
       <motion.div

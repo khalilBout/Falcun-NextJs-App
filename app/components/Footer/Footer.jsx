@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="screenPadding bg-zinc-300">
+    <div className="screenPadding bg-teal-200  ">
       <div className="md:flex">
         {/* logo section  */}
         <div className="my-2 w-full md:w-1/2 flex flex-col items-start justify-center gap-2">
@@ -68,14 +68,14 @@ const Footer = () => {
       <div className="w-full flex justify-center items-center gap-4 mdl:gap-8 py-4 mdl:py-8">
         <Link
           href="https://www.instagram.com/bravo_kw2023/?igsh=cXF5czNjeXZyaGZ6"
-          className="w-12 h-12 rounded-full bg-slate-300 hover:bg-slate-700 hover:text-white text-slate-900 flex justify-center items-center"
+          className="w-12 h-12 rounded-full bg-emerald-400 hover:bg-slate-700 hover:text-white text-slate-900 flex justify-center items-center"
         >
           <FaInstagram size={18} />
         </Link>
 
         <Link
           href="https://wa.me/96550133774"
-          className="w-12 h-12 rounded-full bg-slate-300 hover:bg-slate-700 hover:text-white text-slate-900 flex justify-center items-center"
+          className="w-12 h-12 rounded-full bg-emerald-400 hover:bg-slate-700 hover:text-white text-slate-900 flex justify-center items-center"
         >
           <FaWhatsapp size={18} />
         </Link>

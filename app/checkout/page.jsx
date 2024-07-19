@@ -27,7 +27,7 @@ const page = () => {
     setAddressClientUpdated("update");
   };
 
-  const ShippingExpenses = 80;
+  const ShippingExpenses = 1.5;
 
   const totolPyment = cart.reduce(
     (total, item) => item.priceBook * item.Qt + total,

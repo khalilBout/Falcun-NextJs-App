@@ -16,9 +16,10 @@ export const getBooks = async (page, levels, season) => {
     }
 
     const count = await Book.countDocuments(query);
-    const allBooks = await Book.find(query)
+    const allBook = await Book.find(query)
       .limit(ITEM_PER_PAGE)
       .skip(ITEM_PER_PAGE * (page - 1));
+    const allBooks = JSON.parse(JSON.stringify(allBook));
 
     return { count, allBooks };
   } catch (err) {
