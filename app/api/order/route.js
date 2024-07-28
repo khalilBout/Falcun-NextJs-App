@@ -5,7 +5,6 @@ import Book from "@/models/book";
 
 export const POST = async (request) => {
   const body = await request.json();
-  console.log(" start save Order--------------------------");
 
   const { userName, email, shippingAddress, orderItems, totolPyment } = body;
 
@@ -44,7 +43,6 @@ export const POST = async (request) => {
     orderItems,
     totolPyment,
   };
-  console.log("data Order final --------", dataOrder);
 
   try {
     await connectDB();

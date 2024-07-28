@@ -24,8 +24,6 @@ const Page = () => {
   const [levelList, setLevelList] = useState([]);
   const levelObject = levelList?.find((elm) => elm.title === levels);
   // const levelsInf = { levelId: levelObject._id };
-  console.log("bookCover:", bookCover);
-  console.log("contentBook:", contentBook);
   // add product to database
   const dataBook = {
     ...form,
@@ -64,7 +62,7 @@ const Page = () => {
       setPending(false);
     }
   };
-
+  console.log("bookCover:", bookCover);
   return (
     <div className="w-full">
       {pending ? (
@@ -85,15 +83,15 @@ const Page = () => {
               setLevelList={setLevelList}
             />
           </div>
-          <div className="flex gap-3 m-1">
+          <div className="">
             <div className="w-[140px] h-[220px] border-1 rounded-lg  flex flex-col justify-center items-center bg-green-100">
               {bookCover === "" ? (
                 <UploadBookImg setBookCover={setBookCover} />
               ) : (
                 <div className="w-[140px] h-[220px]flex justify-center items-center">
                   <img
-                    src={bookCover.url}
-                    alt={bookCover.url}
+                    src={bookCover}
+                    alt=""
                     className="rounded-lg w-[140px] h-[220px] object-fill "
                   />
                 </div>

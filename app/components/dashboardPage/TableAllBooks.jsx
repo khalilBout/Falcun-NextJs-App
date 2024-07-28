@@ -60,7 +60,7 @@ function Tr({ item }) {
               quality={100}
               objectFit="cover"
               objectPosition="center"
-              src={bookCover.url || productNoImg}
+              src={bookCover || productNoImg}
               alt={title}
               className="rounded-full object-cover overflow-hidden bg-teal-100"
               // className="text-gray-600 text-sm font-medium hover:text-blue-500 ml-2 truncate"

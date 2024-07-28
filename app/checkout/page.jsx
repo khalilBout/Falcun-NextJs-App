@@ -27,7 +27,7 @@ const page = () => {
     setAddressClientUpdated("update");
   };
 
-  const ShippingExpenses = 1.5;
+  const ShippingExpenses = 1.25;
 
   const totolPyment = cart.reduce(
     (total, item) => item.priceBook * item.Qt + total,
@@ -128,7 +128,7 @@ const page = () => {
                     {session.status === "unauthenticated" && (
                       <div className="flex justify-between items-center bg-red-50 px-4 py-2">
                         <h2 className="text-[15px] mdl:xl">
-                          مرحبا عزيز الطالب يمكن تسجيل الدخول من هنا{" "}
+                          مرحبا عزيزي الطالب يمكن تسجيل الدخول من هنا{" "}
                         </h2>
                         <Link
                           href="/login"
@@ -149,7 +149,7 @@ const page = () => {
                         معلومات الطالب
                       </h2>
                       <h3 className="text-xl mx-2 font-medium font-titleFont">
-                        الإسم:
+                        الاسم:
                         <span className="text-gray-600 ml-2 font-titleFont">
                           {addressClient.clientName}
                         </span>
@@ -200,7 +200,7 @@ const page = () => {
                       : " bg-gray-200 hover:bg-gray-200 text-gray-800"
                   } w-full text-gray-200 text-base font-medium h-10 rounded-md hover:text-white duration-300`}
                 >
-                  {loading ? <>loading...</> : <>أرسل الطلب </>}
+                  {loading ? <>loading...</> : <> أرسل الطلب </>}
                 </button>
               </div>
             </>

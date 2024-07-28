@@ -1,16 +1,16 @@
 import React from "react";
-import Service1 from "@/public/image/service/Service1.png";
-import Service2 from "@/public/image/service/Service2.png";
-import Service3 from "@/public/image/service/Service3.png";
+import Service1 from "@/public/image/service/Service1.webp";
+import Service2 from "@/public/image/service/Service2.webp";
+import Service3 from "@/public/image/service/Service3.webp";
 
-import ServiceMain from "@/public/image/service/ServiceMain.png";
-import ServiceSmall from "@/public/image/service/ServiceSmall.png";
-import bookAll from "@/public/image/service/bookAll.png";
+import ServiceMain from "@/public/image/service/ServiceMain.webp";
+import ServiceSmall from "@/public/image/service/ServiceSmall.webp";
+import bookAll from "@/public/image/service/bookAll.webp";
 
 import Image from "next/image";
 const Service = () => {
   return (
-    <section className=" relative screenPadding py-8 bg-indigo-200 overflow-x-hidden">
+    <section className=" relative screenPadding py-8 bg-indigo-400 overflow-hidden">
       <div className="sml:hidden absolute top-8 left-4 -z-10 max-h-[240px] w-[320px]">
         <Image
           src={bookAll}

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 const GlrySerie = ({ Serie }) => {
-  const [mainImg, setMainImg] = useState(Serie?.bookCover?.url);
+  const [mainImg, setMainImg] = useState(Serie?.bookCover);
 
   return (
     <div className=" m-2 w-full mdl:w-1/2 max-w-[400px]">
@@ -12,27 +12,27 @@ const GlrySerie = ({ Serie }) => {
       </div>
       <div className="flex justify-center items-center flex-wrap gap-2 m-2">
         <Image
-          src={Serie.bookCover.url}
+          src={Serie.bookCover}
           alt=""
           quality={100}
           width={70}
           height={100}
           className="bg-red-200 cursor-pointer"
           onClick={() => {
-            setMainImg(Serie.bookCover.url);
+            setMainImg(Serie.bookCover);
           }}
         />
         {Serie?.contentBook?.map((elm, ind) => (
           <div key={ind} className="">
             <Image
-              src={elm.url}
-              alt=""
+              src={elm}
+              alt={elm}
               quality={60}
               width={70}
               height={100}
               className="bg-red-200 cursor-pointer"
               onClick={() => {
-                setMainImg(elm.url);
+                setMainImg(elm);
               }}
             />
           </div>

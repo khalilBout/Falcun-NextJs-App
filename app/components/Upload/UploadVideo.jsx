@@ -1,10 +1,62 @@
-import React from "react";
-import { CldUploadWidget } from "next-cloudinary";
+import React, { useState } from "react";
+
+// import { CldUploadWidget } from "next-cloudinary";
 
 const UploadVideo = ({ setUrlVideo }) => {
+  const [file, setFile] = useState(null);
+  const [uploading, setUploading] = useState(false);
+
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!file) return;
+
+    setUploading(true);
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await fetch("/api/uploadVidoe", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        const getUrl = `https://bravo-web-site.s3.eu-north-1.amazonaws.com/${data.fileName}`;
+        setUrlVideo(getUrl);
+        setFile(null);
+      }
+      setUploading(false);
+    } catch (error) {
+      console.log(error);
+      setUploading(false);
+    }
+  };
+
   return (
-    <div className="w-full h-full rounded-md border border-gray-200 flex justify-center items-center ">
-      <CldUploadWidget
+    <div className="w-[280px] h-[360px] rounded-md flex justify-center items-center ">
+      <form onSubmit={handleSubmit}>
+        <input type="file" accept="video/*" onChange={handleFileChange} />
+        <button
+          type="submit"
+          className=" bg-green-400 my-3 px-2 py-1 rounded-lg cursor-pointer"
+          disabled={!file || uploading}
+        >
+          {uploading ? "جاري الرفع ..." : "رفع الفيديو"}
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default UploadVideo;
+
+{
+  /* <CldUploadWidget
         uploadPreset="BravoApp"
         onSuccess={(result, { widget }) => {
           console.log("res:", result?.info);
@@ -29,44 +81,5 @@ const UploadVideo = ({ setUrlVideo }) => {
             </button>
           );
         }}
-      </CldUploadWidget>
-    </div>
-  );
-};
-
-export default UploadVideo;
-
-// "use client";
-// import React from "react";
-// import { CldUploadWidget } from "next-cloudinary";
-// import { CldUploadButton } from "next-cloudinary";
-
-// const UploadVideo = ({ setUrlVideo }) => {
-//   const handelUpload = (result) => {
-//     const info = result.info;
-//     // const publicId = result.public_id;
-//     if ("secure_url" in info && "public_id" in info) {
-//       // data of image
-//       const url = info.secure_url;
-//       const public_id = info.public_id;
-
-//       setUrlVideo({
-//         url,
-//         public_id,
-//       });
-//     }
-//   };
-//   return (
-//     <div className="w-[220px] h-[120px] rounded-md border border-gray-600">
-//       <CldUploadButton
-//         uploadPreset="BravoApp"
-//         className="w-full h-full py-2 px-1 text-[14px] rounded-xl bg-slate-100 cursor-pointer"
-//         onUpload={handelUpload}
-//       >
-//         رفع الفيديو
-//       </CldUploadButton>
-//     </div>
-//   );
-// };
-
-// export default UploadVideo;
+      </CldUploadWidget> */
+}

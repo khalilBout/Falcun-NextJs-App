@@ -9,7 +9,7 @@ const BookCard = ({ item }) => {
       className="m-1 max-w-[220px] bg-slate-100 rounded-xl p-2 "
     >
       <div className=" w-[220] bg-slate-900 rounded-xl">
-        <Image width={220} height={380} src={item.bookCover.url} />
+        <Image width={220} height={380} src={item.bookCover} />
       </div>
 
       <div className="p-2 w-full font-bold">

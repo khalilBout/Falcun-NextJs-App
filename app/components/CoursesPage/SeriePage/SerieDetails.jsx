@@ -27,7 +27,7 @@ const SerieDetails = ({ Serie }) => {
     idBook: Serie._id,
     titleBook: Serie.title,
     priceBook: Serie.price,
-    bookCover: Serie.bookCover.url,
+    bookCover: Serie.bookCover,
     season: "",
     level: "",
     Qt: Qt,

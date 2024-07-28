@@ -5,7 +5,8 @@ export const getLevels = async () => {
   try {
     connectDB();
     const count = await Level.find().count();
-    const allLevels = await Level.find();
+    const allLevel = await Level.find();
+    const allLevels = JSON.parse(JSON.stringify(allLevel));
 
     return { count, allLevels };
   } catch (err) {

@@ -21,9 +21,9 @@ const pageVideo = async ({ searchParams }) => {
         </div>
         {/* <Pagination count={count} /> */}
       </div>
-      <div className="w-full">
+      <div className="w-full overflow-hidden flex justify-center ">
         {allVideos.length > 0 ? (
-          <DisplayVideo allVideos={allVideos} />
+          <DisplayVideo allVideos={allVideos} levels={levels} />
         ) : (
           <EmptyView />
         )}

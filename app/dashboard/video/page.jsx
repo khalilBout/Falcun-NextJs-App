@@ -6,7 +6,7 @@ import SelectSeason from "@/app/components/dashboardPage/SelectSeason";
 import Pagination from "@/app/components//dashboardPage/Pagination";
 
 // images
-import empty from "@/public/image/empty.png";
+import empty from "@/public/image/empty.webp";
 import Image from "next/image";
 import EmptyView from "@/app/components/CoursesPage/EmptyView";
 

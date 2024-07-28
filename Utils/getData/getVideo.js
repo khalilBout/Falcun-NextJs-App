@@ -84,6 +84,7 @@ export const getVideoById = async (id) => {
       method: "GET",
       cache: "no-store",
     });
+    // const data = JSON.parse(JSON.stringify(res));
 
     const data = await res.json();
     return data;

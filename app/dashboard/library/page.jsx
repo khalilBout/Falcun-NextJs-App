@@ -4,7 +4,7 @@ import TableAllLibrys from "@/app/components/dashboardPage/TableAllLibrys";
 import Pagination from "@/app/components/dashboardPage/Pagination";
 
 // images
-import empty from "@/public/image/empty.png";
+import empty from "@/public/image/empty.webp";
 import Image from "next/image";
 
 const pageBook = async ({ searchParams }) => {

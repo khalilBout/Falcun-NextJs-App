@@ -59,14 +59,14 @@ const FormAddAddress = ({ setAddressClient }) => {
             {/* client name */}
             <div className="flex flex-col gap-.5">
               <p className="font-titleFont text-base font-semibold text-gray-600">
-                الإسم
+                الاسم
               </p>
               <input
                 onChange={handelChangeForm}
                 name="clientName"
                 className="w-full h-8 placeholder:text-sm placeholder:tracking-wide px-4 text-base font-medium placeholder:font-normal rounded-md border-[1px] border-gray-400 outline-none"
                 type="text"
-                placeholder="الإسم ..."
+                placeholder="الاسم ..."
               />
               {errClientName && (
                 <p className="text-sm text-red-500 font-titleFont font-semibold px-4">

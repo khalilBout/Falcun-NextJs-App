@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import img1 from "@/public/image/vector/vic1.png";
-import img2 from "@/public/image/vector/vic2.png";
-import img3 from "@/public/image/vector/vic3.png";
-import allBook from "@/public/image/vector/allBook.png";
-import video from "@/public/image/vector/video.png";
-import series from "@/public/image/vector/series.png";
+import img1 from "@/public/image/vector/vic1.webp";
+import img2 from "@/public/image/vector/vic2.webp";
+import img3 from "@/public/image/vector/vic3.webp";
+import allBook from "@/public/image/vector/allBook.webp";
+import video from "@/public/image/vector/video.webp";
+import series from "@/public/image/vector/series.webp";
 
 export default function Courses() {
   return (
@@ -70,7 +70,7 @@ export default function Courses() {
             href="/courses/series"
             className="w-[300px] h-[200px] pb-8 flex justify-center items-end font-TitleFont text-2xl font-semibold  rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500"
           >
-            سلاسل التأسيس
+            سلسلة التأسيس
           </Link>
           <Image
             src={img3}

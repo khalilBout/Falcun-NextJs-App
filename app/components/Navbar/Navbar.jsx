@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import MobileLink from "./MobileLink ";
 import Image from "next/image";
 
-import text from "@/public/image/logo/text.png";
+import text from "@/public/image/logo/text.webp";
 const Navbar = () => {
   const dataLink = [
     {

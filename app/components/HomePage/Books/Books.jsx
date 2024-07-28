@@ -1,23 +1,23 @@
 import React from "react";
-import bookLevel1 from "@/public/image/books/book-level-1.png";
-import bookLevel2 from "@/public/image/books/book-level-2.png";
-import bookLevel3 from "@/public/image/books/book-level-3.png";
-import bookLevel4 from "@/public/image/books/book-level-3.png";
-import book1 from "@/public/image/cover/cov1.png";
-import book2 from "@/public/image/cover/cov2.png";
-import book3 from "@/public/image/cover/cov3.png";
-import book4 from "@/public/image/cover/cov4.png";
-import book5 from "@/public/image/cover/cov5.png";
+import bookLevel1 from "@/public/image/books/book-level-1.webp";
+import bookLevel2 from "@/public/image/books/book-level-2.webp";
+import bookLevel3 from "@/public/image/books/book-level-1.webp";
+import bookLevel4 from "@/public/image/books/book-level-3.webp";
+import book1 from "@/public/image/cover/cov1.webp";
+import book2 from "@/public/image/cover/cov2.webp";
+import book3 from "@/public/image/cover/cov3.webp";
+import book4 from "@/public/image/cover/cov4.webp";
+import book5 from "@/public/image/cover/cov5.webp";
 
-import fly from "@/public/image/books/fly.png";
-import bg from "@/public/image/books/bg.png";
-import bgT from "@/public/image/books/bgT.png";
-import cloud from "@/public/image/books/cloud2.png";
+import fly from "@/public/image/books/fly.webp";
+import bg from "@/public/image/books/bg.webp";
+import bgT from "@/public/image/books/bgT.webp";
+import cloud from "@/public/image/books/cloud2.webp";
 
 import Image from "next/image";
 const Books = () => {
   return (
-    <section className=" relative screenPadding py-8 overflow-x-hidden">
+    <section className=" relative screenPadding py-8 overflow-hidden">
       <div className="sml:hidden absolute top-4 left-2 -z-10 max-h-[320px] w-[160px]">
         <Image
           src={cloud}

@@ -5,9 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import Slider from "react-slick";
 
-import sct1 from "@/public/image/slider/sct-1.png";
-import sct2 from "@/public/image/slider/sct-2.png";
-import sct3 from "@/public/image/slider/sct-3.png";
+import sct1 from "@/public/image/slider/sct-1.webp";
+import sct2 from "@/public/image/slider/sct-2.webp";
+import sct3 from "@/public/image/slider/sct-3.webp";
 
 const SliderHome = () => {
   const [dotActive, setDocActive] = useState(0);
@@ -104,19 +104,19 @@ const SliderHome = () => {
   const dataHeroSection = [
     {
       title: "مذكرات مدرسية متكاملة",
-      desc: "احصل على مذكرات مدرسية شاملة تساعد الأطفال على متابعة دروسهم وتحقيق أفضل النتائج. محتوى منظم وسهل الاستخدام لكل مستوى.",
+      desc: "احصل على مذكرات مدرسية شاملة تساعد الأطفال على متابعة دروسهم وتحقيق أفضل النتائج محتوى منظم وسهل الاستخدام لكل مستوى.",
       img: sct1,
       url: "/courses/books",
     },
     {
       title: " سلسلة التأسيس",
-      desc: "ابدأ رحلة التعلم مع سلسلة التأسيس المصممة بعناية لتأسيس مفاهيم قوية في المواد الأساسية للأطفال. تعلم من البداية بأسلوب شيق",
+      desc: "ابدأ رحلة التعلم مع سلسلة التأسيس المصممة بعناية لتأسيس في القراءة في مادة اللغة الانجليزية  ",
       img: sct2,
       url: "/courses/videos",
     },
     {
       title: "فيديوهات تعليمية",
-      desc: "احصل على مذكرات مدرسية شاملة تساعد الأطفال على متابعة دروسهم وتحقيق أفضل النتائج. محتوى منظم وسهل الاستخدام لكل مستوى.",
+      desc: "مجموعة من الفيديوهات التعليمية التي تساعد الأطفال على فهم الدروس بسهولة وفعالية ، وتعزز من مستواهم التعليمي في مادة اللغة الانجليزية  ",
       img: sct3,
       url: "/courses/series",
     },

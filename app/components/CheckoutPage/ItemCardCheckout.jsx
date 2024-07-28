@@ -2,7 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import { ImCross } from "react-icons/im";
-import noImg from "@/public/image/empty.png";
+import noImg from "@/public/image/empty.webp";
 import { removeItem } from "@/redux/CartSlice";
 import { useDispatch } from "react-redux";
 import { HiOutlineTrash } from "react-icons/hi";

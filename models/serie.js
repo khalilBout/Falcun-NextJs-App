@@ -20,15 +20,10 @@ const SerieSchema = new mongoose.Schema({
   },
 
   bookCover: {
-    url: { type: String, required: [true] },
-    public_id: String,
+    type: String,
+    required: [true],
   },
-  contentBook: [
-    {
-      url: { type: String, required: [true] },
-      public_id: String,
-    },
-  ],
+  contentBook: [{ type: String, required: [true] }],
   createdAt: {
     type: Date,
     default: Date.now,

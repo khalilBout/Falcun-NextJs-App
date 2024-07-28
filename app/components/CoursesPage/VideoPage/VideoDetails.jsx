@@ -2,7 +2,8 @@
 import React from "react";
 import { CldVideoPlayer } from "next-cloudinary";
 import "next-cloudinary/dist/cld-video-player.css";
-import AddComment from "@/app/components/CoursesPage/VideoPage/AddComment ";
+
+// import AddComment from "@/app/components/CoursesPage/VideoPage/AddComment ";
 
 import { FcLike } from "react-icons/fc";
 import { FaComment } from "react-icons/fa";
@@ -15,20 +16,10 @@ const VideoDetails = ({ video }) => {
   return (
     <div className="p-2 mdl:p-4 w-full flex flex-col mdl:flex-row gap-4 justify-around mdl:item-center ">
       {/* video Player  */}
-      <div className="w-full m-2 mdl:w-1/2 h-auto -z-10">
+      <div className="w-full m-2 mdl:w-1/2 h-auto ">
         <div className="w-full max-w-[400px] flex justify-center items-center">
-          {/* <CldVideoPlayer
-            width="330"
-            height="600"
-            src={video.urlVideo.public_id}
-          /> */}
-
-          {video?.urlVideo ? (
-            <CldVideoPlayer
-              width="330"
-              height="600"
-              src={video?.urlVideo?.public_id}
-            />
+          {video.urlVideo ? (
+            <video src={video.urlVideo} controls style={{ width: "330px" }} />
           ) : (
             <iframe
               width="330"
@@ -73,6 +64,19 @@ const VideoDetails = ({ video }) => {
             <h2 className="py-1 font-TitleFont ">
               <span className="text-gray-900">{video.TheClass}</span>
             </h2>
+          )}
+
+          {video.unitList && (
+            <div className=" flex gap-2">
+              {video.unitList?.map((elm, ind) => (
+                <span
+                  key={ind}
+                  className="py-1 px-2 bg-red-50  rounded-md font-TitleFont text-gray-900"
+                >
+                  {elm}
+                </span>
+              ))}
+            </div>
           )}
 
           {video.description && (

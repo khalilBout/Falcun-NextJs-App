@@ -2,7 +2,6 @@ import React from "react";
 import DeleteLev from "@/app/components/dashboardPage/Levels/DeleteLev";
 
 const levelsTable = ({ allLevels }) => {
-  console.log("data level new:", allLevels);
   return (
     <>
       <table

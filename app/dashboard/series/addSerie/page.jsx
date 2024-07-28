@@ -65,22 +65,22 @@ const Page = () => {
           <div className="">
             <FormAddSerie form={form} setForm={setForm} />
           </div>
-          <div className="flex gap-3 m-1">
-            <div className="w-[140px] h-[220px] border-1 rounded-lg  flex flex-col justify-center items-center bg-green-100">
+          <div className="flex flex-wrap gap-3 m-1">
+            <div className=" border-1 rounded-lg  flex flex-col justify-center items-center bg-green-100">
               {bookCover === "" ? (
                 <UploadBookImg setBookCover={setBookCover} />
               ) : (
-                <div className="w-[140px] h-[220px]flex justify-center items-center">
+                <div className="flex justify-center items-center">
                   <img
-                    src={bookCover.url}
-                    alt={bookCover.url}
+                    src={bookCover}
+                    alt={bookCover}
                     className="rounded-lg w-[140px] h-[220px] object-fill "
                   />
                 </div>
               )}
             </div>
 
-            <div className="w-[140px] h-[220px] bg-blue-100 rounded-md">
+            <div className=" bg-blue-100 rounded-md">
               <BoxImage
                 contentBook={contentBook}
                 setContentBook={setContentBook}

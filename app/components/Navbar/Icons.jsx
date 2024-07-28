@@ -11,7 +11,7 @@ import { FcManager } from "react-icons/fc";
 import CartBooksShop from "@/app/components/Navbar/CartBooksShop";
 import { signOut } from "next-auth/react";
 import Image from "next/image";
-import bookIcon from "@/public/image/bookIcon.png";
+import bookIcon from "@/public/image/bookIcon.webp";
 
 const Icons = () => {
   const session = useSession();

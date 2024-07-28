@@ -1,13 +1,13 @@
 import React from "react";
-import AboutImg1 from "@/public/image/about/about1.png";
-import AboutImg2 from "@/public/image/about/about2.png";
-import AboutImg3 from "@/public/image/about/about3.png";
-import bgMb from "@/public/image/about/bgMb.png";
-import bgSkyMb from "@/public/image/about/bgSkyBm.png";
+import AboutImg1 from "@/public/image/about/about1.webp";
+import AboutImg2 from "@/public/image/about/about2.webp";
+import AboutImg3 from "@/public/image/about/about3.webp";
+import bgMb from "@/public/image/about/bgMb.webp";
+import bgSkyMb from "@/public/image/about/bgSkyBm.webp";
 import Image from "next/image";
 const About = () => {
   return (
-    <section className=" relative mb-8 bg-green-300/20 screenPadding  py-8 overflow-x-hidden ">
+    <section className=" relative mb-8 bg-green-300/20 screenPadding  py-8 overflow-hidden ">
       <div className="sml:hidden absolute -top-5 left-0 -z-10 max-h-[260px] w-[430px]">
         <Image
           src={bgSkyMb}
@@ -23,7 +23,7 @@ const About = () => {
         من نحن ...؟
       </h1>
       <h3 className="py-4 text-blue-700 font-bold text-center text-[18px] sml:text-[20px] mdl:text-[26px] font-TitleFont ">
-        مذكرات برافو توفر تجربة تعلم شاملة و ممتعة من خالل ثالثة مكونا رئيسية:
+        مذكرات برافو توفر تجربة تعلم شاملة و ممتعة من خلال ثلاثة مكونات رئيسية:
       </h3>
 
       <div className="">
@@ -37,7 +37,7 @@ const About = () => {
                 تساعد الأطفال على متابعة دروسهم و تنظيم معلوماتهم بشكل فعال.حيث
                 أننا نشرح القواعد بطريقة مبسطة و ممتعة و نوفر حوارات عملية تساعد
                 الأطفال على فهم كيفية استخدام اللغة في مواقف حياتية حقيقية. كما
-                نقدم نماذج اختبارات متميزة مواكبة لألطر التعليمية المعتمدة
+                نقدم نماذج اختبارات متميزة مواكبة للأطر التعليمية المعتمدة.
               </span>
             </p>
           </div>
@@ -71,8 +71,8 @@ const About = () => {
               </span>
               <span className="text-cyan-900 font-bold">
                 تقدم شروحات واضحة و مبسطة يمكن مشاهدتها لتعزيز فهم المحتوى كما
-                أنها تجعلعملية التعلم مسلية و جذابة. علما أن هذه الفيديوهات
-                مقدمة مجنا من فريق "برافو"
+                أنها تجعل عملية التعلم مسلية و جذابة. علما أن هذه الفيديوهات
+                مقدمة مجاناً من فريق "برافو".
               </span>
             </p>
           </div>

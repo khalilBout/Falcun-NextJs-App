@@ -1,33 +1,30 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import PlyerVideo from "@/app/components/CoursesPage/VideoPage/PlyerVideo";
+// import PlyerVideo from "@/app/components/CoursesPage/VideoPage/PlyerVideo";
+import Image from "next/image";
+import { FaCirclePlay } from "react-icons/fa6";
 
 const VideoCard = ({ item }) => {
   const urlVideo = item?.urlVideo;
   return (
-    <div className="m-1 w-[220px] bg-slate-100 rounded-xl p-2 ">
-      <div className=" w-[215] h-[350px] bg-slate-900 rounded-xl">
-        {urlVideo && <PlyerVideo urlVideo={urlVideo} />}
-
-        {item?.urlYoutube && (
-          <iframe
-            width="215"
-            height="350px"
-            src={item.urlYoutube}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        )}
+    <Link
+      className="m-1 max-w-[220px] bg-slate-100 rounded-xl p-2 "
+      href={`/courses/videos/${item._id}`}
+    >
+      <div className=" relative w-[215] h-[280px] rounded-xl">
+        <Image
+          src={item.videoCover}
+          alt={item.title}
+          width={210}
+          height={280}
+        />
+        <div className="w-full h-full absolute top-0 right-0 left-0 bg-black/20 z-10 flex justify-center items-center">
+          <FaCirclePlay size={30} />
+        </div>
       </div>
 
-      <Link
-        className="p-2 w-full font-bold"
-        href={`/courses/videos/${item._id}`}
-      >
+      <div className="p-2 w-full font-bold">
         {/* text info  */}
         <div>
           <h2 className="py-1 text-[16px] font-TitleFont text-gray-900">
@@ -55,9 +52,15 @@ const VideoCard = ({ item }) => {
               {item.TheClass}
             </h2>
           )}
+          {/* {item.unitList &&
+            item.unitList.map((elm, ind) => (
+              <h2 className=" px-2 py-1 text-[12px] font-TitleFont text-black bg-red-100 rounded-md m-1 ">
+                {elm}
+              </h2>
+            ))} */}
         </div>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 

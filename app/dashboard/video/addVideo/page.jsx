@@ -2,8 +2,11 @@
 import React, { useState } from "react";
 import FormAddVideo from "@/Utils/Forms/FormAddVideo";
 import UploadVideo from "@/app/components/Upload/UploadVideo";
+import UploadVideoCover from "@/app/components/Upload/UploadVideoCover";
+// import NewUploader from "@/app/components/Upload/NewUploader";
 import { useRouter } from "next/navigation";
 import Loading from "@/app/components/Loading/Loading";
+
 // import toast from "react-hot-toast";
 
 const Page = () => {
@@ -19,13 +22,17 @@ const Page = () => {
   const [levels, setLevels] = useState("");
   const [pending, setPending] = useState(false);
   const [urlVideo, setUrlVideo] = useState("");
+  const [videoCover, setVideoCover] = useState("");
   const [levelList, setLevelList] = useState([]);
+  const [unitList, setUnitList] = useState([]);
   const levelObject = levelList?.find((elm) => elm.title === levels);
   // const levelsInf = { levelId: levelObject._id };
   // add product to database
   const dataVideo = {
     ...form,
     urlVideo,
+    unitList,
+    videoCover,
     levelsInf: {
       levelID: levelObject?._id,
       levelTitle: levelObject?.title,
@@ -36,7 +43,6 @@ const Page = () => {
 
     try {
       setPending(true);
-      console.log("data video:", dataVideo);
       const res = await fetch("/api/admin/video", {
         method: "POST",
         body: JSON.stringify(dataVideo),
@@ -51,7 +57,7 @@ const Page = () => {
           TheClass: "",
         });
         setUrlVideo("");
-        setLevels();
+        setUnitList([]), setLevels();
         router.replace("/dashboard/video");
         router.refresh();
       }
@@ -80,21 +86,35 @@ const Page = () => {
               setLevels={setLevels}
               levelList={levelList}
               setLevelList={setLevelList}
+              unitList={unitList}
+              setUnitList={setUnitList}
             />
           </div>
-          <div className="m-4 p-2 border-1 rounded-lg h-[120px] flex flex-col justify-center items-center gap-4 bg-green-100">
-            {urlVideo === "" ? (
-              <UploadVideo setUrlVideo={setUrlVideo} />
-            ) : (
-              <div className="w-[180px] h-[220px] flex justify-center items-center">
-                <h1 className="font-TitleFont text-xl font-medium text-red-700">
-                  {" "}
-                  تم رفع الفيديو بنجاح{" "}
-                </h1>
-              </div>
-            )}
-          </div>
+          <div className="mdl:flex gap-2">
+            <div className="mdl:w-1/2 rounded-lg  flex flex-col justify-center items-center bg-green-100">
+              {videoCover === "" ? (
+                <UploadVideoCover setVideoCover={setVideoCover} />
+              ) : (
+                <div className=" flex justify-center items-center">
+                  <img
+                    src={videoCover}
+                    alt="videoCover"
+                    className="rounded-lg w-[140px] h-[220px] object-fill "
+                  />
+                </div>
+              )}
+            </div>
 
+            <div className="mdl:w-1/2 p-2 border-1 rounded-lg flex flex-col justify-center items-center gap-4 bg-green-200">
+              {urlVideo === "" ? (
+                <UploadVideo setUrlVideo={setUrlVideo} />
+              ) : (
+                <div className=" flex justify-center items-center">
+                  <video src={urlVideo} controls style={{ width: "150px" }} />
+                </div>
+              )}
+            </div>
+          </div>
           <div className=" flex justify-center items-center rounded border text-sm h-[40px] bg-blue-400 text-gray-800">
             <button className="text-[16px] w-full h-full" onClick={addVideo}>
               {pending ? "Sending..." : "إضافة الفيديو"}

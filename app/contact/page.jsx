@@ -2,8 +2,8 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import FormContact from "@/app/components/contactPage/FormContact";
-import contactImg from "@/public/image/contactImg.png";
-import contactImg2 from "@/public/image/contactImg2.png";
+import contactImg from "@/public/image/contactImg.webp";
+import contactImg2 from "@/public/image/contactImg2.webp";
 
 const page = () => {
   const [addressClient, setAddressClient] = useState();
@@ -29,7 +29,7 @@ const page = () => {
           المكتبات التي نتعامل معها
         </h1>
         <h3 className="text-[14px] sml:text-xl mdl:text-2xl font-semibold  text-center text-gray-800">
-          يمكنكم أيضا إقتناء مذكراتنا من المكتبات التالية
+          يمكنكم أيضا اقتناء مذكراتنا من المكتبات التالية
         </h3>
         <div className="w-full p-4 flex flex-col mdl:flex-row gap-2 flex-wrap ">
           {Lib?.map((elm, ind) => (
@@ -53,10 +53,10 @@ const page = () => {
       <div className="flex flex-col mdl:flex-row ">
         <div className="w-full flex flex-col font-TitleFont m-4 py-2">
           <h1 className="text-2xl sml:text-3xl font-semibold py-1">
-            معلومات الإتصال
+            معلومات الاتصال
           </h1>
           <h3 className="text-[14px] pb-2 sml:text-xl mdl:text-2xl font-semibold  text-center text-gray-800">
-            جاهزون دائما لتلقى أرائكم وإستفساراتكم
+            جاهزون دائما لتلقى آرائكم واستفساراتكم
           </h3>
           <div className="px-2 text-[14px] sml:text-xl">
             <h2 className=" font-medium text-gray-700">الهاتف - الواتساب : </h2>
@@ -67,7 +67,7 @@ const page = () => {
           <div className="px-2 text-[14px] sml:text-xl flex justify-start items-start flex-wrap">
             <h2 className=" font-medium text-gray-700">
               {" "}
-              البريد الإلكتروني :{" "}
+              البريد الالكتروني :{" "}
             </h2>
             <h2 className=" font-medium text-gray-800">
               {" "}

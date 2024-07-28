@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
-import logo from "@/public/image/logo/logo2.png";
+import logo from "@/public/image/logo/logo2.webp";
 const Logo = () => {
   return (
     <motion.div

@@ -6,7 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
 import ItemCard from "@/app/components/Navbar/ItemCard";
 import Image from "next/image";
-// import { emptyCart } from "@/public/image/empty.png";
+// import { emptyCart } from "@/public/image/empty.webp";
 
 const CartBooksShop = () => {
   const [showCard, setShowCard] = useState(false);

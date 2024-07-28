@@ -35,13 +35,13 @@ const BookSchema = new mongoose.Schema({
     },
   },
   bookCover: {
-    url: { type: String, required: [true] },
-    public_id: String,
+    type: String,
+    required: [true],
   },
   contentBook: [
     {
-      url: { type: String, required: [true] },
-      public_id: String,
+      type: String,
+      required: [false],
     },
   ],
   createdAt: {

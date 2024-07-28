@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import AdminImg from "@/public/image/admin.png";
+import AdminImg from "@/public/image/admin.webp";
 import { signOut } from "next-auth/react";
 import Image from "next/image";
 

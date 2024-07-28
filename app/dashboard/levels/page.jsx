@@ -3,21 +3,22 @@ import { getLevels } from "@/Utils/getData/getLevels";
 import LevelsTable from "@/app/components/dashboardPage/Levels/LevelsTable";
 
 // images
-import empty from "@/public/image/empty.png";
+import empty from "@/public/image/empty.webp";
 import Image from "next/image";
 
 const pageLevel = async () => {
-  let allLevels = [];
-  try {
-    const response = await getLevels();
-    if (response && response.allLevels) {
-      allLevels = response.allLevels;
-    } else {
-      console.error("No levels data found");
-    }
-  } catch (error) {
-    console.error("Failed to fetch levels:", error.message);
-  }
+  // let allLevels = [];
+  // try {
+  //   const response = await getLevels();
+  //   if (response && response.allLevels) {
+  //     allLevels = response.allLevels;
+  //   } else {
+  //     console.error("No levels data found");
+  //   }
+  // } catch (error) {
+  //   console.error("Failed to fetch levels:", error.message);
+  // }
+  const { allLevels, count } = await getLevels();
 
   return (
     <div className="w-full font-bodyFont">
@@ -57,7 +58,7 @@ export default pageLevel;
 // import LevelsTable from "@/app/components/dashboardPage/Levels/LevelsTable";
 
 // // images
-// import empty from "@/public/image/empty.png";
+// import empty from "@/public/image/empty.webp";
 // import Image from "next/image";
 
 // const pageLevel = async () => {

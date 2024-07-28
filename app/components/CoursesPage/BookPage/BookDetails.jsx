@@ -12,7 +12,6 @@ const BookDetails = ({ book }) => {
   const cart = useSelector((state) => state.Cart.cartBooks);
   const dispatch = useDispatch();
   const [Qt, setQt] = useState(1);
-  console.log("Qt:", Qt);
 
   const decrement = () => {
     if (Qt > 1) {
@@ -28,7 +27,7 @@ const BookDetails = ({ book }) => {
     idBook: book._id,
     titleBook: book.title,
     priceBook: book.price,
-    bookCover: book.bookCover.url,
+    bookCover: book.bookCover,
     season: book.season,
     level: book.levelsInf.levelTitle,
     Qt: Qt,
@@ -42,15 +41,15 @@ const BookDetails = ({ book }) => {
         // dispatch(addToBasket(bookToCart));
         // toast.error("تم إضافة نسخة أخرى");
         alert(
-          "لقد قمت بإضافة هذه المذكرة ، إن كنت ترغب في نسخ أكثر يمكن زيادة الكمية عند تأكيد الشراء"
+          "لقد قمت بإضافة هذه المذكرة ، إن كنت ترغب في نسخ اكثر يمكن زيادة الكمية عند تاكيد الشراء"
         );
       } else {
         dispatch(addToBasket(bookToCart));
-        toast.success("تمت إضافة الكتاب بنجاح ");
+        toast.success("تمت اضافة المذكرة بنجاح ");
       }
     } else {
       dispatch(addToBasket(bookToCart));
-      toast.success("تمت إضافة الكتاب بنجاح ");
+      toast.success("تمت اضافة المذكرة بنجاح ");
     }
     // dispatch(addToBasket(itemToCart));
     // toast.success("Successfully Product add..");
@@ -143,8 +142,8 @@ const BookDetails = ({ book }) => {
           <p className=" text-center font-TitleFont text-[15px] mdl:text-[17px] ">
             {" "}
             عزيزي الطالب يمكنك طلب المذكرة مباشرة من هنا ، كما نعلمك أن هذه
-            المذكرات متوفر لدى مجموعة من المكتبات يمكنك الإطلاع عليها من خلال
-            الزر ادناه ، أو الإتصال بنا مباشرة على الواتساب{" "}
+            المذكرات متوفرة لدى مجموعة من المكتبات يمكنك الاطلاع عليها من خلال
+            الزر أدناه ، أو الاتصال بنا مباشرة على الواتساب{" "}
           </p>
           <div className="flex justify-end items-center gap-4 font-TitleFont text-[18px] font-semibold mt-2">
             <Link

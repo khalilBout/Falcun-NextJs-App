@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { AiOutlineDelete } from "react-icons/ai";
 
 const FormAddVideo = ({
   form,
@@ -8,6 +9,8 @@ const FormAddVideo = ({
   setLevels,
   levelList,
   setLevelList,
+  unitList,
+  setUnitList,
 }) => {
   useEffect(() => {
     const fetchLevels = async () => {
@@ -35,6 +38,30 @@ const FormAddVideo = ({
   const ListClass = levelList?.find((elm) => elm.title === levels);
 
   const listSeason = ["season-1", "season-2"];
+  const unitData = [
+    "الوحدة-01",
+    "الوحدة-02",
+    "الوحدة-03",
+    "الوحدة-04",
+    "الوحدة-05",
+    "الوحدة-06",
+    "الوحدة-07",
+    "الوحدة-08",
+    "الوحدة-09",
+    "الوحدة-10",
+  ];
+  const addUnitToList = (unit) => {
+    // e.preventDefault();
+    // if (dataClass.name !== "") {
+    setUnitList((prev) => [...prev, unit]);
+    // setClassName("");
+  };
+  const deleteUnit = (val) => {
+    const newList = unitList.filter((elm) => elm !== val);
+    setUnitList(newList);
+  };
+  console.log("unit:", unitList);
+
   return (
     <form>
       <div className="grid lg:grid-cols-2 gap-2 mx-2 ">
@@ -94,6 +121,40 @@ const FormAddVideo = ({
             </option>
           ))}
         </select>
+
+        <select
+          className=" h-[40px] border-[1px] rounded-lg focus:border-pink-200 px-3 focus:border-2 outline-none m-1 bg-blue-200"
+          name=""
+          // onChange={handelChange}
+          required
+        >
+          <option value="" className="text-gray-100 h-[40px]">
+            إختر الوحدة{" "}
+          </option>
+          {unitData?.map((elm, ind) => (
+            <option key={ind} value={elm} onClick={() => addUnitToList(elm)}>
+              {elm}
+            </option>
+          ))}
+        </select>
+        {unitList.length > 0 && (
+          <div className="flex gap-2">
+            {unitList.map((elm, ind) => (
+              <div
+                key={ind}
+                className=" flex justify-center items-center gap-2 px-2 py-1 bg-red-100 rounded-full"
+              >
+                <p className="text-[15px]  ">{elm}</p>
+                <button
+                  className="p-1 w-[10px] h-[10px] rounded-full bg-red-300 flex justify-center items-center "
+                  onClick={() => deleteUnit(elm)}
+                >
+                  <AiOutlineDelete size={16} />
+                </button>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
       <div className="m-2">
         <textarea

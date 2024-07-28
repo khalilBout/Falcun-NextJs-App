@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import logo from "@/public/image/logo/logo2.png";
+import logo from "@/public/image/logo/logo2.webp";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa6";
@@ -24,10 +24,10 @@ const Footer = () => {
             alt="Bravo Logo"
           />
           <p className="text-[16px] mdl:text-[18px] font-bodyFont font-semibold text-center px-2 mdl:px-4 text-slate-700">
-            بكل تفان نعمل على أن يكون "برافو" أكثر من مجرد كتاب ، بل شريكا داعما
-            في رحلة كل طفل نحو التفوق والإبداع. نهدف إلى دعم الأطفال في كل خطوة
-            من خطواتهم التعليمية، مع تقديم موارد تعليمية تلبي احتياجاتهم وتثير
-            شغفهم للتعلم.
+            بكل تفانٍ نعمل على أن يكون "برافو" أكثر من مجرد كتاب ، بل شريكاً
+            داعماً في رحلة كل طفل نحو التفوق والإبداع. نهدف إلى دعم الأطفال في
+            كل خطوة من خطواتهم التعليمية، مع تقديم موارد تعليمية تلبي احتياجاتهم
+            وتثير شغفهم للتعلم.
           </p>
         </div>
         {/* info section  */}

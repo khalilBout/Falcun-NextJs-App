@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import emptyCart from "@/public/image/empty.png";
+import emptyCart from "@/public/image/empty.webp";
 import { motion } from "framer-motion";
 import Link from "next/link";
 

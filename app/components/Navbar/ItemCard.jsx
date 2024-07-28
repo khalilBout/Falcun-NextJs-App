@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import noImg from "@/public/image/empty.png";
+import noImg from "@/public/image/empty.webp";
 import { removeItem, increaseCount, decreaseCount } from "@/redux/CartSlice";
 import { useDispatch } from "react-redux";
 import { HiOutlineTrash } from "react-icons/hi";

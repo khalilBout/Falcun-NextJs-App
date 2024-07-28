@@ -32,12 +32,20 @@ const VideoSchema = new mongoose.Schema({
     },
   },
   urlVideo: {
-    url: { type: String, required: [false] },
-    public_id: String,
-    thumbnail: String,
-    // required: [true],
+    type: String,
+    required: [false],
   },
   urlYoutube: { type: String, required: [false] },
+  unitList: [
+    {
+      type: String,
+      required: [true],
+    },
+  ],
+  videoCover: {
+    type: String,
+    required: [true],
+  },
   like: [
     {
       userID: {
@@ -52,7 +60,7 @@ const VideoSchema = new mongoose.Schema({
       userID: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
-        // required: [true],
+        required: [false],
       },
 
       bodyComment: { type: String, required: [true] },

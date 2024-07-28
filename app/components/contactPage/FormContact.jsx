@@ -68,7 +68,7 @@ const FormContact = () => {
       >
         <div className="px-2 py-4 flex flex-col justify-start ">
           <h1 className="text-center mb-6 font-bold text-xl mdl:text-2xl">
-            يسعد فريق برافو الإطلاع على ارائكم وإقتراحاتكم
+            يسعد فريق برافو الاطلاع على آرائكم واقراحاتكم
           </h1>
           <div className="flex flex-col gap-3">
             {/* client name */}

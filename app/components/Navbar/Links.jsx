@@ -6,7 +6,6 @@ import { isAction } from "@reduxjs/toolkit";
 
 const Links = ({ dataLink }) => {
   const pathName = usePathname();
-  console.log("pathName:", pathName);
   return (
     <motion.div
       initial={{ y: "-600px", opacity: 0 }}
