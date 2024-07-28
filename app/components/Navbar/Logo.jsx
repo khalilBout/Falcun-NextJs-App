@@ -9,10 +9,10 @@ const Logo = () => {
       initial={{ x: "600px", opacity: 0 }}
       animate={{ x: "0%", opacity: 1 }}
       transition={{ duration: 0.7 }}
-      className="h-full max-w-[100px] flex justify-start items-center overflow-hidden "
+      className="h-full max-w-[95px] flex justify-start items-center overflow-hidden "
     >
       <Image
-        width={200}
+        width={180}
         height="auto"
         // fill={true}
         src={logo}

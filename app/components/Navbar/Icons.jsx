@@ -10,8 +10,6 @@ import { TbLogout2 } from "react-icons/tb";
 import { FcManager } from "react-icons/fc";
 import CartBooksShop from "@/app/components/Navbar/CartBooksShop";
 import { signOut } from "next-auth/react";
-import Image from "next/image";
-import bookIcon from "@/public/image/bookIcon.webp";
 
 const Icons = () => {
   const session = useSession();
@@ -20,15 +18,15 @@ const Icons = () => {
   return (
     <>
       {session && session.status === "unauthenticated" && (
-        <ul className="flex justify-center items-center gap-4">
+        <ul className="flex justify-center items-center gap-2">
           <li>
             <Link href="/login" className=" cursor-pointer">
-              <IoPersonAdd className="text-thirdColor" size={24} />
+              <IoPersonAdd className="text-thirdColor" size={22} />
             </Link>
           </li>
 
           <li>
-            <CartBooksShop />
+            <CartBooksShop size={20} />
           </li>
         </ul>
       )}
@@ -39,7 +37,7 @@ const Icons = () => {
             <li>
               <Link
                 href="/dashboard"
-                className=" hidden mdl:block py-1 px-2 rounded-full bg-slate-100 font-TitleFont text-primeColor text-xl font-bold hover:bg-slate-300 cursor-pointer"
+                className=" hidden mdl:block py-1 px-1 rounded-full bg-slate-100 font-TitleFont text-primeColor text-xl font-bold hover:bg-slate-300 cursor-pointer"
               >
                 لوحة التحكم
               </Link>
@@ -47,16 +45,13 @@ const Icons = () => {
                 href="/dashboard"
                 className="block mdl:hidden cursor-pointer"
               >
-                <FcManager className="text-thirdColor" size={24} />
+                <FcManager className="text-thirdColor" size={22} />
               </Link>
             </li>
           ) : (
             <>
               <li>
                 <CartBooksShop size={20} />
-              </li>
-              <li>
-                <Image src={bookIcon} width={20} height={22} alt="icon" />
               </li>
             </>
           )}

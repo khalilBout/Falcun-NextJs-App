@@ -59,27 +59,27 @@ const MobileLink = ({ dataLink }) => {
     },
   };
   return (
-    <div className=" absolute -top-2 -left-2 z-50">
+    <div className="block sml:hidden absolute -top-2 -left-4 z-50">
       <div className="md:hidden m-2">
         {/* MENU BUTTON */}
         <button
-          className=" w-6 h-5 flex flex-col justify-between z-50 "
+          className=" w-5 h-5 flex flex-col justify-between z-50 "
           onClick={() => setOpen((prev) => !prev)}
         >
           <motion.div
             variants={topVariants}
             animate={open ? "opened" : "closed"}
-            className="w-6 h-1 bg-thirdColor rounded origin-left"
+            className="w-5 h-1 bg-thirdColor rounded origin-left"
           ></motion.div>
           <motion.div
             variants={centerVariants}
             animate={open ? "opened" : "closed"}
-            className="w-6 h-1 bg-thirdColor rounded"
+            className="w-5 h-1 bg-thirdColor rounded"
           ></motion.div>
           <motion.div
             variants={bottomVariants}
             animate={open ? "opened" : "closed"}
-            className="w-6 h-1 bg-thirdColor rounded origin-left"
+            className="w-5 h-1 bg-thirdColor rounded origin-left"
           ></motion.div>
         </button>
         {/* MENU LIST */}
