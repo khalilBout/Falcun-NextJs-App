@@ -50,12 +50,11 @@ const FormAddVideo = ({
     "الوحدة-09",
     "الوحدة-10",
   ];
-  const addUnitToList = (unit) => {
-    // e.preventDefault();
-    // if (dataClass.name !== "") {
-    setUnitList((prev) => [...prev, unit]);
-    // setClassName("");
+
+  const handelAddUnit = (elm) => {
+    setUnitList((prv) => [...prv, elm.target.value]);
   };
+
   const deleteUnit = (val) => {
     const newList = unitList.filter((elm) => elm !== val);
     setUnitList(newList);
@@ -116,8 +115,8 @@ const FormAddVideo = ({
             إختر القسم{" "}
           </option>
           {ListClass?.listClass?.map((elm, ind) => (
-            <option key={ind} value={elm.name}>
-              {elm.name}
+            <option key={ind} value={elm}>
+              {elm}
             </option>
           ))}
         </select>
@@ -125,21 +124,21 @@ const FormAddVideo = ({
         <select
           className=" h-[40px] border-[1px] rounded-lg focus:border-pink-200 px-3 focus:border-2 outline-none m-1 bg-blue-200"
           name=""
-          // onChange={handelChange}
+          onChange={handelAddUnit}
           required
         >
           <option value="" className="text-gray-100 h-[40px]">
             إختر الوحدة{" "}
           </option>
           {unitData?.map((elm, ind) => (
-            <option key={ind} value={elm} onClick={() => addUnitToList(elm)}>
+            <option key={ind} value={elm}>
               {elm}
             </option>
           ))}
         </select>
-        {unitList.length > 0 && (
+        {unitList?.length > 0 && (
           <div className="flex gap-2">
-            {unitList.map((elm, ind) => (
+            {unitList?.map((elm, ind) => (
               <div
                 key={ind}
                 className=" flex justify-center items-center gap-2 px-2 py-1 bg-red-100 rounded-full"

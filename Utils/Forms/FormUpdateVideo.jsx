@@ -62,11 +62,11 @@ const FormUpdateVideo = ({ data }) => {
   };
   const ListClass = levelList?.find((elm) => elm.title === TheLevel);
 
-  const addUnitToList = (unit) => {
-    if (unitList.includes(unit)) {
+  const addUnitToList = (elm) => {
+    if (unitList.includes(elm.target.value)) {
       alert("الوحدة موجودة .....");
     } else {
-      setUnitList((prev) => [...prev, unit]);
+      setUnitList((prv) => [...prv, elm.target.value]);
     }
   };
   const deleteUnit = (val) => {
@@ -181,8 +181,8 @@ const FormUpdateVideo = ({ data }) => {
                   إختر القسم{" "}
                 </option>
                 {ListClass?.listClass?.map((elm, ind) => (
-                  <option key={ind} value={elm.name}>
-                    {elm.name}
+                  <option key={ind} value={elm}>
+                    {elm}
                   </option>
                 ))}
               </select>
@@ -190,7 +190,7 @@ const FormUpdateVideo = ({ data }) => {
               <select
                 className=" h-[40px] border-[1px] rounded-lg focus:border-pink-200 px-3 focus:border-2 outline-none m-1 bg-blue-200"
                 name=""
-                // onChange={handelChange}
+                onChange={addUnitToList}
                 defaultValue={data.unitList}
                 required
               >
@@ -198,11 +198,7 @@ const FormUpdateVideo = ({ data }) => {
                   إختر الوحدة{" "}
                 </option>
                 {unitData?.map((elm, ind) => (
-                  <option
-                    key={ind}
-                    value={elm}
-                    onClick={() => addUnitToList(elm)}
-                  >
+                  <option key={ind} value={elm}>
                     {elm}
                   </option>
                 ))}

@@ -66,8 +66,8 @@ const DisplayVideo = ({ allVideos, levels }) => {
             اختر القسم{" "}
           </option>
           {LevelSelectedObject?.listClass?.map((elm, ind) => (
-            <option key={ind} value={elm.name}>
-              {elm.name}
+            <option key={ind} value={elm}>
+              {elm}
             </option>
           ))}
         </select>

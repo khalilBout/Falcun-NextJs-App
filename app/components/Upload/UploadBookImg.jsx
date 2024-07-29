@@ -35,12 +35,12 @@ const UploadBookImg = ({ setBookCover }) => {
   };
 
   return (
-    <div className="w-[280px] h-[220px] p-2 rounded-md flex justify-center items-center bg-slate-200">
+    <div className="w-[300px] h-[220px] p-2 rounded-md bg-slate-200">
       <form onSubmit={handleSubmit}>
         <input type="file" accept="image/*" onChange={handleFileChange} />
         <button
           type="submit"
-          className="bg-green-300 px-2 py-1 rounded-lg my-3"
+          className=" px-2 py-1 rounded-lg my-3 bg-green-200"
           disabled={!file || uploading}
         >
           {uploading ? "جاري الرفع ..." : "رفع صورة الغلاف"}

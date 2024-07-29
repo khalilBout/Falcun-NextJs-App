@@ -43,10 +43,18 @@ const UploadVideo = ({ setUrlVideo }) => {
         <input type="file" accept="video/*" onChange={handleFileChange} />
         <button
           type="submit"
-          className=" bg-green-400 my-3 px-2 py-1 rounded-lg cursor-pointer"
+          className=" min-w-[130px] my-3 px-2 py-1"
           disabled={!file || uploading}
         >
-          {uploading ? "جاري الرفع ..." : "رفع الفيديو"}
+          {uploading ? (
+            <span className="bg-red-400 w-full  rounded-lg cursor-wait  px-2 py-1">
+              جاري الرفع ...
+            </span>
+          ) : (
+            <span className="bg-green-400 w-full  rounded-lg cursor-pointer  px-2 py-1">
+              رفع الفيديو
+            </span>
+          )}
         </button>
       </form>
     </div>

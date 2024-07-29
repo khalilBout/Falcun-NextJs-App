@@ -16,19 +16,13 @@ const Page = () => {
     setTitle(e.target.value);
   };
   const handelClassName = (e) => {
-    // const item = {
-    //   name: e.target.value,
-    // };
-
     setClassName(e.target.value);
   };
-  const dataClass = {
-    name: className,
-  };
+
   const addClassToList = (e) => {
     e.preventDefault();
-    if (dataClass.name !== "") {
-      setListClass((prev) => [...prev, dataClass]);
+    if (className !== "") {
+      setListClass((prev) => [...prev, className]);
       setClassName("");
     } else {
       alert("لا يمكن إضافة قسم فارغ ");
@@ -108,7 +102,7 @@ const Page = () => {
                       key={ind}
                       className=" text-[14px] text-red-400 bg-slate-300 px-3 py-1 rounded-full "
                     >
-                      {elm.name}
+                      {elm}
                     </p>
                   ))}
                 </div>

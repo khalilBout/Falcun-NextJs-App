@@ -7,10 +7,8 @@ const LevelSchema = new mongoose.Schema({
   },
   listClass: [
     {
-      name: {
-        type: String,
-        required: [true],
-      },
+      type: String,
+      required: [true],
     },
   ],
 });

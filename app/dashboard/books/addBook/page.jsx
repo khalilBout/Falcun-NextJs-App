@@ -84,11 +84,11 @@ const Page = () => {
             />
           </div>
           <div className="">
-            <div className="w-[140px] h-[220px] border-1 rounded-lg  flex flex-col justify-center items-center bg-green-100">
+            <div className="rounded-lg ">
               {bookCover === "" ? (
                 <UploadBookImg setBookCover={setBookCover} />
               ) : (
-                <div className="w-[140px] h-[220px]flex justify-center items-center">
+                <div className="flex justify-center items-center">
                   <img
                     src={bookCover}
                     alt=""
@@ -98,7 +98,7 @@ const Page = () => {
               )}
             </div>
 
-            <div className="w-[140px] h-[220px] bg-blue-100 rounded-md">
+            <div className="w-[160px] h-[220px] bg-blue-100 rounded-md">
               <BoxImage
                 contentBook={contentBook}
                 setContentBook={setContentBook}

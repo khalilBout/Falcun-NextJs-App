@@ -6,7 +6,7 @@ import Image from "next/image";
 import { FaCirclePlay } from "react-icons/fa6";
 
 const VideoCard = ({ item }) => {
-  const urlVideo = item?.urlVideo;
+  // const urlVideo = item?.urlVideo;
   return (
     <Link
       className="m-1 max-w-[220px] bg-slate-100 rounded-xl p-2 "

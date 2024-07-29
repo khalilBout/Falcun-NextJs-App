@@ -72,7 +72,7 @@ const BoxImage = ({ contentBook, setContentBook }) => {
           ))}
         </div>
       )}
-      <div className="w-[280px] h-[220px] p-2 rounded-md flex justify-center items-center bg-slate-200">
+      <div className="w-[300px] h-[220px] p-2 rounded-md  bg-slate-200">
         {/* add content books  */}
         <form
           onSubmit={handleSubmit}

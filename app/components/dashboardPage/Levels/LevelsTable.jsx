@@ -1,5 +1,7 @@
 import React from "react";
 import DeleteLev from "@/app/components/dashboardPage/Levels/DeleteLev";
+import { BiEdit } from "react-icons/bi";
+import Link from "next/link";
 
 const levelsTable = ({ allLevels }) => {
   return (
@@ -55,7 +57,7 @@ function Tr({ item }) {
                 key={ind}
                 className=" text-[14px] font-TitleFont bg-zinc-100 px-2 py-1 rounded-lg"
               >
-                {elm.name}
+                {elm}
               </p>
             ))}
           </span>
@@ -64,6 +66,12 @@ function Tr({ item }) {
         {/* Actions  */}
 
         <td className="py-3 px-4 border-b border-b-gray-50 flex justify-center">
+          <Link
+            href={`/dashboard/levels/updateLevel/${_id}`}
+            className="cursor-pointer"
+          >
+            <BiEdit size={20} color={"rgb(34,197,94)"}></BiEdit>
+          </Link>
           <DeleteLev id={_id} />
         </td>
       </tr>
