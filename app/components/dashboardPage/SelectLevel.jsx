@@ -33,7 +33,7 @@ const SelectLevel = () => {
   };
   return (
     <select
-      className="w-[140px]  h-[40px] border-[1px] rounded-lg focus:border-green-200 px-3 focus:border-2 outline-none m-1"
+      className=" font-TitleFont font-bold text-[15px] w-[140px]  h-[40px] border-[1px] rounded-lg focus:border-green-200 px-3 focus:border-2 outline-none m-1"
       name="category"
       defaultValue="all"
       onChange={handelChange}

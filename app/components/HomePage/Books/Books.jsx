@@ -1,8 +1,8 @@
 import React from "react";
 import bookLevel1 from "@/public/image/books/book-level-1.webp";
 import bookLevel2 from "@/public/image/books/book-level-2.webp";
-import bookLevel3 from "@/public/image/books/book-level-1.webp";
-import bookLevel4 from "@/public/image/books/book-level-3.webp";
+import bookLevel3 from "@/public/image/books/book-level-3.webp";
+import bookLevel4 from "@/public/image/books/book-level-4.webp";
 import book1 from "@/public/image/cover/cov1.webp";
 import book2 from "@/public/image/cover/cov2.webp";
 import book3 from "@/public/image/cover/cov3.webp";
@@ -73,10 +73,10 @@ const Books = () => {
             سلسلة التأسيس
           </h1>
           <div className="p-8 flex justify-center items-center gap-2 mdl:gap-4 flex-wrap">
-            <Image src={bookLevel4} alt="book Level-1" width={100} />
-            <Image src={bookLevel2} alt="book Level-1" width={100} />
-            <Image src={bookLevel1} alt="book Level-1" width={100} />
-            <Image src={bookLevel3} alt="book Level-1" width={100} />
+            <Image src={bookLevel1} alt="book Level-1" width={110} />
+            <Image src={bookLevel2} alt="book Level-1" width={110} />
+            <Image src={bookLevel3} alt="book Level-1" width={110} />
+            <Image src={bookLevel4} alt="book Level-1" width={110} />
           </div>
 
           <div className="sml:hidden absolute -top-24 -left-4 -z-10 max-h-[320px] w-[160px]">

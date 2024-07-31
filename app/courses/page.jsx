@@ -15,10 +15,10 @@ export default function Courses() {
       {/* category navbar  */}
 
       <div className="py-8 w-full h-full flex justify-center items-center flex-wrap  gap-8 ">
-        <div className="w-[300px] h-[200px] relative">
+        <div className=" hover:scale-110 duration-300 w-[300px] h-[200px] relative">
           <Link
             href="/courses/videos"
-            className="w-[300px] h-[200px] pb-8 flex justify-center items-end font-TitleFont text-2xl font-semibold  rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500"
+            className=" w-[300px] h-[200px] pb-8 flex justify-center items-end font-TitleFont text-2xl font-semibold  rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500"
           >
             الفيديوهات التعليمية
           </Link>
@@ -40,7 +40,7 @@ export default function Courses() {
           />
         </div>
 
-        <div className="w-[300px] h-[200px] relative">
+        <div className="hover:scale-110 duration-300 w-[300px] h-[200px] relative">
           <Link
             href="/courses/books"
             className="w-[300px] h-[200px] pb-8 flex justify-center items-end font-TitleFont text-2xl font-semibold  rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500"
@@ -65,7 +65,7 @@ export default function Courses() {
           />
         </div>
 
-        <div className="w-[300px] h-[200px] relative">
+        <div className="hover:scale-110 duration-300 w-[300px] h-[200px] relative">
           <Link
             href="/courses/series"
             className="w-[300px] h-[200px] pb-8 flex justify-center items-end font-TitleFont text-2xl font-semibold  rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500"

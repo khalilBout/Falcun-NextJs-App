@@ -47,7 +47,7 @@ const DisplayVideo = ({ allVideos, levels }) => {
 
   useEffect(() => {
     applyFilters();
-  }, [selectClass]);
+  }, [selectClass, levels]);
 
   const handelClass = (e) => {
     setSelectClass(e.target.value);
@@ -55,39 +55,54 @@ const DisplayVideo = ({ allVideos, levels }) => {
 
   return (
     <div className="w-full ">
-      <div className="flex justify-center">
+      <div className="flex justify-center font-TitleFont text-[15px]">
         <select
-          className="w-[140px]  h-[40px] border-[1px] rounded-lg focus:border-green-200 px-3 focus:border-2 outline-none m-1"
+          className="w-[140px] h-[35px] border-[1px] font-bold rounded-lg focus:border-green-200 px-3 focus:border-2 outline-none m-1"
           name="Class"
           defaultValue="all"
           onChange={handelClass}
         >
-          <option key="all" value="">
+          <option
+            key="all"
+            value=""
+            className="font-TitleFont text-[14px] font-bold"
+          >
             اختر القسم{" "}
           </option>
           {LevelSelectedObject?.listClass?.map((elm, ind) => (
-            <option key={ind} value={elm}>
+            <option
+              key={ind}
+              value={elm}
+              className="font-TitleFont text-[14px] font-semibold"
+            >
               {elm}
             </option>
           ))}
         </select>
       </div>
-      <div className=" flex justify-center items-start flex-wrap">
+      <div className="flex flex-wrap">
         {videoFilter?.length > 0 ? (
-          unitData.map((elm, ind) => {
-            const dataUnit = videoFilter.filter((item) =>
-              item.unitList.includes(elm)
+          LevelList.map((item) => {
+            const dataLevel = videoFilter.filter(
+              (video) => video.levelsInf.levelID === item._id
             );
-            return (
-              <div
-                key={ind}
-                className="w-full m-2 flex flex-wrap justify-center items-center"
-              >
-                {dataUnit?.map((item, ind) => (
-                  <VideoCard key={ind} item={item} />
-                ))}
-              </div>
-            );
+            if (dataLevel.length > 0) {
+              return unitData.map((elm, ind) => {
+                const dataUnit = dataLevel.filter((item) =>
+                  item.unitList.includes(elm)
+                );
+                return (
+                  <div
+                    key={ind}
+                    className="w-full m-2 gap-2 flex flex-wrap justify-center "
+                  >
+                    {dataUnit?.map((item, ind) => (
+                      <VideoCard key={ind} item={item} />
+                    ))}
+                  </div>
+                );
+              });
+            }
           })
         ) : (
           // <div>

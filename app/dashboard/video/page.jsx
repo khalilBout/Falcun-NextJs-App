@@ -15,8 +15,9 @@ const pageVideo = async ({ searchParams }) => {
   const page = searchParams?.page || 1;
   const levels = searchParams?.level || "all";
   const season = searchParams?.season || "all";
+  const itemInPage = 12;
 
-  const { allVideos, count } = await getVideo(page, levels, season);
+  const { allVideos, count } = await getVideo(page, levels, season, itemInPage);
   // console.log("allVideos:", allVideos);
   return (
     // <p>product..</p>

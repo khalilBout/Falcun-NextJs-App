@@ -18,14 +18,14 @@ const BookCard = ({ item }) => {
             {item.title}
           </h2>
           <div className="flex justify-between items-center ">
-            <div className=" text-[15px] font-TitleFont  text-emerald-900">
+            <div className=" text-[14px] font-TitleFont  text-emerald-900">
               {item.season === "season-1" ? (
                 <h1>الفصل الأول</h1>
               ) : (
                 <h1>الفصل الثاني</h1>
               )}
             </div>
-            <h2 className="px-4 text-[14px]  font-TitleFont text-emerald-700">
+            <h2 className="px-4 text-[12px] bg-blue-200 rounded-md font-TitleFont text-emerald-700">
               {item.levelsInf.levelTitle}
             </h2>
           </div>

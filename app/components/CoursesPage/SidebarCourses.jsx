@@ -32,7 +32,7 @@ const SidebarCourses = (params) => {
           <Link
             href={cty.url}
             key={ind}
-            className=" mx-1 text-center text-[12px] sml:text-[15px] mdl:text-[18px] font-TitleFont font-medium text-black bg-cyan-100 border-1 border-black/70 rounded-full px-4 py-1 hover:bg-black hover:text-white"
+            className="font-bold mx-1 text-center text-[13px] sml:text-[15px] mdl:text-[18px] font-TitleFont text-red-700 bg-cyan-100 border-1 border-black/70 rounded-full px-4 py-1 hover:bg-black hover:text-white"
           >
             {cty.name}
           </Link>

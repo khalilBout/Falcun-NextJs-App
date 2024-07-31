@@ -10,8 +10,8 @@ const pageVideo = async ({ searchParams }) => {
   const page = searchParams?.page || 1;
   const levels = searchParams?.level || "all";
   const season = searchParams?.season || "all";
-
-  const { allVideos, count } = await getVideo(page, levels, season);
+  const itemInPage = 999;
+  const { allVideos } = await getVideo(page, levels, season, itemInPage);
   return (
     <>
       <div className="flex justify-between items-center flex-wrap ">
@@ -21,7 +21,7 @@ const pageVideo = async ({ searchParams }) => {
         </div>
         {/* <Pagination count={count} /> */}
       </div>
-      <div className="w-full overflow-hidden flex justify-center ">
+      <div className="w-full overflow-hidden flex justify-center  ">
         {allVideos.length > 0 ? (
           <DisplayVideo allVideos={allVideos} levels={levels} />
         ) : (

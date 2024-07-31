@@ -6,7 +6,7 @@ const TotalsCart = () => {
 
   const priceList = cart?.map((x) => x.priceBook * x.Qt);
   const totalPrice = priceList?.reduce((a, c) => a + c, 0);
-  const shippingCharge = 1.25;
+  const shippingCharge = 1.5;
 
   return (
     <div className="max-w-7xl gap-4 flex justify-center mt-2">

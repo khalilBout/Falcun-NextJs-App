@@ -1,8 +1,8 @@
 import Video from "@/models/video";
 import connectDB from "@/Utils/connectDB";
 
-export const getVideo = async (page, levels, season) => {
-  const ITEM_PER_PAGE = 12;
+export const getVideo = async (page, levels, season, itemInPage) => {
+  // const ITEM_PER_PAGE = 12;
 
   try {
     await connectDB();
@@ -17,8 +17,8 @@ export const getVideo = async (page, levels, season) => {
 
     const count = await Video.countDocuments(query);
     const allVideo = await Video.find(query)
-      .limit(ITEM_PER_PAGE)
-      .skip(ITEM_PER_PAGE * (page - 1));
+      .limit(itemInPage)
+      .skip(itemInPage * (page - 1));
     const allVideos = JSON.parse(JSON.stringify(allVideo));
     return { count, allVideos };
   } catch (err) {

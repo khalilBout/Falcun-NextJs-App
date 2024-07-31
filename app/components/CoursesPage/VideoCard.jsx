@@ -9,7 +9,7 @@ const VideoCard = ({ item }) => {
   // const urlVideo = item?.urlVideo;
   return (
     <Link
-      className="m-1 max-w-[220px] bg-slate-100 rounded-xl p-2 "
+      className=" hover:scale-105 bg-rose-100 duration-300 m-1 max-w-[220px] rounded-xl p-2 "
       href={`/courses/videos/${item._id}`}
     >
       <div className=" relative w-[215] h-[280px] rounded-xl">
@@ -18,8 +18,9 @@ const VideoCard = ({ item }) => {
           alt={item.title}
           width={210}
           height={280}
+          className=" rounded-xl"
         />
-        <div className="w-full h-full absolute top-0 right-0 left-0 bg-black/20 z-10 flex justify-center items-center">
+        <div className="w-full h-full absolute top-0 right-0 left-0  z-10 flex justify-center items-center rounded-xl">
           <FaCirclePlay size={30} />
         </div>
       </div>
@@ -41,7 +42,7 @@ const VideoCard = ({ item }) => {
               </div>
             )}
             {item.levelsInf && (
-              <h2 className="px-4 text-[14px]  font-TitleFont text-gray-700">
+              <h2 className="px-2 text-[13px] bg-green-400 rounded-md font-TitleFont text-gray-700">
                 {item.levelsInf.levelTitle}
               </h2>
             )}
