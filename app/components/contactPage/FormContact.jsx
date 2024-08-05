@@ -68,13 +68,13 @@ const FormContact = () => {
       >
         <div className="px-2 py-4 flex flex-col justify-start ">
           <h1 className="text-center mb-6 font-bold text-xl mdl:text-2xl">
-            يسعد فريق برافو الاطلاع على آرائكم واقراحاتكم
+            يسعد فريق برافو الاطلاع على آرائكم واقتراحاتكم
           </h1>
           <div className="flex flex-col gap-3">
             {/* client name */}
             <div className="flex flex-col gap-1">
               <p className="font-titleFont text-base font-semibold text-gray-600">
-                الإسم
+                الاسم
               </p>
               <input
                 name="user_name"

@@ -88,7 +88,7 @@ const MobileLink = ({ dataLink }) => {
             variants={listVariants}
             initial="closed"
             animate="opened"
-            className=" absolute top-8 left-0  w-[85vw] z-40 h-screen bg-black/70 text-white flex flex-col items-center justify-center gap-8 text-4xl"
+            className=" absolute top-14 left-4  w-[90vw] z-40 h-[80vh] bg-black/80 text-white flex flex-col items-center justify-center gap-8 text-4xl"
           >
             {dataLink?.map((link) => (
               <motion.div
@@ -103,7 +103,9 @@ const MobileLink = ({ dataLink }) => {
                 key={link.name}
                 onClick={() => setOpen((prev) => !prev)}
               >
-                <Link href={`${link.url}`}>{link.name}</Link>
+                <Link href={`${link.url}`} className="">
+                  {link.name}
+                </Link>
               </motion.div>
             ))}
           </motion.div>

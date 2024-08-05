@@ -47,7 +47,7 @@ const BoxImage = ({ contentBook, setContentBook }) => {
     }
   };
 
-  console.log("list url:", contentBook);
+  // console.log("list url:", contentBook);
   return (
     <div className="rounded-md m-1 flex justify-start gap-2 ">
       {contentBook?.length > 0 && (

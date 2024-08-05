@@ -29,7 +29,7 @@ const CartBooksShop = () => {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="absolute top-12 left-2  z-50 bg-gray-50 w-[320px] text-[#767676] h-auto px-2 pb-2"
+              className="absolute top-14 -left-6  z-50 bg-gray-50 w-[320px] text-[#767676] h-auto px-2 pb-2"
             >
               {cart.length > 0 ? (
                 <>

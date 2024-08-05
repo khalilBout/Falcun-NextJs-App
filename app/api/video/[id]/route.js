@@ -29,7 +29,7 @@ export const DELETE = async (request, { params }) => {
 };
 
 export const PUT = async (request, { params }) => {
-  console.log("start update ...........");
+  // console.log("start update ...........");
   const { id } = params;
   // const data   = await request.json();
   // console.log("data=",data);

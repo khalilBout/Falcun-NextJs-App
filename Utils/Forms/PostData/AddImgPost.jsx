@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 const AddImgPost = ({ url, setUrl }) => {
   const route = useRouter();
   const handelDeleteImage = async (id) => {
-    console.log("url list 1:", url);
+    // console.log("url list 1:", url);
     const res = await fetch(`/api/deleteImage`, {
       method: "POST",
       body: JSON.stringify(id),
@@ -16,7 +16,7 @@ const AddImgPost = ({ url, setUrl }) => {
     if (res.status === 200) {
       const newList = url.filter((item) => item.public_id !== id);
       setUrl(newList);
-      console.log("list url2:", url);
+      // console.log("list url2:", url);
       route.refresh();
     }
   };

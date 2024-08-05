@@ -36,7 +36,7 @@ const UploadVideoForm = () => {
       setUploading(false);
     }
   };
-  console.log("url:", url);
+  // console.log("url:", url);
 
   return (
     <>

@@ -79,7 +79,7 @@ const Books = () => {
             <Image src={bookLevel4} alt="book Level-1" width={110} />
           </div>
 
-          <div className="sml:hidden absolute -top-24 -left-4 -z-10 max-h-[320px] w-[160px]">
+          <div className="sml:hidden absolute -top-20 -left-2 -z-10 max-h-[320px] w-[160px]">
             <Image
               src={fly}
               quality={100}

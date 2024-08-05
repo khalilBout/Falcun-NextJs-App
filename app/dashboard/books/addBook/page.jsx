@@ -62,7 +62,7 @@ const Page = () => {
       setPending(false);
     }
   };
-  console.log("bookCover:", bookCover);
+  // console.log("bookCover:", bookCover);
   return (
     <div className="w-full">
       {pending ? (

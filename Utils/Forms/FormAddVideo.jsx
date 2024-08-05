@@ -59,7 +59,7 @@ const FormAddVideo = ({
     const newList = unitList.filter((elm) => elm !== val);
     setUnitList(newList);
   };
-  console.log("unit:", unitList);
+  // console.log("unit:", unitList);
 
   return (
     <form>

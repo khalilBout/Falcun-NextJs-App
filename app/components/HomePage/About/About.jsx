@@ -33,7 +33,7 @@ const About = () => {
               <span className="text-red-700 font-bold">
                 مذكرات مدرسية متكاملة :
               </span>
-              <span className="text-cyan-900 font-bold">
+              <span className="text-black font-bold">
                 تساعد الأطفال على متابعة دروسهم و تنظيم معلوماتهم بشكل فعال.حيث
                 أننا نشرح القواعد بطريقة مبسطة و ممتعة و نوفر حوارات عملية تساعد
                 الأطفال على فهم كيفية استخدام اللغة في مواقف حياتية حقيقية. كما
@@ -41,7 +41,7 @@ const About = () => {
               </span>
             </p>
           </div>
-          <div className="min-w-[120px] md:min-w-[140px] mdl:min-w-[160px] max-w-[200px]">
+          <div className="my-8 min-w-[120px] md:min-w-[140px] mdl:min-w-[160px] max-w-[200px]">
             <Image
               src={AboutImg1}
               alt="bannerImgTwo"
@@ -53,8 +53,8 @@ const About = () => {
           </div>
         </div>
 
-        <div className="my-2 flex max-h-[280px] items-center gap-2 ">
-          <div className="min-w-[120px] md:min-w-[140px] mdl:min-w-[160px] max-w-[200px]">
+        <div className="my-4 flex max-h-[280px] items-center gap-2 ">
+          <div className="my-6 min-w-[120px] md:min-w-[140px] mdl:min-w-[160px] max-w-[200px]">
             <Image
               src={AboutImg2}
               alt="bannerImgTwo"
@@ -69,7 +69,7 @@ const About = () => {
               <span className="text-yellow-700 font-bold">
                 فيديوهات تعليمية :
               </span>
-              <span className="text-cyan-900 font-bold">
+              <span className="text-black font-bold">
                 تقدم شروحات واضحة و مبسطة يمكن مشاهدتها لتعزيز فهم المحتوى كما
                 أنها تجعل عملية التعلم مسلية و جذابة. علما أن هذه الفيديوهات
                 مقدمة مجاناً من فريق "برافو".
@@ -80,9 +80,9 @@ const About = () => {
 
         <div className=" my-2 flex  max-h-[280px] justify- gap-2 ">
           <div className=" flex justify-center items-center ">
-            <p className="bg-gray-300/30 p-2 rounded-md md:px-4 xl:px-24  text-[16px] sml:text-[18px] mdl:text-[24px] font-bodyFont font-medium text-center ">
+            <p className="bg-gray-300/50 p-2 rounded-md md:px-4 xl:px-24  text-[16px] sml:text-[18px] mdl:text-[24px] font-bodyFont font-medium text-center ">
               <span className="text-green-700 font-bold">سلسلة التأسيس :</span>
-              <span className="text-red-900 font-bold">
+              <span className="text-black font-bold">
                 دع طفلك يستمتع بتعلم القراءة من خلال سلسلة كتب مصممة خصيصا
                 لتلبية احتياجاتهم التعليمية. حيث سيكتسب الأطفال مهارات القراءة
                 بشكل تدريجي و منظم مما يعزز ثقتهم بأنفسهم و قدرتهم على التعلم .
@@ -91,7 +91,7 @@ const About = () => {
               </span>
             </p>
           </div>
-          <div className="min-w-[120px] md:min-w-[140px] mdl:min-w-[160px] max-w-[200px]">
+          <div className="my-8 min-w-[120px] md:min-w-[140px] mdl:min-w-[160px] max-w-[200px]">
             <Image
               src={AboutImg3}
               alt="bannerImgTwo"

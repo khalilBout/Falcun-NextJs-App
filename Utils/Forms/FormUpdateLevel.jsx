@@ -42,7 +42,7 @@ const FormUpdateLevel = ({ data }) => {
   // Sending Update Data
   const addLevelUpdate = async () => {
     const id = data?._id;
-    console.log("data sending:", dataUpdated);
+    // console.log("data sending:", dataUpdated);
     try {
       setLaudingSend(true);
       const res = await fetch(`/api/levels/${id}`, {
