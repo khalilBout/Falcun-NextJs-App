@@ -1,5 +1,5 @@
 import NextAuth from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
+// import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/models/user";
 import connectDB from "@/Utils/connectDB";
@@ -45,22 +45,22 @@ const handler = NextAuth({
       },
     }),
 
-    GoogleProvider({
-      // إستخراج البيانات من بروفايل الغوغل والتعديل عليعا بإضافة  دور المستخدم
-      // وكذا رقم تعريفي لكون بوفايل الغوغل لا يحتوي على رقم  تعريفي
-      profile(profile) {
-        let roleUser = "user";
-        // إستخراج معلومات من ملف البروفايل الخاص بغوغل
-        return {
-          ...profile,
-          id: profile.sub,
-          role: roleUser,
-          image: profile.picture,
-        };
-      },
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),
+    // GoogleProvider({
+    //   // إستخراج البيانات من بروفايل الغوغل والتعديل عليعا بإضافة  دور المستخدم
+    //   // وكذا رقم تعريفي لكون بوفايل الغوغل لا يحتوي على رقم  تعريفي
+    //   profile(profile) {
+    //     let roleUser = "user";
+    //     // إستخراج معلومات من ملف البروفايل الخاص بغوغل
+    //     return {
+    //       ...profile,
+    //       id: profile.sub,
+    //       role: roleUser,
+    //       image: profile.picture,
+    //     };
+    //   },
+    //   clientId: process.env.GOOGLE_CLIENT_ID,
+    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    // }),
   ],
   //  الدالة المسؤولة على التغير في البايانات الراجعة  او المستردة والت يمكن الوصول إاليها في التطبيق
   callbacks: {

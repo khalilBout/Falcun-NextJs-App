@@ -1,13 +1,14 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import AdminImg from "@/public/image/admin.webp";
-import { signOut } from "next-auth/react";
+import AdminImg from "@/public/admin.webp";
+// import { signOut } from "next-auth/react";
 import Image from "next/image";
 
 const Sidebar = () => {
   const logoutHandler = () => {
-    signOut();
+    // signOut();
+    console.log("signOut");
   };
   return (
     <aside className="md:w-1/5 lg:w-1/6 bg-gray-100 ">
@@ -27,59 +28,21 @@ const Sidebar = () => {
         <ul className="grow py-2 sidebar font-bodyFont flex md:flex-col items-center justify-around ">
           <li>
             <Link
-              href="/dashboard/levels"
+              href="/"
               className=" font-TitleFont font-bold text-[15px] block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
             >
-              الصفوف
+              المنتجات
               {/* <span className="text-red-300">({cart.length})</span> */}
             </Link>
           </li>
 
           <li>
             <Link
-              href="/dashboard/library"
+              href="/"
               className=" font-TitleFont font-bold text-[15px] block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
             >
-              المكتبات
+              المدونات
               {/* <span className="text-red-300">({cart.length})</span> */}
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/dashboard/order"
-              className=" font-TitleFont font-bold text-[15px] block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
-            >
-              طلبات المذكرات
-              {/* <span className="text-red-300">({cart.length})</span> */}
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              href="/dashboard/video"
-              className="text-center font-TitleFont font-bold text-[15px] block px-4 py-2 text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
-            >
-              الفيديوهات التعليمية
-              {/* <span className="text-red-300">({cart.length})</span> */}
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              // href="/profile/order"
-              href="/dashboard/books"
-              className="text-center font-TitleFont font-bold text-[16px] block px-4 py-2  text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
-            >
-              المذكرات المدرسية
-            </Link>
-          </li>
-          <li>
-            <Link
-              // href="/profile/order"
-              href="/dashboard/series"
-              className="text-center font-TitleFont font-bold text-[17px] block px-4 py-2  text-gray-800 hover:bg-blue-100 hover:text-blue-500 rounded-md"
-            >
-              السلاسل التأسيسية
             </Link>
           </li>
         </ul>

@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "../components/Login/Login";
+import Login from "@/app/UiComponents/Login/Login";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
@@ -9,7 +9,7 @@ const page = async () => {
     redirect("/?callbackUrl=/login");
   }
   return (
-    <div className="screenPadding w-screen h-[84vh] bg-green-100 flex justify-center items-center ">
+    <div className="screenPadding w-screen flex justify-center items-center ">
       <Login />
     </div>
   );

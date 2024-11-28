@@ -24,14 +24,17 @@ module.exports = {
         xl: "1280px",
       },
       fontFamily: {
-        TitleFont: ["Cairo", "sans-serif"],
-        bodyFont: ["Markazi Text", "sans-serif"],
+        fontTitle: ["Cairo", "sans-serif"],
+        fontBody: ["Noto Kufi Arabic", "sans-serif"],
       },
       colors: {
-        primeColor: "#193A81",
-        scendColor: "#53B2EF",
-        lightText: "#6D6D6D",
-        thirdColor: "#F8CB5C",
+        primary: "#ED751F",
+        secondary: "#F9DEC9",
+        dark: "#000000",
+        gray: "#3A405A",
+        blue: "#3A405A",
+        grayLight: "#DDD1CC",
+        light: "#FFFFFF",
       },
       boxShadow: {
         testShadow: "0px 0px 54px -13px rgba(0,0,0,0.7)",

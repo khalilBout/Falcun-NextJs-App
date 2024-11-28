@@ -1,5 +1,5 @@
 "use client";
-import Loading from "@/app/components/Loading/Loading";
+import Loading from "@/app/UiComponents/Loading/Loading";
 
 const loading = () => {
   return (

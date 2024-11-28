@@ -5,17 +5,18 @@ import "slick-carousel/slick/slick.css";
 import "./globals.css";
 import "slick-carousel/slick/slick.css";
 import AuthProvider from "@/Utils/AuthProvider/AuthProvider";
-import Navbar from "@/app/components/Navbar/Navbar";
-import Footer from "@/app/components/Footer/Footer";
+import Navbar from "@/app/UiComponents/Navbar/Navbar";
+import Footer from "@/app/UiComponents/Footer/Footer";
+
 import { Toaster } from "react-hot-toast";
-import ReduxProv from "@/app/components/ReduxProv";
+// import ReduxProv from "@/app/components/ReduxProv";
 import Script from "next/script";
 
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Bravo",
-  description: "منصة تعليمية للاطفال في الكويت",
+  title: "Falcun",
+  description: "",
 };
 
 export default function RootLayout({
@@ -43,12 +44,12 @@ export default function RootLayout({
       </head>
       <body className="">
         <AuthProvider>
-          <ReduxProv>
-            <Navbar />
-            {children}
-            <Toaster position="bottom-right" />
-            <Footer />
-          </ReduxProv>
+          {/* <ReduxProv> */}
+          <Navbar />
+          {children}
+          <Toaster position="bottom-right" />
+          <Footer />
+          {/* </ReduxProv> */}
         </AuthProvider>
       </body>
     </html>

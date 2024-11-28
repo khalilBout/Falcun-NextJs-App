@@ -7,8 +7,8 @@ const page = () => {
   return (
     <>
       <div className=" h-[40vh] flex justify-center items-center ">
-        <h1 className="font-TitleFont text-3xl  text-center text-black bg-slate-300 rounded-md px-16 py-8">
-          مرحبا بك في لوحة التحكم الخاصة بمنصة برافو
+        <h1 className="font-fontTitle text-xl  text-center text-black bg-slate-100 rounded-md px-16 py-8">
+          مرحبا بك في لوحة التحكم الخاصة بموقع فالكون
         </h1>
       </div>
     </>

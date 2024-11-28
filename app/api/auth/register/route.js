@@ -6,9 +6,9 @@ import { NextResponse } from "next/server";
 connectDB();
 
 export const POST = async (request) => {
-  // catch data from page of register
-
+  console.log("satart rejeter**********************");
   const { name, email, password } = await request.json();
+  console.log("data:", name, email, password);
 
   //check if user already exists
   const user = await User.findOne({ email });

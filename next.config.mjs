@@ -5,7 +5,6 @@ const nextConfig = {
       "res.cloudinary.com",
       "lh3.googleusercontent.com",
       "**.amazonaws.com",
-      "bravo-web-site.s3.eu-north-1.amazonaws.com",
     ],
   },
 };

@@ -5,7 +5,6 @@ import { getProviders, signIn, useSession } from "next-auth/react";
 
 const Login = () => {
   const session = useSession();
-
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [email, setEmail] = useState("");

@@ -17,7 +17,7 @@
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.3.0",
-    "framer-motion": "^11.2.12",
+    "framer-motion": "^11.11.17",
     "i": "^0.3.7",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.8.0",

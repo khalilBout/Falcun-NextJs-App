@@ -13,7 +13,7 @@ const GlrySerie = ({ Serie }) => {
       <div className="flex justify-center items-center flex-wrap gap-2 m-2">
         <Image
           src={Serie.bookCover}
-          alt=""
+          alt="image main"
           quality={100}
           width={70}
           height={100}

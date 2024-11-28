@@ -29,7 +29,7 @@ const Navbar = () => {
         <Links dataLink={dataLink} />
       </div>
       <div className=" block sml:hidden w-[300px] py-2">
-        <Image src={text} alt="" width={300} height={80} />
+        <Image src={text} alt="logo" width={300} height={80} />
       </div>
 
       <motion.div
