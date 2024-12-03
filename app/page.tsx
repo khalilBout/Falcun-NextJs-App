@@ -8,6 +8,7 @@ import Printing from "@/app/UiComponents/Printing/Printing";
 import Info from "@/app/UiComponents/Info/Info";
 import Map from "@/app/UiComponents/Map/Map";
 import Brand from "@/app/UiComponents/Brand/Brand";
+import Blog from "@/app/UiComponents/Blog/Blog";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Embroidery />
       <AboutSec2 />
       <Printing />
+      <Blog />
       <AboutSec3 />
       <Info />
       <Map />

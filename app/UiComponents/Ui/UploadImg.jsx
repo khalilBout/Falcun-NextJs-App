@@ -14,7 +14,7 @@ const UploadImg = ({ setMainImg }) => {
         {({ open }) => {
           return (
             <button
-              className="text-[18px] font-fontTitle font-semibold py-4 px-2"
+              className="bg-red-200 hover:bg-red-400 w-[90%] text-[18px] font-fontTitle font-semibold p-2 rounded-md"
               onClick={() => open()}
             >
               الصورة الرئيسية

@@ -38,71 +38,83 @@ const Brand = () => {
               quality={100}
               src={a}
               alt="Acme Logo"
+              fill
               className="logo-ticker-image"
             />
             <Image
               quality={100}
               src={b}
+              fill
               alt="Quantum Logo"
               className="logo-ticker-image"
             />
             <Image
               quality={100}
               src={c}
+              fill
               alt="Echo Logo"
               className="logo-ticker-image"
             />
             <Image
               quality={100}
               src={d}
+              fill
               alt="Celestial Logo"
               className="logo-ticker-image"
             />
             <Image
               quality={100}
               src={e}
+              fill
               alt="Pulse Logo"
               className="logo-ticker-image"
             />
             <Image
               quality={100}
               src={f}
+              fill
               alt="Apex Logo"
               className="logo-ticker-image"
             />
             <Image
               quality={100}
               src={h}
+              fill
               alt="Apex Logo"
               className="logo-ticker-image"
             />
             <Image
               quality={100}
               src={j}
+              fill
               alt="Apex Logo"
               className="logo-ticker-image"
             />
             <Image
               quality={100}
               src={m}
+              fill
               alt="Apex Logo"
               className="logo-ticker-image"
             />
             <Image
               quality={100}
               src={n}
+              fill
               alt="Apex Logo"
               className="logo-ticker-image"
             />
             <Image
               quality={100}
               src={r}
+              fill
               alt="Apex Logo"
               className="logo-ticker-image"
             />
             <Image
               quality={100}
               src={s}
+              fill
               alt="Apex Logo"
               className="logo-ticker-image"
             />

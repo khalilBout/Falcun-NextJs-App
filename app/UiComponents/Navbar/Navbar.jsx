@@ -21,7 +21,7 @@ const Navbar = () => {
     },
   ];
   return (
-    <div className=" screenPadding fixed bg-secondary/95 font-fontTitle border-b-2 border-black/40 top-0 left-0 right-0 flex justify-between  py-4 z-50 ">
+    <div className=" screenPadding fixed bg-white shadow-md font-fontTitle border-b-2 border-black/40 top-0 left-0 right-0 flex justify-between  py-4 z-50 ">
       <Logo />
       <div className=" hidden sml:flex grow gap-4 justify-end items-center">
         <Links link={link} />

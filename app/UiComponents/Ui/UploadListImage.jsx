@@ -23,13 +23,13 @@ const UploadListImage = ({ setListImage }) => {
     }
   };
   return (
-    <div className=" rounded-md bg-red-300">
+    <div className=" rounded-md bg-red-200 hover:bg-red-400 w-[170px]">
       <CldUploadButton
         uploadPreset="falcun"
-        className="py-2 px-4  text-[22px] font-semibold font-fontTitle rounded-xl cursor-pointer"
+        className="p-2  text-[18px] font-semibold font-fontTitle rounded-xl cursor-pointer"
         onUpload={handelUpload}
       >
-        إضافة صور أخرى للمنتج
+        إضافة صور أخرى{" "}
       </CldUploadButton>
     </div>
   );

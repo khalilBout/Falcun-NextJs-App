@@ -1,10 +1,8 @@
 "use client";
 import React, { useState } from "react";
-import FormAddProduct from "@/Utils/Forms/FormAddProduct";
+import FormAddBlog from "@/Utils/Forms/FormAddBlog";
 import UploadImg from "@/app/UiComponents/Ui/UploadImg";
 import UploadListImage from "@/app/UiComponents/Ui/UploadListImage";
-// import UploadBookImg from "@/app/components/Upload/UploadBookImg";
-// import BoxImage from "@/app/components/Upload/BoxImage";
 import { useRouter } from "next/navigation";
 import Loading from "@/app/UiComponents/Loading/Loading";
 import Image from "next/image";
@@ -17,28 +15,23 @@ const Page = () => {
   const [form, setForm] = useState({
     title: "",
     description: "",
-    category: "",
   });
-  // const [title, setTitle] = useState("");
-  // const [description, setDescription] = useState("");
-  // const [category, setCategory] = useState("");
+
   const [mainImg, setMainImg] = useState("");
   const [listImage, setListImage] = useState([]);
   // add product to database
-  const dataProduct = {
+  const dataBlog = {
     title: form.title,
-    category: form.category,
     description: form.description,
     mainImg,
     listImage,
   };
-  const addProduct = async () => {
-    console.log("data sending:", dataProduct);
+  const addBlog = async () => {
     try {
       setPending(true);
-      const res = await fetch("/api/product", {
+      const res = await fetch("/api/blog", {
         method: "POST",
-        body: JSON.stringify(dataProduct),
+        body: JSON.stringify(dataBlog),
       });
       if (res.status === 201) {
         setPending(false);
@@ -46,12 +39,11 @@ const Page = () => {
         setForm({
           title: "",
           description: "",
-          category: "",
         });
         setMainImg("");
         setListImage([]);
 
-        router.replace("/dashboard/product");
+        router.replace("/dashboard/blog");
       }
     } catch (err) {
       console.log(err);
@@ -66,11 +58,11 @@ const Page = () => {
       ) : (
         <>
           <h1 className=" font-TitleFont my-3 text-xl md:text-3xl font-semibold text-black mb-8">
-            إضافة منتج
+            إضافة مدونة
           </h1>
           {/* info product  */}
           <div className="">
-            <FormAddProduct form={form} setForm={setForm} />
+            <FormAddBlog form={form} setForm={setForm} />
           </div>
 
           {/* image section  */}
@@ -82,7 +74,7 @@ const Page = () => {
               ) : (
                 <div className="min-w-[180px]">
                   <h1 className=" py-4 text-xl font-fontTitle h-full">
-                    صورة المنتج{" "}
+                    صورة المدونة{" "}
                   </h1>
                   <Image
                     src={mainImg}
@@ -100,7 +92,7 @@ const Page = () => {
               {listImage?.length > 0 ? (
                 <div className="min-w-[180px] h-full min-h-[270px]">
                   <h1 className=" py-4 text-xl font-fontTitle h-full">
-                    صورة أخرى للمنتج{" "}
+                    صورة أخرى للمدونة{" "}
                   </h1>
 
                   <div className="flex items-center gap-4 flex-wrap">
@@ -127,7 +119,7 @@ const Page = () => {
                   </div>
                 </div>
               ) : (
-                <div className="w-full h-[260px] flex justify-center items-center ">
+                <div className="w-full h-[270px] flex items-center justify-center">
                   <UploadListImage
                     listImage={listImage}
                     setListImage={setListImage}
@@ -138,8 +130,8 @@ const Page = () => {
           </div>
 
           <div className=" flex justify-center items-center rounded text-[18px] h-[40px] bg-green-200 hover:bg-green-400 text-gray-800">
-            <button className="text-[16px] w-full h-full" onClick={addProduct}>
-              {pending ? "Sending..." : "إضافة منتج"}
+            <button className="text-[16px] w-full h-full" onClick={addBlog}>
+              {pending ? "Sending..." : "إضافة مدونة "}
             </button>
           </div>
         </>

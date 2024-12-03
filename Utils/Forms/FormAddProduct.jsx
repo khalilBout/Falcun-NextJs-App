@@ -13,9 +13,9 @@ const FormAddProduct = ({ form, setForm }) => {
 
   return (
     <form>
-      <div className="grid lg:grid-cols-2 gap-2 mx-2 ">
+      <div className="flex gap-2 mx-2 ">
         <input
-          className=" h-[40px] border-[1px] rounded-lg focus:border-pink-200 px-3 focus:border-2 outline-none m-1"
+          className="w-1/2 h-[40px] border-[1px] rounded-lg focus:border-pink-200 px-3 focus:border-2 outline-none m-1"
           placeholder="إسم المنتج"
           type="text"
           name="title"
@@ -23,7 +23,7 @@ const FormAddProduct = ({ form, setForm }) => {
         />
 
         <select
-          className=" h-[40px] border-[1px] rounded-lg focus:border-pink-200 px-3 focus:border-2 outline-none m-1 bg-blue-200"
+          className="w-1/2 h-[40px] border-[1px] rounded-lg focus:border-pink-200 px-3 focus:border-2 outline-none m-1 bg-blue-200"
           name="category"
           onChange={handelChange}
           required

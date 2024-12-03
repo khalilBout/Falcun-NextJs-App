@@ -6,13 +6,14 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="screenPadding bg-blue overflow-hidden">
+    <footer className="screenPadding bg-purple overflow-hidden">
       <div className=" border-b-2 border-green-50 overflow-x-hidden py-8 flex flex-col mdl:flex-row gap-12 justify-center items-center">
         {/* text  */}
         <div className="w-full mdl:w-1/3 text-[14px] mdl:text-[16px] font-fontBody text-white">
-          <img
+          <Image
             src={brand}
             alt="falkon logo"
+            quality={100}
             className="w-[140px] h-auto pb-6"
           />
 

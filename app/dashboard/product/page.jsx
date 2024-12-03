@@ -1,14 +1,14 @@
 import Link from "next/link";
-// import { getSeries } from "@/Utils/getData/getSeries";
-// import TableAllSeries from "@/app/components/dashboardPage/TableAllSeries";
+import { getProducts } from "@/Utils/getData/getProducts";
+import TableAllProduct from "@/app/UiComponents/Dashboard/TableAllProduct";
 // import Pagination from "@/app/components/dashboardPage/Pagination";
-// import EmptyView from "@/app/components/CoursesPage/EmptyView";
+import EmptyView from "@/app/UiComponents/Ui/EmptyView";
 
 const pageProductAdmin = async () => {
   //   const page = searchParams?.page || 1;
 
-  //   const { allSeries, count } = await getSeries(page);
-  // console.log("allSeries:", allSeries);
+  const allProduct = await getProducts();
+  // console.log("data:", allProduct);
   return (
     // <p>product..</p>
     <div className="w-full font-bodyFont">
@@ -21,18 +21,19 @@ const pageProductAdmin = async () => {
             </button>
           </Link>
         </div>
-        <div className="flex justify-between"></div>
-        {/* <div className="w-full">
-          {allSeries?.length > 0 ? (
-            <TableAllSeries data={allSeries} />
+        <div className="bg-black h-[1px] w-full"></div>
+
+        <div className="w-full min-h-[350px]">
+          {allProduct?.length > 0 ? (
+            <TableAllProduct data={allProduct} />
           ) : (
             <>
-              <div className="w-full flex justify-center items-center">
+              <div className="w-full flex justify-center items-center mt-4">
                 <EmptyView />
               </div>
             </>
           )}
-        </div> */}
+        </div>
       </div>
     </div>
   );

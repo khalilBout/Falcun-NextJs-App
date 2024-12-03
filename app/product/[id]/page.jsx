@@ -1,5 +1,5 @@
 import TheProduct from "../../UiComponents/Product/TheProduct";
-// import { getBookById } from "@/Utils/getData/getBooks";
+// import { getProductById } from "@/Utils/getData/getProducts";
 
 // for SEO
 // export async function generateMetadata({ params }) {
@@ -27,8 +27,8 @@ const dataProduct = {
 };
 
 export default async function OneProduct({ params }) {
-  //   const bookDetailsData = await getBookById(params.id);
-
+  // const productData = await getProductById(params.id);
+  // console.log('Product Data:', productData)
   // return <BookDetails book={bookDetailsData} />;
 
   return <TheProduct dataProduct={dataProduct} />;
