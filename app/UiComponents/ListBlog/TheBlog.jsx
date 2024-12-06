@@ -1,8 +1,10 @@
 import BoxImg from "../Ui/BoxImg";
-import { dataUniforms } from "../../UiComponents/data";
-import Card from "../../UiComponents/Card/Card";
+import { getProducts } from "@/Utils/getData/getProducts";
+import Card from "../Card/Card";
 
-const TheBlog = ({ dataBlog }) => {
+const TheBlog = async ({ dataBlog }) => {
+  const dataProduct = await getProducts();
+
   return (
     <section>
       <div className="screenPadding mt-20 mdl:mt-24 py-8 ">
@@ -20,7 +22,7 @@ const TheBlog = ({ dataBlog }) => {
 
           <div className="">
             <h3 className=" font-fontBody text-[15px] mdl:text-[17px]  mdl:pr-16 max-md:text-center">
-              {dataBlog.desc}
+              {dataBlog.description}
             </h3>
           </div>
         </div>
@@ -31,7 +33,7 @@ const TheBlog = ({ dataBlog }) => {
           منتجات ذات صلة :
         </h1>
         <div className="flex justify-center items-center gap-4 flex-wrap">
-          {dataUniforms.slice(0, 4).map((elm, ind) => (
+          {dataProduct?.slice(0, 4).map((elm, ind) => (
             <Card key={ind} data={elm} />
           ))}
         </div>

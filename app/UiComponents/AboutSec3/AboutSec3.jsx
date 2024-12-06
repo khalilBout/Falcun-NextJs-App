@@ -45,7 +45,7 @@ const AboutSec3 = () => {
           src={sim}
           alt="logo"
           quality={100}
-          fill
+          // fill
           className=" h-full w-full object-cover object-center"
         />
       </div>

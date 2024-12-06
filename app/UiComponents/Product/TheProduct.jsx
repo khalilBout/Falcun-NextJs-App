@@ -4,20 +4,15 @@ import BoxImg from "../../UiComponents/Ui/BoxImg";
 import { dataUniforms } from "../../UiComponents/data";
 
 import Card from "../../UiComponents/Card/Card";
-// import { useLocation } from "react-router-dom";
 
-const TheProduct = ({ dataProduct }) => {
-  //   const location = useLocation();
-  //   console.log("url:", location.pathname);
+const TheProduct = ({ dataProduct, reletiveProducts }) => {
   const [Qt, setQt] = useState(1);
-
   const handleQt = (e) => {
     setQt(e.target.value);
   };
 
   const productSend = {
-    name: dataProduct.titel,
-    prix: dataProduct.prix,
+    name: dataProduct.title,
     qt: Qt,
   };
 
@@ -31,24 +26,21 @@ const TheProduct = ({ dataProduct }) => {
         {/* info product  */}
         <div className="w-full mdl:w-1/2 p-4 ">
           <h1 className=" font-fontTitle text-2xl mdl:text-3xl ">
-            {dataProduct.titel}
+            {dataProduct.title}
           </h1>
 
-          <div className="flex gap-2">
-            <h2 className="font-fontTitle text-xl md:text-2xl mdl:mr-4 ">
-              السعر :{" "}
-            </h2>
-            <h3 className=" font-fontBody text-xl text-red-600">
-              {dataProduct.prix} ريال
-            </h3>
-          </div>
+          <h3 className="py-2 font-fontBody text-xl text-red-600">
+            {dataProduct.category === "Uniforms" && "أزياء موحدة"}
+            {dataProduct.category === "Embroidery" && "تطريز مباشر"}
+            {dataProduct.category === "Printing" && "طباعة حرارية"}
+          </h3>
 
           <div className="">
             <h2 className="font-fontTitle text-xl md:text-2xl mdl:mr-4 ">
               الوصف{" "}
             </h2>
             <h3 className=" font-fontBody text-[15px] mdl:text-[17px]  mdl:pr-16 ">
-              {dataProduct.desc}
+              {dataProduct.description}
             </h3>
           </div>
           <div className="flex justify-center items-center gap-4 mdl:gap-8 mt-3">
@@ -79,7 +71,7 @@ const TheProduct = ({ dataProduct }) => {
           منتجات ذات صلة :
         </h1>
         <div className="flex justify-center items-center gap-4 flex-wrap">
-          {dataUniforms.slice(0, 4).map((elm, ind) => (
+          {reletiveProducts?.map((elm, ind) => (
             <Card key={ind} data={elm} />
           ))}
         </div>

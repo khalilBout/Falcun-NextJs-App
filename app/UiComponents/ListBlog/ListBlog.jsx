@@ -12,7 +12,7 @@ import BlogHero from "./BlogHero";
 // import { motion, useInView } from "framer-motion";
 // import Image from "next/image";
 
-const Blog = async () => {
+const ListBlog = async () => {
   // const dataBlog = [
   //   {
   //     id: 1,
@@ -64,4 +64,4 @@ const Blog = async () => {
   );
 };
 
-export default Blog;
+export default ListBlog;

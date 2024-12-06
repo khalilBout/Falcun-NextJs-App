@@ -10,6 +10,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import print from "@/public/hero/print.png";
 import emb from "@/public/hero/emb.png";
 import uni from "@/public//hero/uni.png";
+import Link from "next/link";
 // import imageCrovet from "../../../public/image/img2.png";
 
 const Hero = () => {
@@ -33,7 +34,7 @@ const Hero = () => {
               damping: 10,
               delay: 0.8,
             }}
-            className="z-20 text-[15px] sm:text-xl md:text-2xl font-fontTitle text-center text-black/70 flex flex-col justify-center gap-4"
+            className="z-20 text-[15px] sm:text-xl md:text-2xl font-fontBody text-center text-black/70 flex flex-col justify-center gap-4"
           >
             حلول مخصصة تعكس التميز والجودة، من طباعة نابضة بالحياة وتطريز دقيق
             إلى خياطة احترافية وهدايا فريدة. إنتاج سريع، مرونة في الطلب، وأدوات
@@ -43,7 +44,8 @@ const Hero = () => {
           </motion.h1>
 
           <div className="z-20 flex justify-center gap-2 md:gap-4 lg:gap-8">
-            <motion.button
+            <motion.a
+              href="#serviceUniforms"
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
@@ -54,11 +56,11 @@ const Hero = () => {
               }}
               className="hover:scale-110 px-8 mdl:px-12 py-2 bg-blue text-white font-fontBody text-[14px] md:text-[16px] duration-150 transition-all cursor-pointer rounded-full "
             >
-              تواصل معنا{" "}
-            </motion.button>
+              إكتشف خدماتنا{" "}
+            </motion.a>
 
             <motion.a
-              href="/"
+              href="https://wa.me/213670000320"
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
@@ -70,6 +72,7 @@ const Hero = () => {
               className="text-[14px] md:text-[16px] shadow-md flex justify-between items-center gap-2 px-4 mdl:px-8 hover:scale-110 border border-black/30 text-black  duration-150 transition-all cursor-pointer rounded-full "
             >
               <h1 className=" font-fontBody text-[15px] ">تواصل معنا</h1>
+
               <FaWhatsapp
                 size={22}
                 className="text-black/70 w-8 h-8 rounded-full p-1"
@@ -78,16 +81,16 @@ const Hero = () => {
           </div>
         </div>
         {/* image dev  */}
-        <div className=" relative h-full w-full lg:w-2/5 ">
-          <div className=" absolute -top-12 left-40 -z-10 w-[320px] h-[320px] rounded-full bg-lightBlue/40"></div>
-          <div className=" absolute -bottom-12 right-20 -z-10 w-[420px] h-[420px] rounded-full bg-purple/20"></div>
+        <div className=" relative h-full w-full lg:w-2/5">
+          <div className=" hidden mdl:block absolute -top-12 left-40 -z-10 w-[320px] h-[320px] rounded-full bg-lightBlue/40"></div>
+          <div className=" hidden mdl:block absolute -bottom-12 right-20 -z-10 w-[420px] h-[420px] rounded-full bg-purple/20"></div>
           <div className="flex justify-center items-center">
             <div className="w-1/2 flex flex-col gap-3 justify-center items-center">
               <div className="">
                 <Image
                   src={uni}
                   quality={100}
-                  alt="logo falkon"
+                  alt="Uniforms"
                   className=" object-cover object-center"
                 />
               </div>
@@ -95,7 +98,7 @@ const Hero = () => {
               <Image
                 quality={100}
                 src={emb}
-                alt="logo falkon"
+                alt="Embroidery"
                 className=" object-cover object-center"
               />
             </div>
@@ -103,7 +106,7 @@ const Hero = () => {
               <Image
                 src={print}
                 quality={100}
-                alt="logo falkon"
+                alt="Printing"
                 className=" object-cover object-center"
               />
             </div>

@@ -36,7 +36,7 @@ module.exports = {
         lightBlue: "#BAE7FA",
         purple: "#31245A",
         grayLight: "#DDD1CC",
-        light: "#FFFFFF",
+        light: "#F1FAFE",
       },
       boxShadow: {
         testShadow: "0px 0px 54px -13px rgba(0,0,0,0.7)",

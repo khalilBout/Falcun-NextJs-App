@@ -44,12 +44,12 @@ function Tr({ item }) {
         <td className="py-2 px-4 border-b border-b-gray-50 ">
           <div className="relative h-[60px] w-[60px]">
             <Image
-              fill
+              // fill
               quality={100}
               objectFit="cover"
               objectPosition="center"
               src={mainImg}
-              alt=""
+              alt={title}
               className="rounded-full object-cover overflow-hidden bg-teal-100"
               // className="text-gray-600 text-sm font-medium hover:text-blue-500 ml-2 truncate"
             />

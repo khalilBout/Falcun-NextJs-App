@@ -14,7 +14,7 @@ const Sidebar = () => {
               quality={100}
               src={AdminImg}
               alt="admin"
-              fill
+              // fill
               className=" rounded-full bg-green-100 "
             />
           </Link>

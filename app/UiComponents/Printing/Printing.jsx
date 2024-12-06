@@ -1,4 +1,6 @@
 import Card from "@/app/UiComponents/Card/Card";
+import Link from "next/link";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Printing = async () => {
   let DataPrinting;
@@ -39,13 +41,26 @@ const Printing = async () => {
             من الأسطح ، مما يجعلها مثالية للملابس المخصصة والمواد الترويجية
             والشارات المخصصة.
           </h2>
-          <div className="flex gap-2">
-            <button className="hover:scale-110 px-4 py-1 bg-blue font-fontBody text-[13px] sm:text-[15px] hover:text-gray duration-150 transition-all cursor-pointer rounded-full ">
-              إكتشف المزيد
-            </button>
-            {/* <button className="hover:scale-110 px-2 py-1 bg-gray text-blue font-fontBody text-[15px] duration-150 transition-all cursor-pointer rounded-full ">
-              تواصل معنا
-            </button> */}
+          <div className="">
+            <Link
+              href="https://wa.me/213670000320"
+              // initial={{ opacity: 0, y: 100 }}
+              // whileInView={{ opacity: 1, y: 0 }}
+              // transition={{
+              //   type: "spring",
+              //   stiffness: 100,
+              //   damping: 10,
+              //   delay: 0.2,
+              // }}
+              className="bg-lightBlue text-[14px] md:text-[16px] shadow-md flex justify-between items-center gap-2 px-4 mdl:px-8 hover:scale-110 border border-black/30 text-black  duration-150 transition-all cursor-pointer rounded-full "
+            >
+              <h1 className=" font-fontBody text-[15px] ">تواصل معنا</h1>
+
+              <FaWhatsapp
+                size={22}
+                className="text-black/70 w-8 h-8 rounded-full p-1"
+              />
+            </Link>
           </div>
         </div>
       </div>

@@ -15,12 +15,12 @@ const dataInfo = [
   },
   {
     icon: sped,
-    title: "التحيول السريع:",
+    title: "السرعة في الأداء:",
     desc: "تقديم خدمات إنتاج وشحن سريعة، لتقليل وقت الانتظار وتعزيز رضا العملاء. يمكنكم الاعتماد علينا لتوفير خدمات سريعة وموثوقة.",
   },
   {
     icon: save,
-    title: "عدم وجود حد أدنى للطلبات:",
+    title: "لا يوجد حد أدنى للطلبات:",
     desc: "تلبية احتياجات الأفراد والشركات الصغيرة عبر السماح بطلب قطعة واحدة دون الحاجة لشراء كميات كبيرة.",
   },
   {
@@ -44,7 +44,7 @@ const Info = () => {
         {dataInfo.map((elm, ind) => (
           <div
             key={ind}
-            className="bg-gray/60 shadow-md p-8 w-[300px] h-[300px]"
+            className="bg-lightBlue shadow-md p-8 w-[300px] h-[300px]"
           >
             <div className=" flex justify-between items-end py-6">
               <h2 className="font-fontTitle ">{elm.title}</h2>

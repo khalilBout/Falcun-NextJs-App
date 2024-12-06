@@ -18,7 +18,7 @@ const Links = ({ link }) => {
           {link?.map((item) => (
             <li key={item.id}>
               <Link
-                className="font-fontTitle text-[13px] md:text-[14px] lg:text-[16px] py-1 px-2 rounded-full hover:scale-110 duration-100 transition-all hover:bg-primary/70"
+                className="font-fontTitle text-[13px] md:text-[14px] lg:text-[16px] py-1 px-2 rounded-full hover:scale-110 duration-100 transition-all hover:bg-blue hover:text-light"
                 href={`${item.href}`}
               >
                 {item.name}
@@ -30,7 +30,7 @@ const Links = ({ link }) => {
             session?.data.user.role === "admin" && (
               <li>
                 <Link
-                  className="font-fontTitle text-[13px] md:text-[14px] lg:text-[16px] py-1 px-2 rounded-full hover:scale-110 duration-100 transition-all hover:bg-primary/70"
+                  className="font-fontTitle text-[13px] md:text-[14px] lg:text-[16px] py-1 px-2 rounded-full hover:scale-110 duration-100 transition-all hover:bg-purple hover:text-light"
                   href="/dashboard"
                 >
                   لوحة التحكم
@@ -44,8 +44,8 @@ const Links = ({ link }) => {
               </Link>
             </li>
           ) : (
-            <button className="hidden md:block px-4 py-1 bg-primary/80 hover:bg-green-300 text-[13px] md:text-[14px] lg:text-[15px] hover:scale-110 duration-100 transition-all rounded-full font-fontTitle">
-              <Link href="/">إتصل بنا </Link>
+            <button className="hidden md:block px-4 py-1 bg-lightBlue hover:bg-blue text-[13px] md:text-[14px] lg:text-[15px] hover:scale-110 duration-100 transition-all rounded-full font-fontTitle">
+              <Link href="https://wa.me/213670000320">إتصل بنا </Link>
             </button>
           )}
         </ul>

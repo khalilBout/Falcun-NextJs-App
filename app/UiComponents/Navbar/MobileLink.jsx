@@ -111,7 +111,7 @@ const MobileLink = ({ link }) => {
                 key={link.name}
                 onClick={() => setOpen((prev) => !prev)}
               >
-                <Link href={`#${link.href}`}>{link.name}</Link>
+                <Link href={`${link.href}`}>{link.name}</Link>
               </motion.div>
             ))}
 

@@ -46,7 +46,7 @@ const About = () => {
         <Image
           src={logo}
           quality={100}
-          fill
+          // fill
           alt="logo"
           className="h-[220px] w-auto opacity-20 object-cover object-center"
         />

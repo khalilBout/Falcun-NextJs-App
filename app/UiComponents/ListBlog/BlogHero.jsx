@@ -39,7 +39,7 @@ const BlogHero = () => {
           src={flk}
           quality={100}
           alt="logo"
-          fill
+          // fill
           className="h-[180px] w-auto object-cover object-center"
         />
       </motion.div>
