@@ -1,16 +1,11 @@
 import Link from "next/link";
 import { getBlogs } from "@/Utils/getData/getBlogs";
 import TableAllBlog from "@/app/UiComponents/Dashboard/TableAllBlog";
-// import Pagination from "@/app/components/dashboardPage/Pagination";
 import EmptyView from "@/app/UiComponents/Ui/EmptyView";
 
 const pageBlogAdmin = async () => {
-  //   const page = searchParams?.page || 1;
-
   const allBlogs = await getBlogs();
-  console.log("data:", allBlogs);
   return (
-    // <p>product..</p>
     <div className="w-full font-bodyFont">
       <div className="p-2 bg-white border border-gray-100 shadow-md shadow-black/5 rounded-md">
         <div className="flex justify-between  items-start ">

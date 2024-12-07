@@ -11,6 +11,7 @@ const Footer = () => {
         {/* text  */}
         <div className="w-full mdl:w-1/3 text-[14px] mdl:text-[16px] font-fontBody text-white">
           <Image
+            w
             src={brand}
             alt="falkon logo"
             quality={100}
@@ -64,6 +65,8 @@ const Footer = () => {
         {/* big logo  */}
         <div className=" hidden mdl:w-1/3 mdl:flex justify-center items-center">
           <Image
+            width={300}
+            height={380}
             src={logo}
             quality={100}
             alt="logo"

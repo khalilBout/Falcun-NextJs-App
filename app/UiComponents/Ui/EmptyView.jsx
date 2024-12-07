@@ -1,5 +1,5 @@
 import React from "react";
-import emptyImg from "@/public/image/noData.webp";
+import emptyImg from "@/public/empty.webp";
 import Image from "next/image";
 const EmptyView = () => {
   return (

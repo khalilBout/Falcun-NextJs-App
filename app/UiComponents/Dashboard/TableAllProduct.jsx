@@ -47,15 +47,17 @@ function Tr({ item }) {
       <tr className="bg-red-100">
         {/* Image  */}
         <td className="py-2 px-4 border-b border-b-gray-50 ">
-          <div className="relative h-[60px] w-[60px]">
+          <div className=" h-[60px] w-[60px] overflow-hidden">
             <Image
               // fill
+              width={60}
+              height={60}
               quality={100}
               objectFit="cover"
               objectPosition="center"
               src={mainImg}
               alt={title}
-              className="rounded-full object-cover overflow-hidden bg-teal-100"
+              className="w-[60px] h-[60px] rounded-full object-cover overflow-hidden bg-teal-100"
               // className="text-gray-600 text-sm font-medium hover:text-blue-500 ml-2 truncate"
             />
           </div>

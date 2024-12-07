@@ -13,9 +13,11 @@ const page = async () => {
   return (
     <div className=" mt-20 mdl:mt-28 ">
       <div className=" screenPadding m-8 flex justify-center items-center gap-4">
-        {AllBlogs?.map((elm) => (
-          <BlogCard data={elm} key={elm._id} />
-        ))}
+        {AllBlogs?.lenght > 0 ? (
+          AllBlogs?.map((elm) => <BlogCard data={elm} key={elm._id} />)
+        ) : (
+          <EmptyView />
+        )}
       </div>
       <div className="screenPadding bg-lightBlue/20 py-8">
         <h1 className="text-2xl mdl:text-4xl font-fontTitle py-4">
