@@ -41,3 +41,21 @@ export const getProducts = async () => {
     console.log(e);
   }
 };
+
+// import Product from "@/models/product";
+// import connectDB from "@/Utils/connectDB";
+
+// export const getProductById = async (id) => {
+//   try {
+//     await connectDB();
+//     const TheProduct = await Product.findById(id);
+//     const blogData = JSON.parse(JSON.stringify(TheProduct));
+
+//     // console.error("THE blog:", blogData);
+
+//     return { blogData };
+//   } catch (err) {
+//     console.error("Error fetching blog:", err);
+//     throw new Error("Error fetching blog");
+//   }
+// }
