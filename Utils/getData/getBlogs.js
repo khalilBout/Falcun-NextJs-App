@@ -1,7 +1,10 @@
+const API_URL = process.env.GLOBAL_URL || "http://localhost:3000";
+
 export const getBlogById = async (id) => {
   try {
-    const res = await fetch(`${process.env.GLOBAL_URL}/api/blog/${id}`, {
+    const res = await fetch(`${API_URL}/api/blog/${id}`, {
       method: "GET",
+      // cache: "no-store",
     });
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
@@ -15,9 +18,9 @@ export const getBlogById = async (id) => {
 
 export const getBlogs = async () => {
   try {
-    const res = await fetch(`${process.env.GLOBAL_URL}/api/blog`, {
+    const res = await fetch(`${API_URL}/api/blog`, {
       method: "GET",
-      cache: "no-store",
+      // cache: "no-store",
     });
 
     const data = await res.json();

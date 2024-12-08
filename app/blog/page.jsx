@@ -3,12 +3,13 @@ import { getBlogs } from "@/Utils/getData/getBlogs";
 import BlogCard from "../UiComponents/ListBlog/BlogCard";
 import { getProducts } from "@/Utils/getData/getProducts";
 import Card from "@/app/UiComponents/Card/Card";
+import EmptyView from "@/app/UiComponents/Ui/EmptyView";
 
 const page = async () => {
   const AllBlogs = await getBlogs();
 
   const AllProducts = await getProducts();
-  const reletiveProducts = AllProducts.slice(0, 4);
+  const reletiveProducts = AllProducts?.slice(0, 4);
 
   return (
     <div className=" mt-20 mdl:mt-28 ">

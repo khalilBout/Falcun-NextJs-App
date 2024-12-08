@@ -13,7 +13,7 @@ export async function generateMetadata({ params }) {
 
 export default async function OneProduct({ params }) {
   const AllProducts = await getProducts();
-  const reletiveProducts = AllProducts.slice(0, 4);
+  const reletiveProducts = AllProducts?.slice(0, 4);
 
   const dataProduct = await getProductById(params.id);
 
