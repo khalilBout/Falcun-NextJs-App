@@ -8,6 +8,7 @@ import EmptyView from "@/app/UiComponents/Ui/EmptyView";
 const page = async () => {
   const AllBlogs = await getBlogs();
 
+  // fetch data of product
   const AllProducts = await getProducts();
   const reletiveProducts = AllProducts?.slice(0, 4);
 
