@@ -1,4 +1,4 @@
-const API_URL = process.env.GLOBAL_URL || "http://localhost:3000";
+const API_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
 export const getProductById = async (id) => {
   try {

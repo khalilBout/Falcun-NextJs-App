@@ -2,10 +2,12 @@ import Card from "@/app/UiComponents/Card/Card";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
 const Embroidery = async () => {
   let DataEmbroidery;
   try {
-    const res = await fetch(`${process.env.GLOBAL_URL}/api/product`);
+    const res = await fetch(`${baseUrl}/api/product`);
     if (!res.ok) {
       throw new Error(`HTTP error! status: ${res.status}`);
     }
