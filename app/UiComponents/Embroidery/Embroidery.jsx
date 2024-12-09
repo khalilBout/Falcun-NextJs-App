@@ -43,7 +43,7 @@ const Embroidery = async () => {
           </h2>
           <div className="">
             <Link
-              href="https://wa.me/213670000320"
+              href="https://wa.me/966544525016"
               // initial={{ opacity: 0, y: 100 }}
               // whileInView={{ opacity: 1, y: 0 }}
               // transition={{

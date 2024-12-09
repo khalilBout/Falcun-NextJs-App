@@ -24,7 +24,7 @@ const Card = ({ data }) => {
           {title}
         </h2>
         <Link
-          href="/"
+          href="https://wa.me/966544525016"
           className="w-[80%] py-1 flex justify-center items-center gap-2 mdl:gap-4 rounded-full bg-green-200/20 "
         >
           <h4 className="text-[12px] mdl:text-[13px] font-fontBody font-semibold text-white">

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 // import { Inter } from "next/font/google";
+import Script from "next/script";
+
 import "slick-carousel/slick/slick.css";
 
 import "./globals.css";
@@ -10,7 +12,6 @@ import Footer from "@/app/UiComponents/Footer/Footer";
 
 import { Toaster } from "react-hot-toast";
 // import ReduxProv from "@/app/components/ReduxProv";
-import Script from "next/script";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +29,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl">
       <head>
         {/* <!-- Google tag (gtag.js) --> */}
-        <Script
+        {/* <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-RBHX09XHXK"
         ></Script>
@@ -40,6 +41,20 @@ export default function RootLayout({
 
   gtag('config', 'G-RBHX09XHXK');
  `}
+        </Script> */}
+
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-ECPV4FREM6"
+        ></Script>
+        <Script id="google-analytics">
+          {`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ECPV4FREM6');
+  `}
         </Script>
       </head>
       <body className="">

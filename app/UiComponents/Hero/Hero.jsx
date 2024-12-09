@@ -2,16 +2,10 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-// import logo from "../../assets/hero/logo1.png";
-// import bag from "../../assets/hero/logo1.png";
-// import worker from "@/public/hero/work.png";
-
 import { FaWhatsapp } from "react-icons/fa";
 import print from "@/public/hero/print.png";
 import emb from "@/public/hero/emb.png";
 import uni from "@/public//hero/uni.png";
-import Link from "next/link";
-// import imageCrovet from "../../../public/image/img2.png";
 
 const Hero = () => {
   return (
@@ -36,10 +30,10 @@ const Hero = () => {
             }}
             className="z-20 text-[15px] sm:text-xl md:text-2xl font-fontBody text-center text-black/70 flex flex-col justify-center gap-4"
           >
-            حلول مخصصة تعكس التميز والجودة، من طباعة نابضة بالحياة وتطريز دقيق
-            إلى خياطة احترافية وهدايا فريدة. إنتاج سريع، مرونة في الطلب، وأدوات
-            تصميم سهلة تجعل من كل منتج تجربة استثنائية. التميز ليس مجرد خيار...
-            إنه معايير تتجسد في كل تفصيلة.
+            تقدم شركة فالكون منتجات تعكس التميز والجودة، من طباعة نابضة بالحياة
+            وتطريز دقيق إلى خياطة احترافية وهدايا فريدة. إنتاج سريع، مرونة في
+            الطلب، وأدوات تصميم سهلة تجعل من كل منتج تجربة استثنائية. التميز ليس
+            مجرد خيار... إنه معايير تتجسد في كل تفصيلة.
             {/* <span>والدعاية والأزياء الموحدة</span> */}
           </motion.h1>
 
@@ -60,7 +54,7 @@ const Hero = () => {
             </motion.a>
 
             <motion.a
-              href="https://wa.me/213670000320"
+              href="https://wa.me/966544525016"
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{

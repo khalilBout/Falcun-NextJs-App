@@ -45,7 +45,7 @@ const Links = ({ link }) => {
             </li>
           ) : (
             <button className="hidden md:block px-4 py-1 bg-lightBlue hover:bg-blue text-[13px] md:text-[14px] lg:text-[15px] hover:scale-110 duration-100 transition-all rounded-full font-fontTitle">
-              <Link href="https://wa.me/213670000320">إتصل بنا </Link>
+              <Link href="https://wa.me/966544525016">إتصل بنا </Link>
             </button>
           )}
         </ul>
