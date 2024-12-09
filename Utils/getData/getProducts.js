@@ -1,5 +1,7 @@
 const API_URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
+export const dynamic = "force-dynamic";
+
 export const getProductById = async (id) => {
   try {
     const res = await fetch(`${API_URL}/api/product/${id}`, {

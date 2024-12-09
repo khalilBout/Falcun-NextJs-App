@@ -34,6 +34,8 @@
 import Blog from "@/models/blog";
 import connectDB from "@/Utils/connectDB";
 
+export const dynamic = "force-dynamic";
+
 export const getBlogs = async () => {
   try {
     await connectDB();
