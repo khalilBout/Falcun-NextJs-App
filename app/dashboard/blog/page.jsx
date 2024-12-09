@@ -4,7 +4,8 @@ import TableAllBlog from "@/app/UiComponents/Dashboard/TableAllBlog";
 import EmptyView from "@/app/UiComponents/Ui/EmptyView";
 
 const pageBlogAdmin = async () => {
-  const allBlogs = await getBlogs();
+  const { AllBlogs } = await getBlogs();
+
   return (
     <div className="w-full font-bodyFont">
       <div className="p-2 bg-white border border-gray-100 shadow-md shadow-black/5 rounded-md">
@@ -18,8 +19,8 @@ const pageBlogAdmin = async () => {
         </div>
         <div className="bg-black h-[1px] w-full"></div>
         <div className="w-full min-h-[350px]">
-          {allBlogs?.length > 0 ? (
-            <TableAllBlog data={allBlogs} />
+          {AllBlogs?.length > 0 ? (
+            <TableAllBlog data={AllBlogs} />
           ) : (
             <>
               <div className="w-full flex justify-center items-center">

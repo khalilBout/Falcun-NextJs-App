@@ -28,7 +28,7 @@ const Hero = () => {
               damping: 10,
               delay: 0.8,
             }}
-            className="z-20 text-[15px] sm:text-xl md:text-2xl font-fontBody text-center text-black/70 flex flex-col justify-center gap-4"
+            className=" z-20 text-[15px] sm:text-xl md:text-2xl font-fontBody text-center text-black/70 flex flex-col justify-center gap-4"
           >
             تقدم شركة فالكون منتجات تعكس التميز والجودة، من طباعة نابضة بالحياة
             وتطريز دقيق إلى خياطة احترافية وهدايا فريدة. إنتاج سريع، مرونة في

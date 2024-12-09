@@ -22,10 +22,10 @@ const BlogCard = ({ data }) => {
       </div>
       {/* info dev  */}
       <div className="">
-        <h1 className="text-[14px] mdl:text-[16px] font-bold font-fontTitle px-4 pt-2 ">
-          {title}
+        <h1 className="text-justify text-[14px] mdl:text-[16px] font-bold font-fontTitle px-4 pt-2 ">
+          {title.slice(0, 60)}...
         </h1>
-        <h3 className=" font-fontBody text-[12px] mdl:text-[12px] pr-8 pl-2">
+        <h3 className="py-2 text-justify font-fontBody text-[12px] mdl:text-[12px] pr-8 pl-2">
           <span>{description.slice(0, 120)}...</span>
         </h3>
         <Link

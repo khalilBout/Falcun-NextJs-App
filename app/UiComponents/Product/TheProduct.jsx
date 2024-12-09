@@ -4,6 +4,7 @@ import BoxImg from "../../UiComponents/Ui/BoxImg";
 import { dataUniforms } from "../../UiComponents/data";
 
 import Card from "../../UiComponents/Card/Card";
+import Link from "next/link";
 
 const TheProduct = ({ dataProduct, reletiveProducts }) => {
   const [Qt, setQt] = useState(1);
@@ -39,7 +40,7 @@ const TheProduct = ({ dataProduct, reletiveProducts }) => {
             <h2 className="font-fontTitle text-xl md:text-2xl mdl:mr-4 ">
               الوصف{" "}
             </h2>
-            <h3 className=" font-fontBody text-[15px] mdl:text-[17px]  mdl:pr-16 ">
+            <h3 className="text-justify font-fontBody text-[15px] mdl:text-[17px]  mdl:pr-16 ">
               {dataProduct.description}
             </h3>
           </div>
@@ -52,12 +53,13 @@ const TheProduct = ({ dataProduct, reletiveProducts }) => {
                 onChange={handleQt}
               />
             </div>
-            <button
-              onClick={sendOrder}
+            <Link
+              href="https://wa.me/966544525016"
+              // onClick={sendOrder}
               className="hover:scale-110 duration-200 py-2 mdl:py-3 px-4 mdl:px-8 rounded-full bg-green-300 text-[13] mdl:text-[15] font-fontTitle"
             >
               أطلب الأن
-            </button>
+            </Link>
           </div>
         </div>
         {/* images section  */}

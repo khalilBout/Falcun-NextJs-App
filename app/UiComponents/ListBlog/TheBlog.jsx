@@ -21,7 +21,7 @@ const TheBlog = async ({ dataBlog }) => {
           </div>
 
           <div className="">
-            <h3 className=" font-fontBody text-[15px] mdl:text-[17px]  mdl:pr-16 max-md:text-center">
+            <h3 className=" font-fontBody text-[15px] mdl:text-[17px]  mdl:pr-16 max-md:text-justify">
               {dataBlog.description}
             </h3>
           </div>

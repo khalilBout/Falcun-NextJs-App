@@ -12,7 +12,7 @@ const page = async () => {
 
   return (
     <div className=" mt-20 mdl:mt-28 ">
-      <div className=" screenPadding m-8 flex justify-center items-center gap-4">
+      <div className=" screenPadding flex justify-center items-center flex-wrap gap-6 py-16">
         {/* {AllBlogs?.lenght > 0 ? (
           AllBlogs?.map((elm) => <BlogCard data={elm} key={elm._id} />)
         ) : (

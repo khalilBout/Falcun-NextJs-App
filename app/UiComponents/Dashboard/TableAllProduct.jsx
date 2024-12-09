@@ -44,7 +44,12 @@ function Tr({ item }) {
   const { _id, title, category, mainImg } = item;
   return (
     <>
-      <tr className="bg-red-100">
+      <tr className={`${category === "Printing" && "bg-green-100"}
+       ${category === "Embroidery"
+                          && "bg-red-100"} ${
+                            category === "Uniforms"
+                              && "bg-gray"}`}>
+
         {/* Image  */}
         <td className="py-2 px-4 border-b border-b-gray-50 ">
           <div className=" h-[60px] w-[60px] overflow-hidden">
