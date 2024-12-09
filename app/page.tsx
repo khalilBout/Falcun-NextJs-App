@@ -10,7 +10,12 @@ import Map from "@/app/UiComponents/Map/Map";
 import Brand from "@/app/UiComponents/Brand/Brand";
 import ListBlog from "@/app/UiComponents/ListBlog/ListBlog";
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
 export default function Home() {
+  if (!baseUrl) {
+    return null;
+  }
   return (
     <div className="">
       <Hero />
