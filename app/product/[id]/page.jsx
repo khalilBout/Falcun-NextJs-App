@@ -13,7 +13,13 @@ export async function generateMetadata({ params }) {
 
 export default async function OneProduct({ params }) {
   const AllProducts = await getProducts();
-  const reletiveProducts = AllProducts?.slice(0, 4);
+  const numAllProduct = AllProducts.length;
+  const randomNumber = Math.floor(Math.random() * (numAllProduct - 4)) + 5;
+  if (randomNumber > numAllProduct) randomNumber === numAllProduct;
+  const maxNumber = randomNumber;
+  const LowNumber = maxNumber - 4;
+
+  const reletiveProducts = AllProducts?.slice(LowNumber, maxNumber);
 
   const dataProduct = await getProductById(params.id);
 

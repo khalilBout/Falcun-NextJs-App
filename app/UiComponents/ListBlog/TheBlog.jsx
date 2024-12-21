@@ -1,6 +1,7 @@
 import BoxImg from "../Ui/BoxImg";
 import { getProducts } from "@/Utils/getData/getProducts";
 import Card from "../Card/Card";
+import ReactMarkdown from "react-markdown";
 
 const TheBlog = async ({ dataBlog }) => {
   const dataProduct = await getProducts();
@@ -20,10 +21,8 @@ const TheBlog = async ({ dataBlog }) => {
             </h1>
           </div>
 
-          <div className="">
-            <h3 className=" font-fontBody text-[15px] mdl:text-[17px]  mdl:pr-16 max-md:text-justify">
-              {dataBlog.description}
-            </h3>
+          <div className="font-fontBody text-[15px] mdl:text-[17px] mdl:pr-16 text-justify">
+            <ReactMarkdown>{dataBlog.description}</ReactMarkdown>
           </div>
         </div>
       </div>

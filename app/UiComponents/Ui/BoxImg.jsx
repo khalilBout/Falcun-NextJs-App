@@ -17,7 +17,7 @@ const BoxImg = ({ dataProduct }) => {
             quality={100}
             width={800}
             height={500}
-            className="h-full min-h-[300px] w-auto object-cover object-center "
+            className="h-full min-h-[300px] max-h-[480px] w-auto object-cover object-center "
           />
         </div>
         <div className="flex flex-rox md:flex-col gap-2 md:w-1/3">

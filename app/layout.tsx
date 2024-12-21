@@ -16,7 +16,7 @@ import { Toaster } from "react-hot-toast";
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Falcun",
+  title: "Falcon",
   description: "",
 };
 
@@ -28,21 +28,6 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <head>
-        {/* <!-- Google tag (gtag.js) --> */}
-        {/* <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-RBHX09XHXK"
-        ></Script>
-        <Script id="google-analytics">
-          {`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RBHX09XHXK');
- `}
-        </Script> */}
-
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-ECPV4FREM6"
